@@ -1,0 +1,2621 @@
+
+rfm12b.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000198  00800100  00000f28  00000fbc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000f28  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000079  00800298  00800298  00001154  2**0
+                  ALLOC
+  3 .debug_aranges 00000060  00000000  00000000  00001154  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000002ff  00000000  00000000  000011b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000018b9  00000000  00000000  000014b3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000008c4  00000000  00000000  00002d6c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000fdb  00000000  00000000  00003630  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000280  00000000  00000000  0000460c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000008c2  00000000  00000000  0000488c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000006ac  00000000  00000000  0000514e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000060  00000000  00000000  000057fa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 4a 00 	jmp	0x94	; 0x94 <__ctors_end>
+   4:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+   8:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+   c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  10:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  14:	0c 94 30 01 	jmp	0x260	; 0x260 <__vector_5>
+  18:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  1c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  20:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  24:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  28:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  2c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  30:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  34:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  38:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  3c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  40:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  44:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  48:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  4c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  50:	0c 94 69 00 	jmp	0xd2	; 0xd2 <__vector_20>
+  54:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  58:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  5c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  60:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  64:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  68:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  6c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  70:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  74:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  78:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+
+0000007c <_ZL9init_cmds>:
+  7c:	d6 80 01 82 f4 a4 02 c6 2d 94 ab c2 81 ca f7 c4     ........-.......
+  8c:	70 98 00 c8 00 e0 81 82                             p.......
+
+00000094 <__ctors_end>:
+  94:	11 24       	eor	r1, r1
+  96:	1f be       	out	0x3f, r1	; 63
+  98:	cf ef       	ldi	r28, 0xFF	; 255
+  9a:	d0 e1       	ldi	r29, 0x10	; 16
+  9c:	de bf       	out	0x3e, r29	; 62
+  9e:	cd bf       	out	0x3d, r28	; 61
+
+000000a0 <__do_copy_data>:
+  a0:	12 e0       	ldi	r17, 0x02	; 2
+  a2:	a0 e0       	ldi	r26, 0x00	; 0
+  a4:	b1 e0       	ldi	r27, 0x01	; 1
+  a6:	e8 e2       	ldi	r30, 0x28	; 40
+  a8:	ff e0       	ldi	r31, 0x0F	; 15
+  aa:	02 c0       	rjmp	.+4      	; 0xb0 <.do_copy_data_start>
+
+000000ac <.do_copy_data_loop>:
+  ac:	05 90       	lpm	r0, Z+
+  ae:	0d 92       	st	X+, r0
+
+000000b0 <.do_copy_data_start>:
+  b0:	a8 39       	cpi	r26, 0x98	; 152
+  b2:	b1 07       	cpc	r27, r17
+  b4:	d9 f7       	brne	.-10     	; 0xac <.do_copy_data_loop>
+
+000000b6 <__do_clear_bss>:
+  b6:	13 e0       	ldi	r17, 0x03	; 3
+  b8:	a8 e9       	ldi	r26, 0x98	; 152
+  ba:	b2 e0       	ldi	r27, 0x02	; 2
+  bc:	01 c0       	rjmp	.+2      	; 0xc0 <.do_clear_bss_start>
+
+000000be <.do_clear_bss_loop>:
+  be:	1d 92       	st	X+, r1
+
+000000c0 <.do_clear_bss_start>:
+  c0:	a1 31       	cpi	r26, 0x11	; 17
+  c2:	b1 07       	cpc	r27, r17
+  c4:	e1 f7       	brne	.-8      	; 0xbe <.do_clear_bss_loop>
+  c6:	0e 94 92 00 	call	0x124	; 0x124 <main>
+  ca:	0c 94 92 07 	jmp	0xf24	; 0xf24 <_exit>
+
+000000ce <__bad_interrupt>:
+  ce:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000d2 <__vector_20>:
+		uart_index = 0;
+	}
+}
+
+/* UART byte received interrupt */
+ISR(USART0_RX_vect)
+  d2:	1f 92       	push	r1
+  d4:	0f 92       	push	r0
+  d6:	0f b6       	in	r0, 0x3f	; 63
+  d8:	0f 92       	push	r0
+  da:	11 24       	eor	r1, r1
+  dc:	8f 93       	push	r24
+  de:	9f 93       	push	r25
+	__asm__ volatile (
+		"1: sbiw %0,1" "\n\t"
+		"brne 1b"
+		: "=w" (__count)
+		: "0" (__count)
+	);
+  e0:	81 e0       	ldi	r24, 0x01	; 1
+  e2:	90 e0       	ldi	r25, 0x00	; 0
+  e4:	01 97       	sbiw	r24, 0x01	; 1
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <__vector_20+0x12>
+{
+	// uart_input(UDR0);
+	_delay_ms(0);
+}
+  e8:	9f 91       	pop	r25
+  ea:	8f 91       	pop	r24
+  ec:	0f 90       	pop	r0
+  ee:	0f be       	out	0x3f, r0	; 63
+  f0:	0f 90       	pop	r0
+  f2:	1f 90       	pop	r1
+  f4:	18 95       	reti
+
+000000f6 <_Z10uart_inputc>:
+		put_str("Trial");
+		_delay_ms(500);
+	}
+}
+
+void uart_input(char byte)
+  f6:	1f 93       	push	r17
+  f8:	18 2f       	mov	r17, r24
+{
+	// Show the user what they are typing
+	put_ch(byte);
+  fa:	0e 94 4b 03 	call	0x696	; 0x696 <_Z6put_chc>
+
+	// Store the character in the input buffer
+	uart_buff[uart_index] = byte;
+  fe:	80 91 98 02 	lds	r24, 0x0298
+ 102:	e8 2f       	mov	r30, r24
+ 104:	f0 e0       	ldi	r31, 0x00	; 0
+ 106:	ea 5f       	subi	r30, 0xFA	; 250
+ 108:	fe 4f       	sbci	r31, 0xFE	; 254
+ 10a:	10 83       	st	Z, r17
+
+	// Determine if the return key has been hit
+	if (byte == '\r')
+ 10c:	1d 30       	cpi	r17, 0x0D	; 13
+ 10e:	31 f0       	breq	.+12     	; 0x11c <_Z10uart_inputc+0x26>
+
+		// Transmit the entire input string
+		//tx_msg(uart_buff);
+	}
+	// Ensure TX string is under 100 characters
+	else if (uart_index < 100)
+ 110:	84 36       	cpi	r24, 0x64	; 100
+ 112:	20 f4       	brcc	.+8      	; 0x11c <_Z10uart_inputc+0x26>
+	{
+		// Select the next character in the string as long
+		// as the string is under 100 characters long
+		uart_index++;
+ 114:	8f 5f       	subi	r24, 0xFF	; 255
+ 116:	80 93 98 02 	sts	0x0298, r24
+ 11a:	02 c0       	rjmp	.+4      	; 0x120 <_Z10uart_inputc+0x2a>
+	}
+	else
+	{
+		// Overwrite the existing string when the input is
+		// greater than 100 characters so we don't lose it
+		uart_index = 0;
+ 11c:	10 92 98 02 	sts	0x0298, r1
+	}
+}
+ 120:	1f 91       	pop	r17
+ 122:	08 95       	ret
+
+00000124 <main>:
+			}
+		}
+	}
+} */
+
+int main(void)
+ 124:	cf 93       	push	r28
+ 126:	df 93       	push	r29
+{
+	init_uart0();	//init uart
+ 128:	0e 94 34 03 	call	0x668	; 0x668 <_Z10init_uart0v>
+ 12c:	88 ee       	ldi	r24, 0xE8	; 232
+ 12e:	93 e0       	ldi	r25, 0x03	; 3
+ 130:	2c e2       	ldi	r18, 0x2C	; 44
+ 132:	31 e0       	ldi	r19, 0x01	; 1
+ 134:	f9 01       	movw	r30, r18
+ 136:	31 97       	sbiw	r30, 0x01	; 1
+ 138:	f1 f7       	brne	.-4      	; 0x136 <main+0x12>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 13a:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 13c:	d9 f7       	brne	.-10     	; 0x134 <main+0x10>
+	_delay_ms(100); //delay for the rfm12 to initialize properly
+	rfm12_init();	//init the RFM12
+ 13e:	0e 94 dd 02 	call	0x5ba	; 0x5ba <_Z10rfm12_initv>
+ 142:	88 ee       	ldi	r24, 0xE8	; 232
+ 144:	93 e0       	ldi	r25, 0x03	; 3
+ 146:	2c e2       	ldi	r18, 0x2C	; 44
+ 148:	31 e0       	ldi	r19, 0x01	; 1
+ 14a:	f9 01       	movw	r30, r18
+ 14c:	31 97       	sbiw	r30, 0x01	; 1
+ 14e:	f1 f7       	brne	.-4      	; 0x14c <main+0x28>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 150:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 152:	d9 f7       	brne	.-10     	; 0x14a <main+0x26>
+	_delay_ms(100);
+	sei(); //interrupts on
+ 154:	78 94       	sei
+ 156:	cc e2       	ldi	r28, 0x2C	; 44
+ 158:	d1 e0       	ldi	r29, 0x01	; 1
+
+	while (1)
+	{
+		put_str("Trial");
+ 15a:	80 e0       	ldi	r24, 0x00	; 0
+ 15c:	91 e0       	ldi	r25, 0x01	; 1
+ 15e:	0e 94 53 03 	call	0x6a6	; 0x6a6 <_Z7put_strPc>
+ 162:	88 e8       	ldi	r24, 0x88	; 136
+ 164:	93 e1       	ldi	r25, 0x13	; 19
+ 166:	fe 01       	movw	r30, r28
+ 168:	31 97       	sbiw	r30, 0x01	; 1
+ 16a:	f1 f7       	brne	.-4      	; 0x168 <main+0x44>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 16c:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 16e:	d9 f7       	brne	.-10     	; 0x166 <main+0x42>
+ 170:	f4 cf       	rjmp	.-24     	; 0x15a <main+0x36>
+
+00000172 <_ZL10rfm12_dataj>:
+ 172:	2c 98       	cbi	0x05, 4	; 5
+ 174:	9e bd       	out	0x2e, r25	; 46
+ 176:	0d b4       	in	r0, 0x2d	; 45
+ 178:	07 fe       	sbrs	r0, 7
+ 17a:	fd cf       	rjmp	.-6      	; 0x176 <_ZL10rfm12_dataj+0x4>
+ 17c:	8e bd       	out	0x2e, r24	; 46
+ 17e:	0d b4       	in	r0, 0x2d	; 45
+ 180:	07 fe       	sbrs	r0, 7
+ 182:	fd cf       	rjmp	.-6      	; 0x17e <_ZL10rfm12_dataj+0xc>
+ 184:	2c 9a       	sbi	0x05, 4	; 5
+ 186:	08 95       	ret
+
+00000188 <_ZL10rfm12_readj>:
+ 188:	2c 98       	cbi	0x05, 4	; 5
+ 18a:	9e bd       	out	0x2e, r25	; 46
+ 18c:	0d b4       	in	r0, 0x2d	; 45
+ 18e:	07 fe       	sbrs	r0, 7
+ 190:	fd cf       	rjmp	.-6      	; 0x18c <_ZL10rfm12_readj+0x4>
+ 192:	3e b5       	in	r19, 0x2e	; 46
+ 194:	8e bd       	out	0x2e, r24	; 46
+ 196:	0d b4       	in	r0, 0x2d	; 45
+ 198:	07 fe       	sbrs	r0, 7
+ 19a:	fd cf       	rjmp	.-6      	; 0x196 <_ZL10rfm12_readj+0xe>
+ 19c:	2e b5       	in	r18, 0x2e	; 46
+ 19e:	93 2f       	mov	r25, r19
+ 1a0:	80 e0       	ldi	r24, 0x00	; 0
+ 1a2:	2c 9a       	sbi	0x05, 4	; 5
+ 1a4:	30 e0       	ldi	r19, 0x00	; 0
+ 1a6:	28 2b       	or	r18, r24
+ 1a8:	39 2b       	or	r19, r25
+ 1aa:	c9 01       	movw	r24, r18
+ 1ac:	08 95       	ret
+
+000001ae <_Z15rfm12_data_safej>:
+ 1ae:	0f 93       	push	r16
+ 1b0:	1f 93       	push	r17
+ 1b2:	0c e6       	ldi	r16, 0x6C	; 108
+ 1b4:	10 e0       	ldi	r17, 0x00	; 0
+ 1b6:	f8 01       	movw	r30, r16
+ 1b8:	20 81       	ld	r18, Z
+ 1ba:	2d 7f       	andi	r18, 0xFD	; 253
+ 1bc:	20 83       	st	Z, r18
+ 1be:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 1c2:	f8 01       	movw	r30, r16
+ 1c4:	80 81       	ld	r24, Z
+ 1c6:	82 60       	ori	r24, 0x02	; 2
+ 1c8:	80 83       	st	Z, r24
+ 1ca:	1f 91       	pop	r17
+ 1cc:	0f 91       	pop	r16
+ 1ce:	08 95       	ret
+
+000001d0 <_Z14rfm12_livectrlhj>:
+ 1d0:	cf 93       	push	r28
+ 1d2:	df 93       	push	r29
+ 1d4:	a8 2f       	mov	r26, r24
+ 1d6:	b0 e0       	ldi	r27, 0x00	; 0
+ 1d8:	fd 01       	movw	r30, r26
+ 1da:	83 e0       	ldi	r24, 0x03	; 3
+ 1dc:	ee 0f       	add	r30, r30
+ 1de:	ff 1f       	adc	r31, r31
+ 1e0:	8a 95       	dec	r24
+ 1e2:	e1 f7       	brne	.-8      	; 0x1dc <_Z14rfm12_livectrlhj+0xc>
+ 1e4:	e2 53       	subi	r30, 0x32	; 50
+ 1e6:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1e8:	77 83       	std	Z+7, r23	; 0x07
+ 1ea:	66 83       	std	Z+6, r22	; 0x06
+ 1ec:	fd 01       	movw	r30, r26
+ 1ee:	53 e0       	ldi	r21, 0x03	; 3
+ 1f0:	ee 0f       	add	r30, r30
+ 1f2:	ff 1f       	adc	r31, r31
+ 1f4:	5a 95       	dec	r21
+ 1f6:	e1 f7       	brne	.-8      	; 0x1f0 <_Z14rfm12_livectrlhj+0x20>
+ 1f8:	ee 52       	subi	r30, 0x2E	; 46
+ 1fa:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1fc:	c0 81       	ld	r28, Z
+ 1fe:	d1 81       	ldd	r29, Z+1	; 0x01
+ 200:	20 97       	sbiw	r28, 0x00	; 0
+ 202:	19 f4       	brne	.+6      	; 0x20a <_Z14rfm12_livectrlhj+0x3a>
+ 204:	40 e0       	ldi	r20, 0x00	; 0
+ 206:	50 e0       	ldi	r21, 0x00	; 0
+ 208:	10 c0       	rjmp	.+32     	; 0x22a <_Z14rfm12_livectrlhj+0x5a>
+ 20a:	88 81       	ld	r24, Y
+ 20c:	99 81       	ldd	r25, Y+1	; 0x01
+ 20e:	fd 01       	movw	r30, r26
+ 210:	43 e0       	ldi	r20, 0x03	; 3
+ 212:	ee 0f       	add	r30, r30
+ 214:	ff 1f       	adc	r31, r31
+ 216:	4a 95       	dec	r20
+ 218:	e1 f7       	brne	.-8      	; 0x212 <_Z14rfm12_livectrlhj+0x42>
+ 21a:	e0 53       	subi	r30, 0x30	; 48
+ 21c:	fe 4f       	sbci	r31, 0xFE	; 254
+ 21e:	40 81       	ld	r20, Z
+ 220:	51 81       	ldd	r21, Z+1	; 0x01
+ 222:	40 95       	com	r20
+ 224:	50 95       	com	r21
+ 226:	48 23       	and	r20, r24
+ 228:	59 23       	and	r21, r25
+ 22a:	33 e0       	ldi	r19, 0x03	; 3
+ 22c:	aa 0f       	add	r26, r26
+ 22e:	bb 1f       	adc	r27, r27
+ 230:	3a 95       	dec	r19
+ 232:	e1 f7       	brne	.-8      	; 0x22c <_Z14rfm12_livectrlhj+0x5c>
+ 234:	fd 01       	movw	r30, r26
+ 236:	e0 53       	subi	r30, 0x30	; 48
+ 238:	fe 4f       	sbci	r31, 0xFE	; 254
+ 23a:	80 81       	ld	r24, Z
+ 23c:	91 81       	ldd	r25, Z+1	; 0x01
+ 23e:	86 23       	and	r24, r22
+ 240:	97 23       	and	r25, r23
+ 242:	a2 53       	subi	r26, 0x32	; 50
+ 244:	be 4f       	sbci	r27, 0xFE	; 254
+ 246:	2d 91       	ld	r18, X+
+ 248:	3c 91       	ld	r19, X
+ 24a:	82 2b       	or	r24, r18
+ 24c:	93 2b       	or	r25, r19
+ 24e:	84 2b       	or	r24, r20
+ 250:	95 2b       	or	r25, r21
+ 252:	99 83       	std	Y+1, r25	; 0x01
+ 254:	88 83       	st	Y, r24
+ 256:	0e 94 d7 00 	call	0x1ae	; 0x1ae <_Z15rfm12_data_safej>
+ 25a:	df 91       	pop	r29
+ 25c:	cf 91       	pop	r28
+ 25e:	08 95       	ret
+
+00000260 <__vector_5>:
+ 260:	78 94       	sei
+ 262:	1f 92       	push	r1
+ 264:	0f 92       	push	r0
+ 266:	0f b6       	in	r0, 0x3f	; 63
+ 268:	0f 92       	push	r0
+ 26a:	11 24       	eor	r1, r1
+ 26c:	9f 92       	push	r9
+ 26e:	af 92       	push	r10
+ 270:	bf 92       	push	r11
+ 272:	cf 92       	push	r12
+ 274:	df 92       	push	r13
+ 276:	ef 92       	push	r14
+ 278:	ff 92       	push	r15
+ 27a:	0f 93       	push	r16
+ 27c:	1f 93       	push	r17
+ 27e:	2f 93       	push	r18
+ 280:	3f 93       	push	r19
+ 282:	4f 93       	push	r20
+ 284:	5f 93       	push	r21
+ 286:	6f 93       	push	r22
+ 288:	7f 93       	push	r23
+ 28a:	8f 93       	push	r24
+ 28c:	9f 93       	push	r25
+ 28e:	af 93       	push	r26
+ 290:	bf 93       	push	r27
+ 292:	cf 93       	push	r28
+ 294:	df 93       	push	r29
+ 296:	ef 93       	push	r30
+ 298:	ff 93       	push	r31
+ 29a:	19 99       	sbic	0x03, 1	; 3
+ 29c:	fa c0       	rjmp	.+500    	; 0x492 <__vector_5+0x232>
+ 29e:	80 91 6c 00 	lds	r24, 0x006C
+ 2a2:	8d 7f       	andi	r24, 0xFD	; 253
+ 2a4:	80 93 6c 00 	sts	0x006C, r24
+ 2a8:	10 91 10 03 	lds	r17, 0x0310
+ 2ac:	52 e0       	ldi	r21, 0x02	; 2
+ 2ae:	95 2e       	mov	r9, r21
+ 2b0:	c3 e2       	ldi	r28, 0x23	; 35
+ 2b2:	d0 e0       	ldi	r29, 0x00	; 0
+ 2b4:	41 e0       	ldi	r20, 0x01	; 1
+ 2b6:	e4 2e       	mov	r14, r20
+ 2b8:	f1 2c       	mov	r15, r1
+ 2ba:	dd 24       	eor	r13, r13
+ 2bc:	d3 94       	inc	r13
+ 2be:	31 e2       	ldi	r19, 0x21	; 33
+ 2c0:	b3 2e       	mov	r11, r19
+ 2c2:	23 e0       	ldi	r18, 0x03	; 3
+ 2c4:	a2 2e       	mov	r10, r18
+ 2c6:	94 e0       	ldi	r25, 0x04	; 4
+ 2c8:	c9 2e       	mov	r12, r25
+ 2ca:	9b ba       	out	0x1b, r9	; 27
+ 2cc:	2c 98       	cbi	0x05, 4	; 5
+ 2ce:	1e bc       	out	0x2e, r1	; 46
+ 2d0:	0d b4       	in	r0, 0x2d	; 45
+ 2d2:	07 fe       	sbrs	r0, 7
+ 2d4:	fd cf       	rjmp	.-6      	; 0x2d0 <__vector_5+0x70>
+ 2d6:	2c 9a       	sbi	0x05, 4	; 5
+ 2d8:	0e b5       	in	r16, 0x2e	; 46
+ 2da:	07 ff       	sbrs	r16, 7
+ 2dc:	d0 c0       	rjmp	.+416    	; 0x47e <__vector_5+0x21e>
+ 2de:	90 91 02 03 	lds	r25, 0x0302
+ 2e2:	92 30       	cpi	r25, 0x02	; 2
+ 2e4:	39 f1       	breq	.+78     	; 0x334 <__vector_5+0xd4>
+ 2e6:	92 30       	cpi	r25, 0x02	; 2
+ 2e8:	18 f0       	brcs	.+6      	; 0x2f0 <__vector_5+0x90>
+ 2ea:	93 30       	cpi	r25, 0x03	; 3
+ 2ec:	81 f5       	brne	.+96     	; 0x34e <__vector_5+0xee>
+ 2ee:	1f c0       	rjmp	.+62     	; 0x32e <__vector_5+0xce>
+ 2f0:	80 91 05 03 	lds	r24, 0x0305
+ 2f4:	83 30       	cpi	r24, 0x03	; 3
+ 2f6:	11 f0       	breq	.+4      	; 0x2fc <__vector_5+0x9c>
+ 2f8:	20 e0       	ldi	r18, 0x00	; 0
+ 2fa:	04 c0       	rjmp	.+8      	; 0x304 <__vector_5+0xa4>
+ 2fc:	20 e0       	ldi	r18, 0x00	; 0
+ 2fe:	1f 3f       	cpi	r17, 0xFF	; 255
+ 300:	09 f0       	breq	.+2      	; 0x304 <__vector_5+0xa4>
+ 302:	21 e0       	ldi	r18, 0x01	; 1
+ 304:	80 91 06 03 	lds	r24, 0x0306
+ 308:	90 e0       	ldi	r25, 0x00	; 0
+ 30a:	8c 9f       	mul	r24, r28
+ 30c:	f0 01       	movw	r30, r0
+ 30e:	8d 9f       	mul	r24, r29
+ 310:	f0 0d       	add	r31, r0
+ 312:	9c 9f       	mul	r25, r28
+ 314:	f0 0d       	add	r31, r0
+ 316:	11 24       	eor	r1, r1
+ 318:	e4 54       	subi	r30, 0x44	; 68
+ 31a:	fd 4f       	sbci	r31, 0xFD	; 253
+ 31c:	81 a1       	ldd	r24, Z+33	; 0x21
+ 31e:	92 a1       	ldd	r25, Z+34	; 0x22
+ 320:	89 2b       	or	r24, r25
+ 322:	a9 f4       	brne	.+42     	; 0x34e <__vector_5+0xee>
+ 324:	22 23       	and	r18, r18
+ 326:	99 f4       	brne	.+38     	; 0x34e <__vector_5+0xee>
+ 328:	d0 92 02 03 	sts	0x0302, r13
+ 32c:	12 c0       	rjmp	.+36     	; 0x352 <__vector_5+0xf2>
+ 32e:	c0 92 02 03 	sts	0x0302, r12
+ 332:	0f c0       	rjmp	.+30     	; 0x352 <__vector_5+0xf2>
+ 334:	a0 92 02 03 	sts	0x0302, r10
+ 338:	20 91 05 03 	lds	r18, 0x0305
+ 33c:	80 91 04 03 	lds	r24, 0x0304
+ 340:	28 17       	cp	r18, r24
+ 342:	38 f4       	brcc	.+14     	; 0x352 <__vector_5+0xf2>
+ 344:	24 32       	cpi	r18, 0x24	; 36
+ 346:	28 f4       	brcc	.+10     	; 0x352 <__vector_5+0xf2>
+ 348:	90 93 02 03 	sts	0x0302, r25
+ 34c:	02 c0       	rjmp	.+4      	; 0x352 <__vector_5+0xf2>
+ 34e:	10 92 02 03 	sts	0x0302, r1
+ 352:	80 91 02 03 	lds	r24, 0x0302
+ 356:	82 30       	cpi	r24, 0x02	; 2
+ 358:	09 f4       	brne	.+2      	; 0x35c <__vector_5+0xfc>
+ 35a:	5f c0       	rjmp	.+190    	; 0x41a <__vector_5+0x1ba>
+ 35c:	83 30       	cpi	r24, 0x03	; 3
+ 35e:	20 f4       	brcc	.+8      	; 0x368 <__vector_5+0x108>
+ 360:	81 30       	cpi	r24, 0x01	; 1
+ 362:	09 f0       	breq	.+2      	; 0x366 <__vector_5+0x106>
+ 364:	7b c0       	rjmp	.+246    	; 0x45c <__vector_5+0x1fc>
+ 366:	07 c0       	rjmp	.+14     	; 0x376 <__vector_5+0x116>
+ 368:	83 30       	cpi	r24, 0x03	; 3
+ 36a:	09 f4       	brne	.+2      	; 0x36e <__vector_5+0x10e>
+ 36c:	66 c0       	rjmp	.+204    	; 0x43a <__vector_5+0x1da>
+ 36e:	84 30       	cpi	r24, 0x04	; 4
+ 370:	09 f0       	breq	.+2      	; 0x374 <__vector_5+0x114>
+ 372:	74 c0       	rjmp	.+232    	; 0x45c <__vector_5+0x1fc>
+ 374:	67 c0       	rjmp	.+206    	; 0x444 <__vector_5+0x1e4>
+ 376:	80 e0       	ldi	r24, 0x00	; 0
+ 378:	90 eb       	ldi	r25, 0xB0	; 176
+ 37a:	0e 94 c4 00 	call	0x188	; 0x188 <_ZL10rfm12_readj>
+ 37e:	38 2f       	mov	r19, r24
+ 380:	18 27       	eor	r17, r24
+ 382:	20 91 05 03 	lds	r18, 0x0305
+ 386:	22 23       	and	r18, r18
+ 388:	d9 f4       	brne	.+54     	; 0x3c0 <__vector_5+0x160>
+ 38a:	82 32       	cpi	r24, 0x22	; 34
+ 38c:	70 f0       	brcs	.+28     	; 0x3aa <__vector_5+0x14a>
+ 38e:	80 91 06 03 	lds	r24, 0x0306
+ 392:	90 e0       	ldi	r25, 0x00	; 0
+ 394:	8c 9f       	mul	r24, r28
+ 396:	f0 01       	movw	r30, r0
+ 398:	8d 9f       	mul	r24, r29
+ 39a:	f0 0d       	add	r31, r0
+ 39c:	9c 9f       	mul	r25, r28
+ 39e:	f0 0d       	add	r31, r0
+ 3a0:	11 24       	eor	r1, r1
+ 3a2:	e4 54       	subi	r30, 0x44	; 68
+ 3a4:	fd 4f       	sbci	r31, 0xFD	; 253
+ 3a6:	b0 82       	st	Z, r11
+ 3a8:	1a c0       	rjmp	.+52     	; 0x3de <__vector_5+0x17e>
+ 3aa:	80 91 06 03 	lds	r24, 0x0306
+ 3ae:	90 e0       	ldi	r25, 0x00	; 0
+ 3b0:	8c 9f       	mul	r24, r28
+ 3b2:	f0 01       	movw	r30, r0
+ 3b4:	8d 9f       	mul	r24, r29
+ 3b6:	f0 0d       	add	r31, r0
+ 3b8:	9c 9f       	mul	r25, r28
+ 3ba:	f0 0d       	add	r31, r0
+ 3bc:	11 24       	eor	r1, r1
+ 3be:	0c c0       	rjmp	.+24     	; 0x3d8 <__vector_5+0x178>
+ 3c0:	80 91 06 03 	lds	r24, 0x0306
+ 3c4:	90 e0       	ldi	r25, 0x00	; 0
+ 3c6:	8c 9f       	mul	r24, r28
+ 3c8:	f0 01       	movw	r30, r0
+ 3ca:	8d 9f       	mul	r24, r29
+ 3cc:	f0 0d       	add	r31, r0
+ 3ce:	9c 9f       	mul	r25, r28
+ 3d0:	f0 0d       	add	r31, r0
+ 3d2:	11 24       	eor	r1, r1
+ 3d4:	e2 0f       	add	r30, r18
+ 3d6:	f1 1d       	adc	r31, r1
+ 3d8:	e4 54       	subi	r30, 0x44	; 68
+ 3da:	fd 4f       	sbci	r31, 0xFD	; 253
+ 3dc:	30 83       	st	Z, r19
+ 3de:	2f 5f       	subi	r18, 0xFF	; 255
+ 3e0:	20 93 05 03 	sts	0x0305, r18
+ 3e4:	40 91 06 03 	lds	r20, 0x0306
+ 3e8:	84 2f       	mov	r24, r20
+ 3ea:	90 e0       	ldi	r25, 0x00	; 0
+ 3ec:	8c 9f       	mul	r24, r28
+ 3ee:	f0 01       	movw	r30, r0
+ 3f0:	8d 9f       	mul	r24, r29
+ 3f2:	f0 0d       	add	r31, r0
+ 3f4:	9c 9f       	mul	r25, r28
+ 3f6:	f0 0d       	add	r31, r0
+ 3f8:	11 24       	eor	r1, r1
+ 3fa:	e4 54       	subi	r30, 0x44	; 68
+ 3fc:	fd 4f       	sbci	r31, 0xFD	; 253
+ 3fe:	80 81       	ld	r24, Z
+ 400:	99 27       	eor	r25, r25
+ 402:	87 fd       	sbrc	r24, 7
+ 404:	90 95       	com	r25
+ 406:	30 e0       	ldi	r19, 0x00	; 0
+ 408:	28 17       	cp	r18, r24
+ 40a:	39 07       	cpc	r19, r25
+ 40c:	3c f1       	brlt	.+78     	; 0x45c <__vector_5+0x1fc>
+ 40e:	f2 a2       	std	Z+34, r15	; 0x22
+ 410:	e1 a2       	std	Z+33, r14	; 0x21
+ 412:	4d 25       	eor	r20, r13
+ 414:	40 93 06 03 	sts	0x0306, r20
+ 418:	1f c0       	rjmp	.+62     	; 0x458 <__vector_5+0x1f8>
+ 41a:	e0 91 05 03 	lds	r30, 0x0305
+ 41e:	f0 e0       	ldi	r31, 0x00	; 0
+ 420:	e7 56       	subi	r30, 0x67	; 103
+ 422:	fd 4f       	sbci	r31, 0xFD	; 253
+ 424:	80 81       	ld	r24, Z
+ 426:	90 e0       	ldi	r25, 0x00	; 0
+ 428:	98 6b       	ori	r25, 0xB8	; 184
+ 42a:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 42e:	80 91 05 03 	lds	r24, 0x0305
+ 432:	8f 5f       	subi	r24, 0xFF	; 255
+ 434:	80 93 05 03 	sts	0x0305, r24
+ 438:	11 c0       	rjmp	.+34     	; 0x45c <__vector_5+0x1fc>
+ 43a:	8a ea       	ldi	r24, 0xAA	; 170
+ 43c:	98 eb       	ldi	r25, 0xB8	; 184
+ 43e:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 442:	0c c0       	rjmp	.+24     	; 0x45c <__vector_5+0x1fc>
+ 444:	10 92 03 03 	sts	0x0303, r1
+ 448:	81 e8       	ldi	r24, 0x81	; 129
+ 44a:	92 e8       	ldi	r25, 0x82	; 130
+ 44c:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 450:	8a ea       	ldi	r24, 0xAA	; 170
+ 452:	98 eb       	ldi	r25, 0xB8	; 184
+ 454:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 458:	10 92 02 03 	sts	0x0302, r1
+ 45c:	80 91 02 03 	lds	r24, 0x0302
+ 460:	88 23       	and	r24, r24
+ 462:	69 f4       	brne	.+26     	; 0x47e <__vector_5+0x21e>
+ 464:	10 92 05 03 	sts	0x0305, r1
+ 468:	10 92 04 03 	sts	0x0304, r1
+ 46c:	81 e8       	ldi	r24, 0x81	; 129
+ 46e:	9a ec       	ldi	r25, 0xCA	; 202
+ 470:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 474:	83 e8       	ldi	r24, 0x83	; 131
+ 476:	9a ec       	ldi	r25, 0xCA	; 202
+ 478:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 47c:	10 e0       	ldi	r17, 0x00	; 0
+ 47e:	04 79       	andi	r16, 0x94	; 148
+ 480:	09 f0       	breq	.+2      	; 0x484 <__vector_5+0x224>
+ 482:	23 cf       	rjmp	.-442    	; 0x2ca <__vector_5+0x6a>
+ 484:	10 93 10 03 	sts	0x0310, r17
+ 488:	80 91 6c 00 	lds	r24, 0x006C
+ 48c:	82 60       	ori	r24, 0x02	; 2
+ 48e:	80 93 6c 00 	sts	0x006C, r24
+ 492:	ff 91       	pop	r31
+ 494:	ef 91       	pop	r30
+ 496:	df 91       	pop	r29
+ 498:	cf 91       	pop	r28
+ 49a:	bf 91       	pop	r27
+ 49c:	af 91       	pop	r26
+ 49e:	9f 91       	pop	r25
+ 4a0:	8f 91       	pop	r24
+ 4a2:	7f 91       	pop	r23
+ 4a4:	6f 91       	pop	r22
+ 4a6:	5f 91       	pop	r21
+ 4a8:	4f 91       	pop	r20
+ 4aa:	3f 91       	pop	r19
+ 4ac:	2f 91       	pop	r18
+ 4ae:	1f 91       	pop	r17
+ 4b0:	0f 91       	pop	r16
+ 4b2:	ff 90       	pop	r15
+ 4b4:	ef 90       	pop	r14
+ 4b6:	df 90       	pop	r13
+ 4b8:	cf 90       	pop	r12
+ 4ba:	bf 90       	pop	r11
+ 4bc:	af 90       	pop	r10
+ 4be:	9f 90       	pop	r9
+ 4c0:	0f 90       	pop	r0
+ 4c2:	0f be       	out	0x3f, r0	; 63
+ 4c4:	0f 90       	pop	r0
+ 4c6:	1f 90       	pop	r1
+ 4c8:	18 95       	reti
+
+000004ca <_Z14rfm12_start_txv>:
+ 4ca:	0f 93       	push	r16
+ 4cc:	1f 93       	push	r17
+ 4ce:	0c e6       	ldi	r16, 0x6C	; 108
+ 4d0:	10 e0       	ldi	r17, 0x00	; 0
+ 4d2:	f8 01       	movw	r30, r16
+ 4d4:	80 81       	ld	r24, Z
+ 4d6:	8d 7f       	andi	r24, 0xFD	; 253
+ 4d8:	80 83       	st	Z, r24
+ 4da:	81 e0       	ldi	r24, 0x01	; 1
+ 4dc:	92 e8       	ldi	r25, 0x82	; 130
+ 4de:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 4e2:	80 91 9b 02 	lds	r24, 0x029B
+ 4e6:	8b 5f       	subi	r24, 0xFB	; 251
+ 4e8:	80 93 04 03 	sts	0x0304, r24
+ 4ec:	10 92 05 03 	sts	0x0305, r1
+ 4f0:	82 e0       	ldi	r24, 0x02	; 2
+ 4f2:	80 93 02 03 	sts	0x0302, r24
+ 4f6:	8a ea       	ldi	r24, 0xAA	; 170
+ 4f8:	98 eb       	ldi	r25, 0xB8	; 184
+ 4fa:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 4fe:	8a ea       	ldi	r24, 0xAA	; 170
+ 500:	98 eb       	ldi	r25, 0xB8	; 184
+ 502:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 506:	81 e2       	ldi	r24, 0x21	; 33
+ 508:	92 e8       	ldi	r25, 0x82	; 130
+ 50a:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 50e:	f8 01       	movw	r30, r16
+ 510:	80 81       	ld	r24, Z
+ 512:	82 60       	ori	r24, 0x02	; 2
+ 514:	80 83       	st	Z, r24
+ 516:	1f 91       	pop	r17
+ 518:	0f 91       	pop	r16
+ 51a:	08 95       	ret
+
+0000051c <_Z10rfm12_tickv>:
+ 51c:	80 91 02 03 	lds	r24, 0x0302
+ 520:	88 23       	and	r24, r24
+ 522:	01 f5       	brne	.+64     	; 0x564 <_Z10rfm12_tickv+0x48>
+ 524:	80 91 6c 00 	lds	r24, 0x006C
+ 528:	8d 7f       	andi	r24, 0xFD	; 253
+ 52a:	80 93 6c 00 	sts	0x006C, r24
+ 52e:	80 e0       	ldi	r24, 0x00	; 0
+ 530:	90 e0       	ldi	r25, 0x00	; 0
+ 532:	0e 94 c4 00 	call	0x188	; 0x188 <_ZL10rfm12_readj>
+ 536:	20 91 6c 00 	lds	r18, 0x006C
+ 53a:	22 60       	ori	r18, 0x02	; 2
+ 53c:	20 93 6c 00 	sts	0x006C, r18
+ 540:	90 ff       	sbrs	r25, 0
+ 542:	02 c0       	rjmp	.+4      	; 0x548 <_Z10rfm12_tickv+0x2c>
+ 544:	88 ec       	ldi	r24, 0xC8	; 200
+ 546:	05 c0       	rjmp	.+10     	; 0x552 <_Z10rfm12_tickv+0x36>
+ 548:	80 91 16 02 	lds	r24, 0x0216
+ 54c:	88 23       	and	r24, r24
+ 54e:	21 f0       	breq	.+8      	; 0x558 <_Z10rfm12_tickv+0x3c>
+ 550:	81 50       	subi	r24, 0x01	; 1
+ 552:	80 93 16 02 	sts	0x0216, r24
+ 556:	08 95       	ret
+ 558:	80 91 03 03 	lds	r24, 0x0303
+ 55c:	81 30       	cpi	r24, 0x01	; 1
+ 55e:	11 f4       	brne	.+4      	; 0x564 <_Z10rfm12_tickv+0x48>
+ 560:	0e 94 65 02 	call	0x4ca	; 0x4ca <_Z14rfm12_start_txv>
+ 564:	08 95       	ret
+
+00000566 <_Z14rfm12_queue_txhh>:
+ 566:	98 2f       	mov	r25, r24
+ 568:	80 91 03 03 	lds	r24, 0x0303
+ 56c:	88 23       	and	r24, r24
+ 56e:	11 f0       	breq	.+4      	; 0x574 <_Z14rfm12_queue_txhh+0xe>
+ 570:	83 e0       	ldi	r24, 0x03	; 3
+ 572:	08 95       	ret
+ 574:	60 93 9b 02 	sts	0x029B, r22
+ 578:	90 93 9c 02 	sts	0x029C, r25
+ 57c:	69 27       	eor	r22, r25
+ 57e:	60 95       	com	r22
+ 580:	60 93 9d 02 	sts	0x029D, r22
+ 584:	81 e0       	ldi	r24, 0x01	; 1
+ 586:	80 93 03 03 	sts	0x0303, r24
+ 58a:	80 e8       	ldi	r24, 0x80	; 128
+ 58c:	08 95       	ret
+
+0000058e <_Z14rfm12_rx_clearv>:
+ 58e:	40 91 07 03 	lds	r20, 0x0307
+ 592:	24 2f       	mov	r18, r20
+ 594:	30 e0       	ldi	r19, 0x00	; 0
+ 596:	83 e2       	ldi	r24, 0x23	; 35
+ 598:	90 e0       	ldi	r25, 0x00	; 0
+ 59a:	28 9f       	mul	r18, r24
+ 59c:	f0 01       	movw	r30, r0
+ 59e:	29 9f       	mul	r18, r25
+ 5a0:	f0 0d       	add	r31, r0
+ 5a2:	38 9f       	mul	r19, r24
+ 5a4:	f0 0d       	add	r31, r0
+ 5a6:	11 24       	eor	r1, r1
+ 5a8:	e4 54       	subi	r30, 0x44	; 68
+ 5aa:	fd 4f       	sbci	r31, 0xFD	; 253
+ 5ac:	12 a2       	std	Z+34, r1	; 0x22
+ 5ae:	11 a2       	std	Z+33, r1	; 0x21
+ 5b0:	81 e0       	ldi	r24, 0x01	; 1
+ 5b2:	48 27       	eor	r20, r24
+ 5b4:	40 93 07 03 	sts	0x0307, r20
+ 5b8:	08 95       	ret
+
+000005ba <_Z10rfm12_initv>:
+ 5ba:	cf 93       	push	r28
+ 5bc:	df 93       	push	r29
+ 5be:	2c 9a       	sbi	0x05, 4	; 5
+ 5c0:	24 9a       	sbi	0x04, 4	; 4
+ 5c2:	25 9a       	sbi	0x04, 5	; 4
+ 5c4:	27 9a       	sbi	0x04, 7	; 4
+ 5c6:	2c 9a       	sbi	0x05, 4	; 5
+ 5c8:	24 9a       	sbi	0x04, 4	; 4
+ 5ca:	26 98       	cbi	0x04, 6	; 4
+ 5cc:	81 e5       	ldi	r24, 0x51	; 81
+ 5ce:	8c bd       	out	0x2c, r24	; 44
+ 5d0:	8d e2       	ldi	r24, 0x2D	; 45
+ 5d2:	80 93 99 02 	sts	0x0299, r24
+ 5d6:	84 ed       	ldi	r24, 0xD4	; 212
+ 5d8:	80 93 9a 02 	sts	0x029A, r24
+ 5dc:	10 92 06 03 	sts	0x0306, r1
+ 5e0:	10 92 07 03 	sts	0x0307, r1
+ 5e4:	8d e2       	ldi	r24, 0x2D	; 45
+ 5e6:	94 e9       	ldi	r25, 0x94	; 148
+ 5e8:	90 93 09 03 	sts	0x0309, r25
+ 5ec:	80 93 08 03 	sts	0x0308, r24
+ 5f0:	87 ef       	ldi	r24, 0xF7	; 247
+ 5f2:	94 ec       	ldi	r25, 0xC4	; 196
+ 5f4:	90 93 0b 03 	sts	0x030B, r25
+ 5f8:	80 93 0a 03 	sts	0x030A, r24
+ 5fc:	80 e7       	ldi	r24, 0x70	; 112
+ 5fe:	98 e9       	ldi	r25, 0x98	; 152
+ 600:	90 93 0d 03 	sts	0x030D, r25
+ 604:	80 93 0c 03 	sts	0x030C, r24
+ 608:	86 ed       	ldi	r24, 0xD6	; 214
+ 60a:	90 e8       	ldi	r25, 0x80	; 128
+ 60c:	90 93 0f 03 	sts	0x030F, r25
+ 610:	80 93 0e 03 	sts	0x030E, r24
+ 614:	c0 e0       	ldi	r28, 0x00	; 0
+ 616:	d0 e0       	ldi	r29, 0x00	; 0
+ 618:	fe 01       	movw	r30, r28
+ 61a:	ee 0f       	add	r30, r30
+ 61c:	ff 1f       	adc	r31, r31
+ 61e:	e4 58       	subi	r30, 0x84	; 132
+ 620:	ff 4f       	sbci	r31, 0xFF	; 255
+ 622:	85 91       	lpm	r24, Z+
+ 624:	94 91       	lpm	r25, Z+
+ 626:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 62a:	21 96       	adiw	r28, 0x01	; 1
+ 62c:	cc 30       	cpi	r28, 0x0C	; 12
+ 62e:	d1 05       	cpc	r29, r1
+ 630:	99 f7       	brne	.-26     	; 0x618 <_Z10rfm12_initv+0x5e>
+ 632:	80 91 68 00 	lds	r24, 0x0068
+ 636:	82 60       	ori	r24, 0x02	; 2
+ 638:	80 93 68 00 	sts	0x0068, r24
+ 63c:	80 e0       	ldi	r24, 0x00	; 0
+ 63e:	90 e0       	ldi	r25, 0x00	; 0
+ 640:	0e 94 c4 00 	call	0x188	; 0x188 <_ZL10rfm12_readj>
+ 644:	82 e0       	ldi	r24, 0x02	; 2
+ 646:	8b bb       	out	0x1b, r24	; 27
+ 648:	81 e8       	ldi	r24, 0x81	; 129
+ 64a:	9a ec       	ldi	r25, 0xCA	; 202
+ 64c:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 650:	83 e8       	ldi	r24, 0x83	; 131
+ 652:	9a ec       	ldi	r25, 0xCA	; 202
+ 654:	0e 94 b9 00 	call	0x172	; 0x172 <_ZL10rfm12_dataj>
+ 658:	80 91 6c 00 	lds	r24, 0x006C
+ 65c:	82 60       	ori	r24, 0x02	; 2
+ 65e:	80 93 6c 00 	sts	0x006C, r24
+ 662:	df 91       	pop	r29
+ 664:	cf 91       	pop	r28
+ 666:	08 95       	ret
+
+00000668 <_Z10init_uart0v>:
+ 668:	10 92 c5 00 	sts	0x00C5, r1
+ 66c:	8d e4       	ldi	r24, 0x4D	; 77
+ 66e:	80 93 c4 00 	sts	0x00C4, r24
+ 672:	e1 ec       	ldi	r30, 0xC1	; 193
+ 674:	f0 e0       	ldi	r31, 0x00	; 0
+ 676:	88 e1       	ldi	r24, 0x18	; 24
+ 678:	80 83       	st	Z, r24
+ 67a:	86 e0       	ldi	r24, 0x06	; 6
+ 67c:	80 93 c2 00 	sts	0x00C2, r24
+ 680:	80 81       	ld	r24, Z
+ 682:	80 68       	ori	r24, 0x80	; 128
+ 684:	80 83       	st	Z, r24
+ 686:	08 95       	ret
+
+00000688 <_Z6get_chv>:
+ 688:	80 91 c0 00 	lds	r24, 0x00C0
+ 68c:	87 ff       	sbrs	r24, 7
+ 68e:	fc cf       	rjmp	.-8      	; 0x688 <_Z6get_chv>
+ 690:	80 91 c6 00 	lds	r24, 0x00C6
+ 694:	08 95       	ret
+
+00000696 <_Z6put_chc>:
+ 696:	98 2f       	mov	r25, r24
+ 698:	80 91 c0 00 	lds	r24, 0x00C0
+ 69c:	85 ff       	sbrs	r24, 5
+ 69e:	fc cf       	rjmp	.-8      	; 0x698 <_Z6put_chc+0x2>
+ 6a0:	90 93 c6 00 	sts	0x00C6, r25
+ 6a4:	08 95       	ret
+
+000006a6 <_Z7put_strPc>:
+ 6a6:	fc 01       	movw	r30, r24
+ 6a8:	07 c0       	rjmp	.+14     	; 0x6b8 <_Z7put_strPc+0x12>
+ 6aa:	80 91 c0 00 	lds	r24, 0x00C0
+ 6ae:	85 ff       	sbrs	r24, 5
+ 6b0:	fc cf       	rjmp	.-8      	; 0x6aa <_Z7put_strPc+0x4>
+ 6b2:	90 93 c6 00 	sts	0x00C6, r25
+ 6b6:	31 96       	adiw	r30, 0x01	; 1
+ 6b8:	90 81       	ld	r25, Z
+ 6ba:	99 23       	and	r25, r25
+ 6bc:	b1 f7       	brne	.-20     	; 0x6aa <_Z7put_strPc+0x4>
+ 6be:	08 95       	ret
+
+000006c0 <_Z8rfm12_txhhPh>:
+ 6c0:	0f 93       	push	r16
+ 6c2:	1f 93       	push	r17
+ 6c4:	18 2f       	mov	r17, r24
+ 6c6:	06 2f       	mov	r16, r22
+ 6c8:	8f 31       	cpi	r24, 0x1F	; 31
+ 6ca:	10 f0       	brcs	.+4      	; 0x6d0 <_Z8rfm12_txhhPh+0x10>
+ 6cc:	82 e0       	ldi	r24, 0x02	; 2
+ 6ce:	12 c0       	rjmp	.+36     	; 0x6f4 <_Z8rfm12_txhhPh+0x34>
+ 6d0:	80 91 03 03 	lds	r24, 0x0303
+ 6d4:	88 23       	and	r24, r24
+ 6d6:	11 f0       	breq	.+4      	; 0x6dc <_Z8rfm12_txhhPh+0x1c>
+ 6d8:	83 e0       	ldi	r24, 0x03	; 3
+ 6da:	0c c0       	rjmp	.+24     	; 0x6f4 <_Z8rfm12_txhhPh+0x34>
+ 6dc:	2e e9       	ldi	r18, 0x9E	; 158
+ 6de:	32 e0       	ldi	r19, 0x02	; 2
+ 6e0:	c9 01       	movw	r24, r18
+ 6e2:	ba 01       	movw	r22, r20
+ 6e4:	41 2f       	mov	r20, r17
+ 6e6:	50 e0       	ldi	r21, 0x00	; 0
+ 6e8:	0e 94 77 07 	call	0xeee	; 0xeee <memcpy>
+ 6ec:	80 2f       	mov	r24, r16
+ 6ee:	61 2f       	mov	r22, r17
+ 6f0:	0e 94 b3 02 	call	0x566	; 0x566 <_Z14rfm12_queue_txhh>
+ 6f4:	1f 91       	pop	r17
+ 6f6:	0f 91       	pop	r16
+ 6f8:	08 95       	ret
+
+000006fa <_ZN3DLLC2Ev>:
+// Student ID: 30582105
+
+
+#include "DLLnPHY.h"
+
+DLL::DLL()
+ 6fa:	fc 01       	movw	r30, r24
+{
+	framenum = 0;
+ 6fc:	12 86       	std	Z+10, r1	; 0x0a
+ 6fe:	11 86       	std	Z+9, r1	; 0x09
+	read_until_index = 0;
+ 700:	14 86       	std	Z+12, r1	; 0x0c
+ 702:	13 86       	std	Z+11, r1	; 0x0b
+	Seq = 0;
+ 704:	15 86       	std	Z+13, r1	; 0x0d
+	Ack = 0;
+ 706:	16 86       	std	Z+14, r1	; 0x0e
+	CSmethod =0;
+ 708:	17 86       	std	Z+15, r1	; 0x0f
+}
+ 70a:	08 95       	ret
+
+0000070c <_ZN3DLLC1Ev>:
+// Student ID: 30582105
+
+
+#include "DLLnPHY.h"
+
+DLL::DLL()
+ 70c:	fc 01       	movw	r30, r24
+{
+	framenum = 0;
+ 70e:	12 86       	std	Z+10, r1	; 0x0a
+ 710:	11 86       	std	Z+9, r1	; 0x09
+	read_until_index = 0;
+ 712:	14 86       	std	Z+12, r1	; 0x0c
+ 714:	13 86       	std	Z+11, r1	; 0x0b
+	Seq = 0;
+ 716:	15 86       	std	Z+13, r1	; 0x0d
+	Ack = 0;
+ 718:	16 86       	std	Z+14, r1	; 0x0e
+	CSmethod =0;
+ 71a:	17 86       	std	Z+15, r1	; 0x0f
+}
+ 71c:	08 95       	ret
+
+0000071e <_ZN3DLL14from_NET_layerEPh>:
+
+void DLL::from_NET_layer(uint8_t networkpayload[])
+ 71e:	cf 93       	push	r28
+ 720:	df 93       	push	r29
+ 722:	ec 01       	movw	r28, r24
+ 724:	20 e0       	ldi	r18, 0x00	; 0
+ 726:	30 e0       	ldi	r19, 0x00	; 0
+ 728:	02 c0       	rjmp	.+4      	; 0x72e <_ZN3DLL14from_NET_layerEPh+0x10>
+{
+    uint16_t length =0; 
+    while (NET_packet[length] != '\0')
+	{
+		length++;
+ 72a:	2f 5f       	subi	r18, 0xFF	; 255
+ 72c:	3f 4f       	sbci	r19, 0xFF	; 255
+}
+
+void DLL::from_NET_layer(uint8_t networkpayload[])
+{
+    uint16_t length =0; 
+    while (NET_packet[length] != '\0')
+ 72e:	f9 01       	movw	r30, r18
+ 730:	e9 5e       	subi	r30, 0xE9	; 233
+ 732:	fd 4f       	sbci	r31, 0xFD	; 253
+ 734:	80 81       	ld	r24, Z
+ 736:	88 23       	and	r24, r24
+ 738:	c1 f7       	brne	.-16     	; 0x72a <_ZN3DLL14from_NET_layerEPh+0xc>
+ 73a:	90 e0       	ldi	r25, 0x00	; 0
+ 73c:	08 c0       	rjmp	.+16     	; 0x74e <_ZN3DLL14from_NET_layerEPh+0x30>
+	{
+		length++;
+	}
+    for(uint8_t i = 0; i<length;i++)
+    {
+        NET_queue[i] = networkpayload[i];
+ 73e:	fe 01       	movw	r30, r28
+ 740:	ea 0f       	add	r30, r26
+ 742:	fb 1f       	adc	r31, r27
+ 744:	a6 0f       	add	r26, r22
+ 746:	b7 1f       	adc	r27, r23
+ 748:	8c 91       	ld	r24, X
+ 74a:	81 87       	std	Z+9, r24	; 0x09
+    uint16_t length =0; 
+    while (NET_packet[length] != '\0')
+	{
+		length++;
+	}
+    for(uint8_t i = 0; i<length;i++)
+ 74c:	9f 5f       	subi	r25, 0xFF	; 255
+ 74e:	a9 2f       	mov	r26, r25
+ 750:	b0 e0       	ldi	r27, 0x00	; 0
+ 752:	a2 17       	cp	r26, r18
+ 754:	b3 07       	cpc	r27, r19
+ 756:	98 f3       	brcs	.-26     	; 0x73e <_ZN3DLL14from_NET_layerEPh+0x20>
+    {
+        NET_queue[i] = networkpayload[i];
+    }
+    addressing(NET_queue[2],NET_queue[3]);
+ 758:	9c 85       	ldd	r25, Y+12	; 0x0c
+void DLL::addressing(uint8_t source,uint8_t destination)
+{
+	uint8_t addressbytes[2] = { 0x00,0x00};
+    addressbytes[0] = source;
+    addressbytes[1] = destination;
+    Payload.Address[0] = addressbytes[0];
+ 75a:	8b 85       	ldd	r24, Y+11	; 0x0b
+ 75c:	8d 83       	std	Y+5, r24	; 0x05
+	Payload.Address[1] = addressbytes[1];
+ 75e:	9e 83       	std	Y+6, r25	; 0x06
+    {
+        NET_queue[i] = networkpayload[i];
+    }
+    addressing(NET_queue[2],NET_queue[3]);
+    // determine the frame number to be send, each frame of DLL has 32 bits.
+    framenum = length/32;
+ 760:	c9 01       	movw	r24, r18
+ 762:	45 e0       	ldi	r20, 0x05	; 5
+ 764:	96 95       	lsr	r25
+ 766:	87 95       	ror	r24
+ 768:	4a 95       	dec	r20
+ 76a:	e1 f7       	brne	.-8      	; 0x764 <_ZN3DLL14from_NET_layerEPh+0x46>
+ 76c:	9a 87       	std	Y+10, r25	; 0x0a
+ 76e:	89 87       	std	Y+9, r24	; 0x09
+    if((length%32)>0)
+ 770:	2f 71       	andi	r18, 0x1F	; 31
+ 772:	30 70       	andi	r19, 0x00	; 0
+ 774:	23 2b       	or	r18, r19
+ 776:	19 f0       	breq	.+6      	; 0x77e <_ZN3DLL14from_NET_layerEPh+0x60>
+    {
+        framenum+=1;
+ 778:	01 96       	adiw	r24, 0x01	; 1
+ 77a:	9a 87       	std	Y+10, r25	; 0x0a
+ 77c:	89 87       	std	Y+9, r24	; 0x09
+    }
+    return;
+}
+ 77e:	df 91       	pop	r29
+ 780:	cf 91       	pop	r28
+ 782:	08 95       	ret
+
+00000784 <_ZN3DLL12to_PHY_layerEv>:
+ 
+Packet DLL::to_PHY_layer()
+ 784:	ac 01       	movw	r20, r24
+{
+    return Payload;
+ 786:	dc 01       	movw	r26, r24
+ 788:	fb 01       	movw	r30, r22
+ 78a:	89 e0       	ldi	r24, 0x09	; 9
+ 78c:	01 90       	ld	r0, Z+
+ 78e:	0d 92       	st	X+, r0
+ 790:	81 50       	subi	r24, 0x01	; 1
+ 792:	e1 f7       	brne	.-8      	; 0x78c <_ZN3DLL12to_PHY_layerEv+0x8>
+}
+ 794:	ca 01       	movw	r24, r20
+ 796:	08 95       	ret
+
+00000798 <_ZN3DLL6putNETEv>:
+// Packet DLL::from_PHY_layer()
+// {
+//     return haha;
+// }
+////////////// on sending ///////////
+void DLL::putNET()
+ 798:	cf 93       	push	r28
+ 79a:	df 93       	push	r29
+ 79c:	dc 01       	movw	r26, r24
+ 79e:	ec 01       	movw	r28, r24
+{
+    for(uint8_t j = 0;j<23;j++)
+ 7a0:	ac 01       	movw	r20, r24
+ 7a2:	49 5e       	subi	r20, 0xE9	; 233
+ 7a4:	5f 4f       	sbci	r21, 0xFF	; 255
+    {
+        Payload.Netpkt[j] = NET_queue[read_until_index];
+ 7a6:	1b 96       	adiw	r26, 0x0b	; 11
+ 7a8:	8d 91       	ld	r24, X+
+ 7aa:	9c 91       	ld	r25, X
+ 7ac:	1c 97       	sbiw	r26, 0x0c	; 12
+ 7ae:	fd 01       	movw	r30, r26
+ 7b0:	e8 0f       	add	r30, r24
+ 7b2:	f9 1f       	adc	r31, r25
+ 7b4:	21 85       	ldd	r18, Z+9	; 0x09
+ 7b6:	2a 83       	std	Y+2, r18	; 0x02
+		read_until_index++;
+ 7b8:	01 96       	adiw	r24, 0x01	; 1
+ 7ba:	1c 96       	adiw	r26, 0x0c	; 12
+ 7bc:	9c 93       	st	X, r25
+ 7be:	8e 93       	st	-X, r24
+ 7c0:	1b 97       	sbiw	r26, 0x0b	; 11
+ 7c2:	21 96       	adiw	r28, 0x01	; 1
+//     return haha;
+// }
+////////////// on sending ///////////
+void DLL::putNET()
+{
+    for(uint8_t j = 0;j<23;j++)
+ 7c4:	c4 17       	cp	r28, r20
+ 7c6:	d5 07       	cpc	r29, r21
+ 7c8:	71 f7       	brne	.-36     	; 0x7a6 <_ZN3DLL6putNETEv+0xe>
+    {
+        Payload.Netpkt[j] = NET_queue[read_until_index];
+		read_until_index++;
+    }
+    return;
+}
+ 7ca:	df 91       	pop	r29
+ 7cc:	cf 91       	pop	r28
+ 7ce:	08 95       	ret
+
+000007d0 <_ZN3DLL7putlengEv>:
+
+void DLL::putleng()
+{
+    Payload.Length = (uint8_t) sizeof(Payload.Netpkt);
+ 7d0:	fc 01       	movw	r30, r24
+ 7d2:	14 82       	std	Z+4, r1	; 0x04
+	return;
+}
+ 7d4:	08 95       	ret
+
+000007d6 <_ZN3DLL10addressingEhh>:
+
+void DLL::addressing(uint8_t source,uint8_t destination)
+ 7d6:	fc 01       	movw	r30, r24
+{
+	uint8_t addressbytes[2] = { 0x00,0x00};
+    addressbytes[0] = source;
+    addressbytes[1] = destination;
+    Payload.Address[0] = addressbytes[0];
+ 7d8:	65 83       	std	Z+5, r22	; 0x05
+	Payload.Address[1] = addressbytes[1];
+ 7da:	46 83       	std	Z+6, r20	; 0x06
+    return;
+}
+ 7dc:	08 95       	ret
+
+000007de <_ZN3DLL8checksumEv>:
+
+void DLL::checksum()
+ 7de:	df 93       	push	r29
+ 7e0:	fc 01       	movw	r30, r24
+        accumulate += Payload.Netpkt[0];
+        A[i] = accumulate;
+        accumulate_of_A += A[i];
+        B[i] = accumulate_of_A;
+    }
+    Payload.checksum[0] = A[sizeof(Payload.Netpkt)-1]%256;
+ 7e2:	ad b7       	in	r26, 0x3d	; 61
+ 7e4:	be b7       	in	r27, 0x3e	; 62
+ 7e6:	11 97       	sbiw	r26, 0x01	; 1
+ 7e8:	8c 91       	ld	r24, X
+ 7ea:	82 83       	std	Z+2, r24	; 0x02
+    Payload.checksum[1] = B[sizeof(Payload.Netpkt)-1]%256; //  modulus 256 because 1 byte is 2**8 bits
+ 7ec:	83 83       	std	Z+3, r24	; 0x03
+    return;
+}
+ 7ee:	df 91       	pop	r29
+ 7f0:	08 95       	ret
+
+000007f2 <_ZN3DLL12controlbytesEv>:
+
+void DLL::controlbytes()
+ 7f2:	fc 01       	movw	r30, r24
+{
+    Payload.Control[0] = (Seq<<4) | Ack;
+ 7f4:	85 85       	ldd	r24, Z+13	; 0x0d
+ 7f6:	82 95       	swap	r24
+ 7f8:	80 7f       	andi	r24, 0xF0	; 240
+ 7fa:	96 85       	ldd	r25, Z+14	; 0x0e
+ 7fc:	89 2b       	or	r24, r25
+ 7fe:	87 83       	std	Z+7, r24	; 0x07
+    Payload.Control[1] = (CSmethod<<4) | framenum;
+ 800:	97 85       	ldd	r25, Z+15	; 0x0f
+ 802:	92 95       	swap	r25
+ 804:	90 7f       	andi	r25, 0xF0	; 240
+ 806:	81 85       	ldd	r24, Z+9	; 0x09
+ 808:	89 2b       	or	r24, r25
+ 80a:	80 87       	std	Z+8, r24	; 0x08
+    return;
+}
+ 80c:	08 95       	ret
+
+0000080e <_ZN3DLL17encode_everythingEv>:
+
+void DLL::encode_everything()
+ 80e:	cf 93       	push	r28
+ 810:	df 93       	push	r29
+ 812:	dc 01       	movw	r26, r24
+ 814:	ec 01       	movw	r28, r24
+//     return haha;
+// }
+////////////// on sending ///////////
+void DLL::putNET()
+{
+    for(uint8_t j = 0;j<23;j++)
+ 816:	ac 01       	movw	r20, r24
+ 818:	49 5e       	subi	r20, 0xE9	; 233
+ 81a:	5f 4f       	sbci	r21, 0xFF	; 255
+    {
+        Payload.Netpkt[j] = NET_queue[read_until_index];
+ 81c:	1b 96       	adiw	r26, 0x0b	; 11
+ 81e:	8d 91       	ld	r24, X+
+ 820:	9c 91       	ld	r25, X
+ 822:	1c 97       	sbiw	r26, 0x0c	; 12
+ 824:	fd 01       	movw	r30, r26
+ 826:	e8 0f       	add	r30, r24
+ 828:	f9 1f       	adc	r31, r25
+ 82a:	21 85       	ldd	r18, Z+9	; 0x09
+ 82c:	2a 83       	std	Y+2, r18	; 0x02
+		read_until_index++;
+ 82e:	01 96       	adiw	r24, 0x01	; 1
+ 830:	1c 96       	adiw	r26, 0x0c	; 12
+ 832:	9c 93       	st	X, r25
+ 834:	8e 93       	st	-X, r24
+ 836:	1b 97       	sbiw	r26, 0x0b	; 11
+ 838:	21 96       	adiw	r28, 0x01	; 1
+//     return haha;
+// }
+////////////// on sending ///////////
+void DLL::putNET()
+{
+    for(uint8_t j = 0;j<23;j++)
+ 83a:	c4 17       	cp	r28, r20
+ 83c:	d5 07       	cpc	r29, r21
+ 83e:	71 f7       	brne	.-36     	; 0x81c <_ZN3DLL17encode_everythingEv+0xe>
+    return;
+}
+
+void DLL::controlbytes()
+{
+    Payload.Control[0] = (Seq<<4) | Ack;
+ 840:	1d 96       	adiw	r26, 0x0d	; 13
+ 842:	2c 91       	ld	r18, X
+ 844:	1d 97       	sbiw	r26, 0x0d	; 13
+ 846:	22 95       	swap	r18
+ 848:	20 7f       	andi	r18, 0xF0	; 240
+ 84a:	1e 96       	adiw	r26, 0x0e	; 14
+ 84c:	8c 91       	ld	r24, X
+ 84e:	1e 97       	sbiw	r26, 0x0e	; 14
+ 850:	28 2b       	or	r18, r24
+ 852:	17 96       	adiw	r26, 0x07	; 7
+ 854:	2c 93       	st	X, r18
+ 856:	17 97       	sbiw	r26, 0x07	; 7
+    Payload.Control[1] = (CSmethod<<4) | framenum;
+ 858:	1f 96       	adiw	r26, 0x0f	; 15
+ 85a:	9c 91       	ld	r25, X
+ 85c:	1f 97       	sbiw	r26, 0x0f	; 15
+ 85e:	92 95       	swap	r25
+ 860:	90 7f       	andi	r25, 0xF0	; 240
+ 862:	19 96       	adiw	r26, 0x09	; 9
+ 864:	8c 91       	ld	r24, X
+ 866:	19 97       	sbiw	r26, 0x09	; 9
+ 868:	89 2b       	or	r24, r25
+ 86a:	18 96       	adiw	r26, 0x08	; 8
+ 86c:	8c 93       	st	X, r24
+ 86e:	18 97       	sbiw	r26, 0x08	; 8
+                7.Footer,
+*/
+    putNET();
+    uint16_t byte_count = 0;
+    controlbytes();
+    addressing(Payload.Netpkt[2],Payload.Netpkt[3]);
+ 870:	15 96       	adiw	r26, 0x05	; 5
+ 872:	9c 91       	ld	r25, X
+ 874:	15 97       	sbiw	r26, 0x05	; 5
+void DLL::addressing(uint8_t source,uint8_t destination)
+{
+	uint8_t addressbytes[2] = { 0x00,0x00};
+    addressbytes[0] = source;
+    addressbytes[1] = destination;
+    Payload.Address[0] = addressbytes[0];
+ 876:	14 96       	adiw	r26, 0x04	; 4
+ 878:	8c 91       	ld	r24, X
+ 87a:	14 97       	sbiw	r26, 0x04	; 4
+ 87c:	15 96       	adiw	r26, 0x05	; 5
+ 87e:	8c 93       	st	X, r24
+ 880:	15 97       	sbiw	r26, 0x05	; 5
+	Payload.Address[1] = addressbytes[1];
+ 882:	16 96       	adiw	r26, 0x06	; 6
+ 884:	9c 93       	st	X, r25
+ 886:	16 97       	sbiw	r26, 0x06	; 6
+    return;
+}
+
+void DLL::putleng()
+{
+    Payload.Length = (uint8_t) sizeof(Payload.Netpkt);
+ 888:	14 96       	adiw	r26, 0x04	; 4
+ 88a:	1c 92       	st	X, r1
+ 88c:	14 97       	sbiw	r26, 0x04	; 4
+        accumulate += Payload.Netpkt[0];
+        A[i] = accumulate;
+        accumulate_of_A += A[i];
+        B[i] = accumulate_of_A;
+    }
+    Payload.checksum[0] = A[sizeof(Payload.Netpkt)-1]%256;
+ 88e:	ed b7       	in	r30, 0x3d	; 61
+ 890:	fe b7       	in	r31, 0x3e	; 62
+ 892:	31 97       	sbiw	r30, 0x01	; 1
+ 894:	80 81       	ld	r24, Z
+ 896:	12 96       	adiw	r26, 0x02	; 2
+ 898:	8c 93       	st	X, r24
+ 89a:	12 97       	sbiw	r26, 0x02	; 2
+    Payload.checksum[1] = B[sizeof(Payload.Netpkt)-1]%256; //  modulus 256 because 1 byte is 2**8 bits
+ 89c:	13 96       	adiw	r26, 0x03	; 3
+ 89e:	8c 93       	st	X, r24
+ 8a0:	13 97       	sbiw	r26, 0x03	; 3
+    controlbytes();
+    addressing(Payload.Netpkt[2],Payload.Netpkt[3]);
+    putleng();
+    checksum();
+
+	Payload.Header = 0x7E;
+ 8a2:	8e e7       	ldi	r24, 0x7E	; 126
+ 8a4:	8c 93       	st	X, r24
+	Payload.Footer = 0x7E;
+ 8a6:	11 96       	adiw	r26, 0x01	; 1
+ 8a8:	8c 93       	st	X, r24
+ 8aa:	11 97       	sbiw	r26, 0x01	; 1
+
+    Payload.Everything[byte_count] = Payload.Header;        ///////Header
+ 8ac:	19 96       	adiw	r26, 0x09	; 9
+ 8ae:	8c 93       	st	X, r24
+ 8b0:	19 97       	sbiw	r26, 0x09	; 9
+	byte_count++;
+
+    if(Payload.Control[0]==Payload.Header)
+ 8b2:	2e 37       	cpi	r18, 0x7E	; 126
+ 8b4:	19 f0       	breq	.+6      	; 0x8bc <_ZN3DLL17encode_everythingEv+0xae>
+ 8b6:	21 e0       	ldi	r18, 0x01	; 1
+ 8b8:	30 e0       	ldi	r19, 0x00	; 0
+ 8ba:	06 c0       	rjmp	.+12     	; 0x8c8 <_ZN3DLL17encode_everythingEv+0xba>
+    {
+        Payload.Everything[byte_count] = flagbyte;
+ 8bc:	85 e5       	ldi	r24, 0x55	; 85
+ 8be:	1a 96       	adiw	r26, 0x0a	; 10
+ 8c0:	8c 93       	st	X, r24
+ 8c2:	1a 97       	sbiw	r26, 0x0a	; 10
+ 8c4:	22 e0       	ldi	r18, 0x02	; 2
+ 8c6:	30 e0       	ldi	r19, 0x00	; 0
+        byte_count++;
+    }
+
+    Payload.Everything[byte_count] = Payload.Control[0];    /////////Control
+ 8c8:	fd 01       	movw	r30, r26
+ 8ca:	e2 0f       	add	r30, r18
+ 8cc:	f3 1f       	adc	r31, r19
+ 8ce:	17 96       	adiw	r26, 0x07	; 7
+ 8d0:	8c 91       	ld	r24, X
+ 8d2:	17 97       	sbiw	r26, 0x07	; 7
+ 8d4:	81 87       	std	Z+9, r24	; 0x09
+	byte_count++;
+ 8d6:	2f 5f       	subi	r18, 0xFF	; 255
+ 8d8:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(Payload.Control[1]==Payload.Header)
+ 8da:	18 96       	adiw	r26, 0x08	; 8
+ 8dc:	9c 91       	ld	r25, X
+ 8de:	18 97       	sbiw	r26, 0x08	; 8
+ 8e0:	8c 91       	ld	r24, X
+ 8e2:	98 17       	cp	r25, r24
+ 8e4:	39 f4       	brne	.+14     	; 0x8f4 <_ZN3DLL17encode_everythingEv+0xe6>
+    {
+        Payload.Everything[byte_count] = flagbyte;
+ 8e6:	fd 01       	movw	r30, r26
+ 8e8:	e2 0f       	add	r30, r18
+ 8ea:	f3 1f       	adc	r31, r19
+ 8ec:	85 e5       	ldi	r24, 0x55	; 85
+ 8ee:	81 87       	std	Z+9, r24	; 0x09
+		byte_count++;
+ 8f0:	2f 5f       	subi	r18, 0xFF	; 255
+ 8f2:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Everything[byte_count] = Payload.Control[1];
+ 8f4:	fd 01       	movw	r30, r26
+ 8f6:	e2 0f       	add	r30, r18
+ 8f8:	f3 1f       	adc	r31, r19
+ 8fa:	18 96       	adiw	r26, 0x08	; 8
+ 8fc:	8c 91       	ld	r24, X
+ 8fe:	18 97       	sbiw	r26, 0x08	; 8
+ 900:	81 87       	std	Z+9, r24	; 0x09
+	byte_count++;
+ 902:	2f 5f       	subi	r18, 0xFF	; 255
+ 904:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(Payload.Address[0]==Payload.Header)
+ 906:	15 96       	adiw	r26, 0x05	; 5
+ 908:	9c 91       	ld	r25, X
+ 90a:	15 97       	sbiw	r26, 0x05	; 5
+ 90c:	8c 91       	ld	r24, X
+ 90e:	98 17       	cp	r25, r24
+ 910:	39 f4       	brne	.+14     	; 0x920 <_ZN3DLL17encode_everythingEv+0x112>
+    {
+        Payload.Everything[byte_count] = flagbyte;
+ 912:	fd 01       	movw	r30, r26
+ 914:	e2 0f       	add	r30, r18
+ 916:	f3 1f       	adc	r31, r19
+ 918:	85 e5       	ldi	r24, 0x55	; 85
+ 91a:	81 87       	std	Z+9, r24	; 0x09
+		byte_count++;
+ 91c:	2f 5f       	subi	r18, 0xFF	; 255
+ 91e:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Everything[byte_count] = Payload.Address[0];      ///////Address
+ 920:	fd 01       	movw	r30, r26
+ 922:	e2 0f       	add	r30, r18
+ 924:	f3 1f       	adc	r31, r19
+ 926:	15 96       	adiw	r26, 0x05	; 5
+ 928:	8c 91       	ld	r24, X
+ 92a:	15 97       	sbiw	r26, 0x05	; 5
+ 92c:	81 87       	std	Z+9, r24	; 0x09
+	byte_count++;
+ 92e:	2f 5f       	subi	r18, 0xFF	; 255
+ 930:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(Payload.Address[1]==Payload.Header)
+ 932:	16 96       	adiw	r26, 0x06	; 6
+ 934:	9c 91       	ld	r25, X
+ 936:	16 97       	sbiw	r26, 0x06	; 6
+ 938:	8c 91       	ld	r24, X
+ 93a:	98 17       	cp	r25, r24
+ 93c:	39 f4       	brne	.+14     	; 0x94c <_ZN3DLL17encode_everythingEv+0x13e>
+    {
+        Payload.Everything[byte_count] = flagbyte;
+ 93e:	fd 01       	movw	r30, r26
+ 940:	e2 0f       	add	r30, r18
+ 942:	f3 1f       	adc	r31, r19
+ 944:	85 e5       	ldi	r24, 0x55	; 85
+ 946:	81 87       	std	Z+9, r24	; 0x09
+		byte_count++;
+ 948:	2f 5f       	subi	r18, 0xFF	; 255
+ 94a:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Everything[byte_count] = Payload.Address[1];
+ 94c:	fd 01       	movw	r30, r26
+ 94e:	e2 0f       	add	r30, r18
+ 950:	f3 1f       	adc	r31, r19
+ 952:	16 96       	adiw	r26, 0x06	; 6
+ 954:	8c 91       	ld	r24, X
+ 956:	16 97       	sbiw	r26, 0x06	; 6
+ 958:	81 87       	std	Z+9, r24	; 0x09
+	byte_count++;
+ 95a:	2f 5f       	subi	r18, 0xFF	; 255
+ 95c:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(Payload.Length==Payload.Header)
+ 95e:	14 96       	adiw	r26, 0x04	; 4
+ 960:	9c 91       	ld	r25, X
+ 962:	14 97       	sbiw	r26, 0x04	; 4
+ 964:	8c 91       	ld	r24, X
+ 966:	98 17       	cp	r25, r24
+ 968:	39 f4       	brne	.+14     	; 0x978 <_ZN3DLL17encode_everythingEv+0x16a>
+    {
+        Payload.Everything[byte_count] = flagbyte;
+ 96a:	fd 01       	movw	r30, r26
+ 96c:	e2 0f       	add	r30, r18
+ 96e:	f3 1f       	adc	r31, r19
+ 970:	85 e5       	ldi	r24, 0x55	; 85
+ 972:	81 87       	std	Z+9, r24	; 0x09
+		byte_count++;
+ 974:	2f 5f       	subi	r18, 0xFF	; 255
+ 976:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Everything[byte_count] = Payload.Length;       /////Length
+ 978:	fd 01       	movw	r30, r26
+ 97a:	e2 0f       	add	r30, r18
+ 97c:	f3 1f       	adc	r31, r19
+ 97e:	14 96       	adiw	r26, 0x04	; 4
+ 980:	8c 91       	ld	r24, X
+ 982:	14 97       	sbiw	r26, 0x04	; 4
+ 984:	81 87       	std	Z+9, r24	; 0x09
+	byte_count++;
+ 986:	2f 5f       	subi	r18, 0xFF	; 255
+ 988:	3f 4f       	sbci	r19, 0xFF	; 255
+        }
+        Payload.Everything[byte_count] = Payload.Netpkt[x];    ///// NET
+		byte_count++;
+    }
+
+    if(Payload.checksum[0]==Payload.Header)
+ 98a:	12 96       	adiw	r26, 0x02	; 2
+ 98c:	9c 91       	ld	r25, X
+ 98e:	12 97       	sbiw	r26, 0x02	; 2
+ 990:	8c 91       	ld	r24, X
+ 992:	98 17       	cp	r25, r24
+ 994:	39 f4       	brne	.+14     	; 0x9a4 <_ZN3DLL17encode_everythingEv+0x196>
+    {
+        Payload.Everything[byte_count] = flagbyte;
+ 996:	fd 01       	movw	r30, r26
+ 998:	e2 0f       	add	r30, r18
+ 99a:	f3 1f       	adc	r31, r19
+ 99c:	85 e5       	ldi	r24, 0x55	; 85
+ 99e:	81 87       	std	Z+9, r24	; 0x09
+		byte_count++;
+ 9a0:	2f 5f       	subi	r18, 0xFF	; 255
+ 9a2:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Everything[byte_count] = Payload.checksum[0];      ///// Checksum
+ 9a4:	fd 01       	movw	r30, r26
+ 9a6:	e2 0f       	add	r30, r18
+ 9a8:	f3 1f       	adc	r31, r19
+ 9aa:	12 96       	adiw	r26, 0x02	; 2
+ 9ac:	8c 91       	ld	r24, X
+ 9ae:	12 97       	sbiw	r26, 0x02	; 2
+ 9b0:	81 87       	std	Z+9, r24	; 0x09
+	byte_count++;
+ 9b2:	2f 5f       	subi	r18, 0xFF	; 255
+ 9b4:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(Payload.checksum[1]==Payload.Header)
+ 9b6:	13 96       	adiw	r26, 0x03	; 3
+ 9b8:	9c 91       	ld	r25, X
+ 9ba:	13 97       	sbiw	r26, 0x03	; 3
+ 9bc:	8c 91       	ld	r24, X
+ 9be:	98 17       	cp	r25, r24
+ 9c0:	39 f4       	brne	.+14     	; 0x9d0 <_ZN3DLL17encode_everythingEv+0x1c2>
+    {
+        Payload.Everything[byte_count] = flagbyte;
+ 9c2:	fd 01       	movw	r30, r26
+ 9c4:	e2 0f       	add	r30, r18
+ 9c6:	f3 1f       	adc	r31, r19
+ 9c8:	85 e5       	ldi	r24, 0x55	; 85
+ 9ca:	81 87       	std	Z+9, r24	; 0x09
+		byte_count++;
+ 9cc:	2f 5f       	subi	r18, 0xFF	; 255
+ 9ce:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Everything[byte_count] = Payload.checksum[1];
+ 9d0:	fd 01       	movw	r30, r26
+ 9d2:	e2 0f       	add	r30, r18
+ 9d4:	f3 1f       	adc	r31, r19
+ 9d6:	13 96       	adiw	r26, 0x03	; 3
+ 9d8:	8c 91       	ld	r24, X
+ 9da:	13 97       	sbiw	r26, 0x03	; 3
+ 9dc:	81 87       	std	Z+9, r24	; 0x09
+	byte_count++;
+
+    Payload.Everything[byte_count] = Payload.Footer;          ////// Footer
+ 9de:	11 96       	adiw	r26, 0x01	; 1
+ 9e0:	8c 91       	ld	r24, X
+ 9e2:	82 87       	std	Z+10, r24	; 0x0a
+    return;
+}
+ 9e4:	df 91       	pop	r29
+ 9e6:	cf 91       	pop	r28
+ 9e8:	08 95       	ret
+
+000009ea <_ZN3DLL17decode_everythingE6Packet>:
+	return;
+}
+
+//////////////////// On receiving ////////////////
+
+void DLL::decode_everything(Packet DL_packet_received)
+ 9ea:	cf 92       	push	r12
+ 9ec:	df 92       	push	r13
+ 9ee:	ef 92       	push	r14
+ 9f0:	ff 92       	push	r15
+ 9f2:	0f 93       	push	r16
+ 9f4:	1f 93       	push	r17
+ 9f6:	df 93       	push	r29
+ 9f8:	cf 93       	push	r28
+ 9fa:	cd b7       	in	r28, 0x3d	; 61
+ 9fc:	de b7       	in	r29, 0x3e	; 62
+ 9fe:	29 97       	sbiw	r28, 0x09	; 9
+ a00:	0f b6       	in	r0, 0x3f	; 63
+ a02:	f8 94       	cli
+ a04:	de bf       	out	0x3e, r29	; 62
+ a06:	0f be       	out	0x3f, r0	; 63
+ a08:	cd bf       	out	0x3d, r28	; 61
+ a0a:	6c 01       	movw	r12, r24
+ a0c:	e9 82       	std	Y+1, r14	; 0x01
+ a0e:	fa 82       	std	Y+2, r15	; 0x02
+ a10:	0b 83       	std	Y+3, r16	; 0x03
+ a12:	1c 83       	std	Y+4, r17	; 0x04
+ a14:	2d 83       	std	Y+5, r18	; 0x05
+ a16:	3e 83       	std	Y+6, r19	; 0x06
+ a18:	4f 83       	std	Y+7, r20	; 0x07
+ a1a:	58 87       	std	Y+8, r21	; 0x08
+ a1c:	69 87       	std	Y+9, r22	; 0x09
+{
+    uint16_t byte_count1 = 0;
+    uint16_t byte_count2 = 0;
+    Payload.Header = DL_packet_received.Everything[byte_count2];
+ a1e:	8a 85       	ldd	r24, Y+10	; 0x0a
+ a20:	f6 01       	movw	r30, r12
+ a22:	80 83       	st	Z, r24
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ a24:	81 87       	std	Z+9, r24	; 0x09
+    byte_count1++;
+    byte_count2++;
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ a26:	8b 85       	ldd	r24, Y+11	; 0x0b
+ a28:	85 35       	cpi	r24, 0x55	; 85
+ a2a:	19 f4       	brne	.+6      	; 0xa32 <_ZN3DLL17decode_everythingE6Packet+0x48>
+ a2c:	22 e0       	ldi	r18, 0x02	; 2
+ a2e:	30 e0       	ldi	r19, 0x00	; 0
+ a30:	02 c0       	rjmp	.+4      	; 0xa36 <_ZN3DLL17decode_everythingE6Packet+0x4c>
+ a32:	21 e0       	ldi	r18, 0x01	; 1
+ a34:	30 e0       	ldi	r19, 0x00	; 0
+    {
+        byte_count2++;    // see flag then skip
+    }
+
+    Payload.Control[0] = DL_packet_received.Everything[byte_count2];
+ a36:	de 01       	movw	r26, r28
+ a38:	1a 96       	adiw	r26, 0x0a	; 10
+ a3a:	fd 01       	movw	r30, r26
+ a3c:	e2 0f       	add	r30, r18
+ a3e:	f3 1f       	adc	r31, r19
+ a40:	80 81       	ld	r24, Z
+ a42:	f6 01       	movw	r30, r12
+ a44:	87 83       	std	Z+7, r24	; 0x07
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ a46:	82 87       	std	Z+10, r24	; 0x0a
+    byte_count1++;
+    byte_count2++;
+ a48:	2f 5f       	subi	r18, 0xFF	; 255
+ a4a:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ a4c:	a2 0f       	add	r26, r18
+ a4e:	b3 1f       	adc	r27, r19
+ a50:	8c 91       	ld	r24, X
+ a52:	85 35       	cpi	r24, 0x55	; 85
+ a54:	11 f4       	brne	.+4      	; 0xa5a <_ZN3DLL17decode_everythingE6Packet+0x70>
+    {
+        byte_count2++;    // see flag then skip
+ a56:	2f 5f       	subi	r18, 0xFF	; 255
+ a58:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Control[1] = DL_packet_received.Everything[byte_count2];
+ a5a:	de 01       	movw	r26, r28
+ a5c:	1a 96       	adiw	r26, 0x0a	; 10
+ a5e:	fd 01       	movw	r30, r26
+ a60:	e2 0f       	add	r30, r18
+ a62:	f3 1f       	adc	r31, r19
+ a64:	80 81       	ld	r24, Z
+ a66:	f6 01       	movw	r30, r12
+ a68:	80 87       	std	Z+8, r24	; 0x08
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ a6a:	83 87       	std	Z+11, r24	; 0x0b
+    byte_count1++;
+    byte_count2++;
+ a6c:	2f 5f       	subi	r18, 0xFF	; 255
+ a6e:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ a70:	a2 0f       	add	r26, r18
+ a72:	b3 1f       	adc	r27, r19
+ a74:	8c 91       	ld	r24, X
+ a76:	85 35       	cpi	r24, 0x55	; 85
+ a78:	11 f4       	brne	.+4      	; 0xa7e <_ZN3DLL17decode_everythingE6Packet+0x94>
+    {
+        byte_count2++;    // see flag then skip
+ a7a:	2f 5f       	subi	r18, 0xFF	; 255
+ a7c:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Address[0] = DL_packet_received.Everything[byte_count2];
+ a7e:	de 01       	movw	r26, r28
+ a80:	1a 96       	adiw	r26, 0x0a	; 10
+ a82:	fd 01       	movw	r30, r26
+ a84:	e2 0f       	add	r30, r18
+ a86:	f3 1f       	adc	r31, r19
+ a88:	80 81       	ld	r24, Z
+ a8a:	f6 01       	movw	r30, r12
+ a8c:	85 83       	std	Z+5, r24	; 0x05
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ a8e:	84 87       	std	Z+12, r24	; 0x0c
+    byte_count1++;
+    byte_count2++;
+ a90:	2f 5f       	subi	r18, 0xFF	; 255
+ a92:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ a94:	a2 0f       	add	r26, r18
+ a96:	b3 1f       	adc	r27, r19
+ a98:	8c 91       	ld	r24, X
+ a9a:	85 35       	cpi	r24, 0x55	; 85
+ a9c:	11 f4       	brne	.+4      	; 0xaa2 <_ZN3DLL17decode_everythingE6Packet+0xb8>
+    {
+        byte_count2++;    // see flag then skip
+ a9e:	2f 5f       	subi	r18, 0xFF	; 255
+ aa0:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.Address[1] = DL_packet_received.Everything[byte_count2];
+ aa2:	de 01       	movw	r26, r28
+ aa4:	1a 96       	adiw	r26, 0x0a	; 10
+ aa6:	fd 01       	movw	r30, r26
+ aa8:	e2 0f       	add	r30, r18
+ aaa:	f3 1f       	adc	r31, r19
+ aac:	80 81       	ld	r24, Z
+ aae:	f6 01       	movw	r30, r12
+ ab0:	86 83       	std	Z+6, r24	; 0x06
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ ab2:	85 87       	std	Z+13, r24	; 0x0d
+    byte_count1++;
+    byte_count2++;
+ ab4:	a9 01       	movw	r20, r18
+ ab6:	4f 5f       	subi	r20, 0xFF	; 255
+ ab8:	5f 4f       	sbci	r21, 0xFF	; 255
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ aba:	a4 0f       	add	r26, r20
+ abc:	b5 1f       	adc	r27, r21
+ abe:	8c 91       	ld	r24, X
+ ac0:	85 35       	cpi	r24, 0x55	; 85
+ ac2:	11 f4       	brne	.+4      	; 0xac8 <_ZN3DLL17decode_everythingE6Packet+0xde>
+    {
+        byte_count2++;    // see flag then skip
+ ac4:	4f 5f       	subi	r20, 0xFF	; 255
+ ac6:	5f 4f       	sbci	r21, 0xFF	; 255
+    }
+
+    Payload.Length = DL_packet_received.Everything[byte_count2];
+ ac8:	ce 01       	movw	r24, r28
+ aca:	0a 96       	adiw	r24, 0x0a	; 10
+ acc:	fc 01       	movw	r30, r24
+ ace:	e4 0f       	add	r30, r20
+ ad0:	f5 1f       	adc	r31, r21
+ ad2:	20 81       	ld	r18, Z
+ ad4:	f6 01       	movw	r30, r12
+ ad6:	24 83       	std	Z+4, r18	; 0x04
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ ad8:	26 87       	std	Z+14, r18	; 0x0e
+    byte_count1++;
+    byte_count2++;
+ ada:	9a 01       	movw	r18, r20
+ adc:	2f 5f       	subi	r18, 0xFF	; 255
+ ade:	3f 4f       	sbci	r19, 0xFF	; 255
+ ae0:	d6 01       	movw	r26, r12
+ ae2:	46 e0       	ldi	r20, 0x06	; 6
+ ae4:	50 e0       	ldi	r21, 0x00	; 0
+ ae6:	bc 01       	movw	r22, r24
+ ae8:	18 c0       	rjmp	.+48     	; 0xb1a <_ZN3DLL17decode_everythingE6Packet+0x130>
+
+    for(uint8_t i=0;i<Payload.Length;i++)
+    {
+        if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ aea:	fb 01       	movw	r30, r22
+ aec:	e2 0f       	add	r30, r18
+ aee:	f3 1f       	adc	r31, r19
+ af0:	80 81       	ld	r24, Z
+ af2:	85 35       	cpi	r24, 0x55	; 85
+ af4:	11 f4       	brne	.+4      	; 0xafa <_ZN3DLL17decode_everythingE6Packet+0x110>
+        {
+            byte_count2++;    // see flag then skip
+ af6:	2f 5f       	subi	r18, 0xFF	; 255
+ af8:	3f 4f       	sbci	r19, 0xFF	; 255
+        }
+        Payload.Netpkt[i] = DL_packet_received.Everything[byte_count2];
+ afa:	fb 01       	movw	r30, r22
+ afc:	e2 0f       	add	r30, r18
+ afe:	f3 1f       	adc	r31, r19
+ b00:	80 81       	ld	r24, Z
+ b02:	f6 01       	movw	r30, r12
+ b04:	e9 0f       	add	r30, r25
+ b06:	f1 1d       	adc	r31, r1
+ b08:	82 83       	std	Z+2, r24	; 0x02
+        Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ b0a:	1f 96       	adiw	r26, 0x0f	; 15
+ b0c:	8c 93       	st	X, r24
+ b0e:	1f 97       	sbiw	r26, 0x0f	; 15
+        byte_count1++;
+ b10:	4f 5f       	subi	r20, 0xFF	; 255
+ b12:	5f 4f       	sbci	r21, 0xFF	; 255
+        byte_count2++;
+ b14:	2f 5f       	subi	r18, 0xFF	; 255
+ b16:	3f 4f       	sbci	r19, 0xFF	; 255
+ b18:	11 96       	adiw	r26, 0x01	; 1
+ b1a:	94 2f       	mov	r25, r20
+ b1c:	96 50       	subi	r25, 0x06	; 6
+    Payload.Length = DL_packet_received.Everything[byte_count2];
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+    byte_count1++;
+    byte_count2++;
+
+    for(uint8_t i=0;i<Payload.Length;i++)
+ b1e:	f6 01       	movw	r30, r12
+ b20:	84 81       	ldd	r24, Z+4	; 0x04
+ b22:	98 17       	cp	r25, r24
+ b24:	10 f3       	brcs	.-60     	; 0xaea <_ZN3DLL17decode_everythingE6Packet+0x100>
+        Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+        byte_count1++;
+        byte_count2++;
+    }
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ b26:	fb 01       	movw	r30, r22
+ b28:	e2 0f       	add	r30, r18
+ b2a:	f3 1f       	adc	r31, r19
+ b2c:	80 81       	ld	r24, Z
+ b2e:	85 35       	cpi	r24, 0x55	; 85
+ b30:	11 f4       	brne	.+4      	; 0xb36 <_ZN3DLL17decode_everythingE6Packet+0x14c>
+    {
+        byte_count2++;    // see flag then skip
+ b32:	2f 5f       	subi	r18, 0xFF	; 255
+ b34:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.checksum[0] = DL_packet_received.Everything[byte_count2];
+ b36:	de 01       	movw	r26, r28
+ b38:	1a 96       	adiw	r26, 0x0a	; 10
+ b3a:	fd 01       	movw	r30, r26
+ b3c:	e2 0f       	add	r30, r18
+ b3e:	f3 1f       	adc	r31, r19
+ b40:	80 81       	ld	r24, Z
+ b42:	f6 01       	movw	r30, r12
+ b44:	82 83       	std	Z+2, r24	; 0x02
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ b46:	e4 0f       	add	r30, r20
+ b48:	f5 1f       	adc	r31, r21
+ b4a:	81 87       	std	Z+9, r24	; 0x09
+    byte_count1++;
+ b4c:	4f 5f       	subi	r20, 0xFF	; 255
+ b4e:	5f 4f       	sbci	r21, 0xFF	; 255
+    byte_count2++;
+ b50:	2f 5f       	subi	r18, 0xFF	; 255
+ b52:	3f 4f       	sbci	r19, 0xFF	; 255
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ b54:	a2 0f       	add	r26, r18
+ b56:	b3 1f       	adc	r27, r19
+ b58:	8c 91       	ld	r24, X
+ b5a:	85 35       	cpi	r24, 0x55	; 85
+ b5c:	11 f4       	brne	.+4      	; 0xb62 <_ZN3DLL17decode_everythingE6Packet+0x178>
+    {
+        byte_count2++;    // see flag then skip
+ b5e:	2f 5f       	subi	r18, 0xFF	; 255
+ b60:	3f 4f       	sbci	r19, 0xFF	; 255
+    }
+
+    Payload.checksum[1] = DL_packet_received.Everything[byte_count2];
+ b62:	de 01       	movw	r26, r28
+ b64:	1a 96       	adiw	r26, 0x0a	; 10
+ b66:	fd 01       	movw	r30, r26
+ b68:	e2 0f       	add	r30, r18
+ b6a:	f3 1f       	adc	r31, r19
+ b6c:	80 81       	ld	r24, Z
+ b6e:	f6 01       	movw	r30, r12
+ b70:	83 83       	std	Z+3, r24	; 0x03
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ b72:	e4 0f       	add	r30, r20
+ b74:	f5 1f       	adc	r31, r21
+ b76:	81 87       	std	Z+9, r24	; 0x09
+    byte_count1++;
+    byte_count2++;
+ b78:	f9 01       	movw	r30, r18
+ b7a:	31 96       	adiw	r30, 0x01	; 1
+
+    if(DL_packet_received.Everything[byte_count2] == flagbyte)
+ b7c:	ae 0f       	add	r26, r30
+ b7e:	bf 1f       	adc	r27, r31
+ b80:	8c 91       	ld	r24, X
+ b82:	85 35       	cpi	r24, 0x55	; 85
+ b84:	09 f4       	brne	.+2      	; 0xb88 <_ZN3DLL17decode_everythingE6Packet+0x19e>
+    {
+        byte_count2++;    // see flag then skip
+ b86:	31 96       	adiw	r30, 0x01	; 1
+    }
+
+    Payload.Footer = DL_packet_received.Everything[byte_count2];
+ b88:	ec 0f       	add	r30, r28
+ b8a:	fd 1f       	adc	r31, r29
+ b8c:	82 85       	ldd	r24, Z+10	; 0x0a
+ b8e:	f6 01       	movw	r30, r12
+ b90:	81 83       	std	Z+1, r24	; 0x01
+    Payload.Everything[byte_count1] = DL_packet_received.Everything[byte_count2];
+ b92:	4c 0d       	add	r20, r12
+ b94:	5d 1d       	adc	r21, r13
+ b96:	fa 01       	movw	r30, r20
+ b98:	82 87       	std	Z+10, r24	; 0x0a
+    byte_count1++;
+    byte_count2++;
+
+    return;
+
+}
+ b9a:	29 96       	adiw	r28, 0x09	; 9
+ b9c:	0f b6       	in	r0, 0x3f	; 63
+ b9e:	f8 94       	cli
+ ba0:	de bf       	out	0x3e, r29	; 62
+ ba2:	0f be       	out	0x3f, r0	; 63
+ ba4:	cd bf       	out	0x3d, r28	; 61
+ ba6:	cf 91       	pop	r28
+ ba8:	df 91       	pop	r29
+ baa:	1f 91       	pop	r17
+ bac:	0f 91       	pop	r16
+ bae:	ff 90       	pop	r15
+ bb0:	ef 90       	pop	r14
+ bb2:	df 90       	pop	r13
+ bb4:	cf 90       	pop	r12
+ bb6:	08 95       	ret
+
+00000bb8 <_ZN3DLL13errorcheckingE6Packet>:
+            phy_layer.from_DLL_layer(Payload);
+        }
+    }
+}
+
+bool DLL::errorchecking(Packet errorcheck)
+ bb8:	0f 93       	push	r16
+ bba:	1f 93       	push	r17
+ bbc:	df 93       	push	r29
+ bbe:	cf 93       	push	r28
+ bc0:	cd b7       	in	r28, 0x3d	; 61
+ bc2:	de b7       	in	r29, 0x3e	; 62
+ bc4:	29 97       	sbiw	r28, 0x09	; 9
+ bc6:	0f b6       	in	r0, 0x3f	; 63
+ bc8:	f8 94       	cli
+ bca:	de bf       	out	0x3e, r29	; 62
+ bcc:	0f be       	out	0x3f, r0	; 63
+ bce:	cd bf       	out	0x3d, r28	; 61
+        accumulate += Payload.Netpkt[0];
+        A[i] = accumulate;
+        accumulate_of_A += A[i];
+        B[i] = accumulate_of_A;
+    }
+    if(errorcheck.checksum[0]!=(A[sizeof(Payload.Netpkt)-1]%256) || 
+ bd0:	40 2f       	mov	r20, r16
+ bd2:	50 e0       	ldi	r21, 0x00	; 0
+ bd4:	fe 01       	movw	r30, r28
+ bd6:	31 97       	sbiw	r30, 0x01	; 1
+ bd8:	80 81       	ld	r24, Z
+ bda:	91 81       	ldd	r25, Z+1	; 0x01
+ bdc:	90 70       	andi	r25, 0x00	; 0
+ bde:	48 17       	cp	r20, r24
+ be0:	59 07       	cpc	r21, r25
+ be2:	11 f0       	breq	.+4      	; 0xbe8 <_ZN3DLL13errorcheckingE6Packet+0x30>
+ be4:	20 e0       	ldi	r18, 0x00	; 0
+ be6:	07 c0       	rjmp	.+14     	; 0xbf6 <_ZN3DLL13errorcheckingE6Packet+0x3e>
+ be8:	20 e0       	ldi	r18, 0x00	; 0
+ bea:	81 2f       	mov	r24, r17
+ bec:	90 e0       	ldi	r25, 0x00	; 0
+ bee:	84 17       	cp	r24, r20
+ bf0:	95 07       	cpc	r25, r21
+ bf2:	09 f4       	brne	.+2      	; 0xbf6 <_ZN3DLL13errorcheckingE6Packet+0x3e>
+ bf4:	21 e0       	ldi	r18, 0x01	; 1
+    errorcheck.checksum[1]!=(B[sizeof(Payload.Netpkt)-1]%256))
+    {return false;}
+    else
+    {return true;}
+}
+ bf6:	82 2f       	mov	r24, r18
+ bf8:	29 96       	adiw	r28, 0x09	; 9
+ bfa:	0f b6       	in	r0, 0x3f	; 63
+ bfc:	f8 94       	cli
+ bfe:	de bf       	out	0x3e, r29	; 62
+ c00:	0f be       	out	0x3f, r0	; 63
+ c02:	cd bf       	out	0x3d, r28	; 61
+ c04:	cf 91       	pop	r28
+ c06:	df 91       	pop	r29
+ c08:	1f 91       	pop	r17
+ c0a:	0f 91       	pop	r16
+ c0c:	08 95       	ret
+
+00000c0e <_Z7rx_pollP6Packet>:
+    rx_poll(message);
+    return;
+}
+
+///////////////////////////// non classified function ////////////////////////
+void rx_poll(Packet *on_rx)
+ c0e:	0f 93       	push	r16
+ c10:	1f 93       	push	r17
+ c12:	df 93       	push	r29
+ c14:	cf 93       	push	r28
+ c16:	cd b7       	in	r28, 0x3d	; 61
+ c18:	de b7       	in	r29, 0x3e	; 62
+ c1a:	c8 5c       	subi	r28, 0xC8	; 200
+ c1c:	d0 40       	sbci	r29, 0x00	; 0
+ c1e:	0f b6       	in	r0, 0x3f	; 63
+ c20:	f8 94       	cli
+ c22:	de bf       	out	0x3e, r29	; 62
+ c24:	0f be       	out	0x3f, r0	; 63
+ c26:	cd bf       	out	0x3d, r28	; 61
+ c28:	8c 01       	movw	r16, r24
+	//! Inline function to return the rx buffer status byte.
+	/** \returns STATUS_FREE or STATUS_COMPLETE
+	* \see \ref rxtx_states "rx buffer states", rfm12_rx_len(), rfm12_rx_type(), rfm12_rx_buffer(), rfm12_rx_clear() and rf_rx_buffer_t
+	*/
+	static inline uint8_t rfm12_rx_status(void) {
+		return rf_rx_buffers[ctrl.buffer_out_num].status;
+ c2a:	80 91 07 03 	lds	r24, 0x0307
+ c2e:	90 e0       	ldi	r25, 0x00	; 0
+{
+	if (rfm12_rx_status() == STATUS_COMPLETE)
+ c30:	23 e2       	ldi	r18, 0x23	; 35
+ c32:	30 e0       	ldi	r19, 0x00	; 0
+ c34:	82 9f       	mul	r24, r18
+ c36:	b0 01       	movw	r22, r0
+ c38:	83 9f       	mul	r24, r19
+ c3a:	70 0d       	add	r23, r0
+ c3c:	92 9f       	mul	r25, r18
+ c3e:	70 0d       	add	r23, r0
+ c40:	11 24       	eor	r1, r1
+ c42:	fb 01       	movw	r30, r22
+ c44:	e4 54       	subi	r30, 0x44	; 68
+ c46:	fd 4f       	sbci	r31, 0xFD	; 253
+ c48:	81 a1       	ldd	r24, Z+33	; 0x21
+ c4a:	81 30       	cpi	r24, 0x01	; 1
+ c4c:	a1 f5       	brne	.+104    	; 0xcb6 <_Z7rx_pollP6Packet+0xa8>
+	//! Inline function to return the rx buffer length field.
+	/** \returns The length of the data inside the buffer
+	* \see rfm12_rx_status(), rfm12_rx_type(), rfm12_rx_buffer(), rfm12_rx_clear() and rf_rx_buffer_t
+	*/
+	static inline uint8_t rfm12_rx_len(void) {
+		return rf_rx_buffers[ctrl.buffer_out_num].len;
+ c4e:	40 81       	ld	r20, Z
+		// Determine the length of the incoming data
+		uint8_t rx_length = rfm12_rx_len();
+        uint8_t *rx[100];
+
+		// Quick sanity check to ensure we are receiving good data
+		if ((rx_length == 0) || (rx_length > 100))
+ c50:	84 2f       	mov	r24, r20
+ c52:	81 50       	subi	r24, 0x01	; 1
+ c54:	84 36       	cpi	r24, 0x64	; 100
+ c56:	78 f5       	brcc	.+94     	; 0xcb6 <_Z7rx_pollP6Packet+0xa8>
+			// Malformed data
+			return;
+		}
+
+		// Receive the data
+		memcpy(rx, rfm12_rx_buffer(), rx_length);
+ c58:	9b 01       	movw	r18, r22
+ c5a:	21 54       	subi	r18, 0x41	; 65
+ c5c:	3d 4f       	sbci	r19, 0xFD	; 253
+ c5e:	ce 01       	movw	r24, r28
+ c60:	01 96       	adiw	r24, 0x01	; 1
+ c62:	b9 01       	movw	r22, r18
+ c64:	50 e0       	ldi	r21, 0x00	; 0
+ c66:	0e 94 77 07 	call	0xeee	; 0xeee <memcpy>
+ c6a:	90 e0       	ldi	r25, 0x00	; 0
+ c6c:	e9 81       	ldd	r30, Y+1	; 0x01
+ c6e:	fa 81       	ldd	r31, Y+2	; 0x02
+ c70:	80 81       	ld	r24, Z
+ c72:	8e 37       	cpi	r24, 0x7E	; 126
+ c74:	09 f4       	brne	.+2      	; 0xc78 <_Z7rx_pollP6Packet+0x6a>
+ c76:	91 e0       	ldi	r25, 0x01	; 1
+ c78:	20 e0       	ldi	r18, 0x00	; 0
+            if(*rx[i] == HeaderFooter){flag= !flag;}
+            while(flag == true)
+            {
+                on_rx->Everything[x] = *rx[i];
+                x++;
+                if((*rx[i] == HeaderFooter)&&(*rx[i-1]!=flagbyte))
+ c7a:	ae 01       	movw	r20, r28
+ c7c:	41 50       	subi	r20, 0x01	; 1
+ c7e:	50 40       	sbci	r21, 0x00	; 0
+ c80:	16 c0       	rjmp	.+44     	; 0xcae <_Z7rx_pollP6Packet+0xa0>
+        for(uint8_t i = 0; i<sizeof(rx_length); i++)
+        {
+            if(*rx[i] == HeaderFooter){flag= !flag;}
+            while(flag == true)
+            {
+                on_rx->Everything[x] = *rx[i];
+ c82:	d8 01       	movw	r26, r16
+ c84:	a2 0f       	add	r26, r18
+ c86:	b1 1d       	adc	r27, r1
+ c88:	e9 81       	ldd	r30, Y+1	; 0x01
+ c8a:	fa 81       	ldd	r31, Y+2	; 0x02
+ c8c:	80 81       	ld	r24, Z
+ c8e:	19 96       	adiw	r26, 0x09	; 9
+ c90:	8c 93       	st	X, r24
+                x++;
+                if((*rx[i] == HeaderFooter)&&(*rx[i-1]!=flagbyte))
+ c92:	e9 81       	ldd	r30, Y+1	; 0x01
+ c94:	fa 81       	ldd	r31, Y+2	; 0x02
+ c96:	80 81       	ld	r24, Z
+ c98:	8e 37       	cpi	r24, 0x7E	; 126
+ c9a:	41 f4       	brne	.+16     	; 0xcac <_Z7rx_pollP6Packet+0x9e>
+ c9c:	90 e0       	ldi	r25, 0x00	; 0
+ c9e:	da 01       	movw	r26, r20
+ ca0:	ed 91       	ld	r30, X+
+ ca2:	fc 91       	ld	r31, X
+ ca4:	80 81       	ld	r24, Z
+ ca6:	85 35       	cpi	r24, 0x55	; 85
+ ca8:	09 f4       	brne	.+2      	; 0xcac <_Z7rx_pollP6Packet+0x9e>
+ caa:	91 e0       	ldi	r25, 0x01	; 1
+        {
+            if(*rx[i] == HeaderFooter){flag= !flag;}
+            while(flag == true)
+            {
+                on_rx->Everything[x] = *rx[i];
+                x++;
+ cac:	2f 5f       	subi	r18, 0xFF	; 255
+        bool flag = false;
+        uint8_t x = 0;
+        for(uint8_t i = 0; i<sizeof(rx_length); i++)
+        {
+            if(*rx[i] == HeaderFooter){flag= !flag;}
+            while(flag == true)
+ cae:	99 23       	and	r25, r25
+ cb0:	41 f7       	brne	.-48     	; 0xc82 <_Z7rx_pollP6Packet+0x74>
+                if((*rx[i] == HeaderFooter)&&(*rx[i-1]!=flagbyte))
+                {flag= !flag;}
+            }
+        }
+		// Clear the chip buffer after we read it
+		rfm12_rx_clear();
+ cb2:	0e 94 c7 02 	call	0x58e	; 0x58e <_Z14rfm12_rx_clearv>
+
+	}
+ cb6:	c8 53       	subi	r28, 0x38	; 56
+ cb8:	df 4f       	sbci	r29, 0xFF	; 255
+ cba:	0f b6       	in	r0, 0x3f	; 63
+ cbc:	f8 94       	cli
+ cbe:	de bf       	out	0x3e, r29	; 62
+ cc0:	0f be       	out	0x3f, r0	; 63
+ cc2:	cd bf       	out	0x3d, r28	; 61
+ cc4:	cf 91       	pop	r28
+ cc6:	df 91       	pop	r29
+ cc8:	1f 91       	pop	r17
+ cca:	0f 91       	pop	r16
+ ccc:	08 95       	ret
+
+00000cce <_ZN3PHY6rx_msgEv>:
+
+	// Tick the device to transmit
+	rfm12_tick();
+}
+
+void PHY::rx_msg()
+ cce:	fc 01       	movw	r30, r24
+{
+    rx_poll(message);
+ cd0:	80 81       	ld	r24, Z
+ cd2:	91 81       	ldd	r25, Z+1	; 0x01
+ cd4:	0e 94 07 06 	call	0xc0e	; 0xc0e <_Z7rx_pollP6Packet>
+    return;
+}
+ cd8:	08 95       	ret
+
+00000cda <_ZN3PHY12to_DLL_layerEv>:
+    {return true;}
+}
+
+/////////////////////////////////// PHY Layer //////////////////////////////////////
+
+Packet PHY::to_DLL_layer()
+ cda:	ef 92       	push	r14
+ cdc:	ff 92       	push	r15
+ cde:	0f 93       	push	r16
+ ce0:	1f 93       	push	r17
+ ce2:	8c 01       	movw	r16, r24
+ ce4:	7b 01       	movw	r14, r22
+	rfm12_tick();
+}
+
+void PHY::rx_msg()
+{
+    rx_poll(message);
+ ce6:	fb 01       	movw	r30, r22
+ ce8:	80 81       	ld	r24, Z
+ cea:	91 81       	ldd	r25, Z+1	; 0x01
+ cec:	0e 94 07 06 	call	0xc0e	; 0xc0e <_Z7rx_pollP6Packet>
+/////////////////////////////////// PHY Layer //////////////////////////////////////
+
+Packet PHY::to_DLL_layer()
+{
+    rx_msg();
+    Packet tosend = *message;
+ cf0:	f7 01       	movw	r30, r14
+ cf2:	60 81       	ld	r22, Z
+ cf4:	71 81       	ldd	r23, Z+1	; 0x01
+ cf6:	c8 01       	movw	r24, r16
+ cf8:	49 e0       	ldi	r20, 0x09	; 9
+ cfa:	50 e0       	ldi	r21, 0x00	; 0
+ cfc:	0e 94 80 07 	call	0xf00	; 0xf00 <memmove>
+    return tosend;
+}
+ d00:	c8 01       	movw	r24, r16
+ d02:	1f 91       	pop	r17
+ d04:	0f 91       	pop	r16
+ d06:	ff 90       	pop	r15
+ d08:	ef 90       	pop	r14
+ d0a:	08 95       	ret
+
+00000d0c <_ZN3PHY6tx_msgEP6Packet>:
+    *message = Payload;
+    tx_msg(message);
+    return;
+}
+
+void PHY::tx_msg(Packet *msg)
+ d0c:	ab 01       	movw	r20, r22
+ d0e:	90 e0       	ldi	r25, 0x00	; 0
+ d10:	01 c0       	rjmp	.+2      	; 0xd14 <_ZN3PHY6tx_msgEP6Packet+0x8>
+{
+	// Determine the length of the string
+	uint8_t length = 0;
+	while (msg->Everything[length] != '\0')
+	{
+		length++;
+ d12:	9f 5f       	subi	r25, 0xFF	; 255
+
+void PHY::tx_msg(Packet *msg)
+{
+	// Determine the length of the string
+	uint8_t length = 0;
+	while (msg->Everything[length] != '\0')
+ d14:	fa 01       	movw	r30, r20
+ d16:	e9 0f       	add	r30, r25
+ d18:	f1 1d       	adc	r31, r1
+ d1a:	81 85       	ldd	r24, Z+9	; 0x09
+ d1c:	88 23       	and	r24, r24
+ d1e:	c9 f7       	brne	.-14     	; 0xd12 <_ZN3PHY6tx_msgEP6Packet+0x6>
+	{
+		length++;
+	}
+
+	// Queue message for transmission on rmf12 module
+	rfm12_tx(length, 0xEE, msg->Everything);
+ d20:	47 5f       	subi	r20, 0xF7	; 247
+ d22:	5f 4f       	sbci	r21, 0xFF	; 255
+ d24:	89 2f       	mov	r24, r25
+ d26:	6e ee       	ldi	r22, 0xEE	; 238
+ d28:	0e 94 60 03 	call	0x6c0	; 0x6c0 <_Z8rfm12_txhhPh>
+
+	// Tick the device to transmit
+	rfm12_tick();
+ d2c:	0e 94 8e 02 	call	0x51c	; 0x51c <_Z10rfm12_tickv>
+}
+ d30:	08 95       	ret
+
+00000d32 <_ZN3PHY14from_DLL_layerE6Packet>:
+    rx_msg();
+    Packet tosend = *message;
+    return tosend;
+}
+
+void PHY::from_DLL_layer(Packet payload)
+ d32:	ef 92       	push	r14
+ d34:	ff 92       	push	r15
+ d36:	0f 93       	push	r16
+ d38:	1f 93       	push	r17
+ d3a:	df 93       	push	r29
+ d3c:	cf 93       	push	r28
+ d3e:	cd b7       	in	r28, 0x3d	; 61
+ d40:	de b7       	in	r29, 0x3e	; 62
+ d42:	29 97       	sbiw	r28, 0x09	; 9
+ d44:	0f b6       	in	r0, 0x3f	; 63
+ d46:	f8 94       	cli
+ d48:	de bf       	out	0x3e, r29	; 62
+ d4a:	0f be       	out	0x3f, r0	; 63
+ d4c:	cd bf       	out	0x3d, r28	; 61
+ d4e:	fc 01       	movw	r30, r24
+ d50:	e9 82       	std	Y+1, r14	; 0x01
+ d52:	fa 82       	std	Y+2, r15	; 0x02
+ d54:	0b 83       	std	Y+3, r16	; 0x03
+ d56:	1c 83       	std	Y+4, r17	; 0x04
+ d58:	2d 83       	std	Y+5, r18	; 0x05
+ d5a:	3e 83       	std	Y+6, r19	; 0x06
+ d5c:	4f 83       	std	Y+7, r20	; 0x07
+ d5e:	58 87       	std	Y+8, r21	; 0x08
+ d60:	69 87       	std	Y+9, r22	; 0x09
+{
+    *message = Payload;
+ d62:	80 81       	ld	r24, Z
+ d64:	91 81       	ldd	r25, Z+1	; 0x01
+ d66:	9c 01       	movw	r18, r24
+ d68:	af 01       	movw	r20, r30
+ d6a:	4e 5f       	subi	r20, 0xFE	; 254
+ d6c:	5f 4f       	sbci	r21, 0xFF	; 255
+ d6e:	89 e0       	ldi	r24, 0x09	; 9
+ d70:	da 01       	movw	r26, r20
+ d72:	0d 90       	ld	r0, X+
+ d74:	ad 01       	movw	r20, r26
+ d76:	d9 01       	movw	r26, r18
+ d78:	0d 92       	st	X+, r0
+ d7a:	9d 01       	movw	r18, r26
+ d7c:	81 50       	subi	r24, 0x01	; 1
+ d7e:	c1 f7       	brne	.-16     	; 0xd70 <_ZN3PHY14from_DLL_layerE6Packet+0x3e>
+    tx_msg(message);
+ d80:	60 81       	ld	r22, Z
+ d82:	71 81       	ldd	r23, Z+1	; 0x01
+ d84:	cf 01       	movw	r24, r30
+ d86:	0e 94 86 06 	call	0xd0c	; 0xd0c <_ZN3PHY6tx_msgEP6Packet>
+    return;
+}
+ d8a:	29 96       	adiw	r28, 0x09	; 9
+ d8c:	0f b6       	in	r0, 0x3f	; 63
+ d8e:	f8 94       	cli
+ d90:	de bf       	out	0x3e, r29	; 62
+ d92:	0f be       	out	0x3f, r0	; 63
+ d94:	cd bf       	out	0x3d, r28	; 61
+ d96:	cf 91       	pop	r28
+ d98:	df 91       	pop	r29
+ d9a:	1f 91       	pop	r17
+ d9c:	0f 91       	pop	r16
+ d9e:	ff 90       	pop	r15
+ da0:	ef 90       	pop	r14
+ da2:	08 95       	ret
+
+00000da4 <_ZN3DLL9addr_readEv>:
+
+    return;
+
+}
+
+void DLL::addr_read()
+ da4:	cf 92       	push	r12
+ da6:	df 92       	push	r13
+ da8:	ef 92       	push	r14
+ daa:	ff 92       	push	r15
+ dac:	0f 93       	push	r16
+ dae:	1f 93       	push	r17
+ db0:	df 93       	push	r29
+ db2:	cf 93       	push	r28
+ db4:	cd b7       	in	r28, 0x3d	; 61
+ db6:	de b7       	in	r29, 0x3e	; 62
+ db8:	6d 97       	sbiw	r28, 0x1d	; 29
+ dba:	0f b6       	in	r0, 0x3f	; 63
+ dbc:	f8 94       	cli
+ dbe:	de bf       	out	0x3e, r29	; 62
+ dc0:	0f be       	out	0x3f, r0	; 63
+ dc2:	cd bf       	out	0x3d, r28	; 61
+ dc4:	6c 01       	movw	r12, r24
+{
+    PHY phy_layer;
+    decode_everything(phy_layer.to_DLL_layer());
+ dc6:	ce 01       	movw	r24, r28
+ dc8:	01 96       	adiw	r24, 0x01	; 1
+ dca:	be 01       	movw	r22, r28
+ dcc:	6d 5e       	subi	r22, 0xED	; 237
+ dce:	7f 4f       	sbci	r23, 0xFF	; 255
+ dd0:	0e 94 6d 06 	call	0xcda	; 0xcda <_ZN3PHY12to_DLL_layerEv>
+ dd4:	c6 01       	movw	r24, r12
+ dd6:	e9 80       	ldd	r14, Y+1	; 0x01
+ dd8:	fa 80       	ldd	r15, Y+2	; 0x02
+ dda:	0b 81       	ldd	r16, Y+3	; 0x03
+ ddc:	1c 81       	ldd	r17, Y+4	; 0x04
+ dde:	2d 81       	ldd	r18, Y+5	; 0x05
+ de0:	3e 81       	ldd	r19, Y+6	; 0x06
+ de2:	4f 81       	ldd	r20, Y+7	; 0x07
+ de4:	58 85       	ldd	r21, Y+8	; 0x08
+ de6:	69 85       	ldd	r22, Y+9	; 0x09
+ de8:	0e 94 f5 04 	call	0x9ea	; 0x9ea <_ZN3DLL17decode_everythingE6Packet>
+    if((Payload.Address[1]>>4) == node_addr)        //   read destination Address
+ dec:	f6 01       	movw	r30, r12
+ dee:	86 81       	ldd	r24, Z+6	; 0x06
+ df0:	90 e0       	ldi	r25, 0x00	; 0
+ df2:	64 e0       	ldi	r22, 0x04	; 4
+ df4:	95 95       	asr	r25
+ df6:	87 95       	ror	r24
+ df8:	6a 95       	dec	r22
+ dfa:	e1 f7       	brne	.-8      	; 0xdf4 <_ZN3DLL9addr_readEv+0x50>
+ dfc:	01 97       	sbiw	r24, 0x01	; 1
+ dfe:	e1 f5       	brne	.+120    	; 0xe78 <_ZN3DLL9addr_readEv+0xd4>
+    {
+        uint8_t Ackbits = Payload.Control[0]<<4;
+        Ackbits = Payload.Control[0]>>4;
+ e00:	47 81       	ldd	r20, Z+7	; 0x07
+        if(errorchecking(Payload))    
+ e02:	de 01       	movw	r26, r28
+ e04:	1a 96       	adiw	r26, 0x0a	; 10
+ e06:	89 e0       	ldi	r24, 0x09	; 9
+ e08:	01 90       	ld	r0, Z+
+ e0a:	0d 92       	st	X+, r0
+ e0c:	81 50       	subi	r24, 0x01	; 1
+ e0e:	e1 f7       	brne	.-8      	; 0xe08 <_ZN3DLL9addr_readEv+0x64>
+ e10:	5d 85       	ldd	r21, Y+13	; 0x0d
+        accumulate += Payload.Netpkt[0];
+        A[i] = accumulate;
+        accumulate_of_A += A[i];
+        B[i] = accumulate_of_A;
+    }
+    if(errorcheck.checksum[0]!=(A[sizeof(Payload.Netpkt)-1]%256) || 
+ e12:	8c 85       	ldd	r24, Y+12	; 0x0c
+ e14:	28 2f       	mov	r18, r24
+ e16:	30 e0       	ldi	r19, 0x00	; 0
+ e18:	fe 01       	movw	r30, r28
+ e1a:	31 97       	sbiw	r30, 0x01	; 1
+ e1c:	80 81       	ld	r24, Z
+ e1e:	91 81       	ldd	r25, Z+1	; 0x01
+ e20:	90 70       	andi	r25, 0x00	; 0
+ e22:	28 17       	cp	r18, r24
+ e24:	39 07       	cpc	r19, r25
+ e26:	41 f5       	brne	.+80     	; 0xe78 <_ZN3DLL9addr_readEv+0xd4>
+ e28:	85 2f       	mov	r24, r21
+ e2a:	90 e0       	ldi	r25, 0x00	; 0
+ e2c:	82 17       	cp	r24, r18
+ e2e:	93 07       	cpc	r25, r19
+ e30:	19 f5       	brne	.+70     	; 0xe78 <_ZN3DLL9addr_readEv+0xd4>
+ e32:	18 c0       	rjmp	.+48     	; 0xe64 <_ZN3DLL9addr_readEv+0xc0>
+        {
+        ///  if errorchecking passed, Acknowledge bits +1 and send back to source
+            if(Ackbits==15) ///  overflows set back to 0;
+            {
+                Payload.Control[0] = (Payload.Control[0]>>4);
+                Payload.Control[0] = (Payload.Control[0]<<4);  // resets Ack
+ e34:	80 ef       	ldi	r24, 0xF0	; 240
+ e36:	f6 01       	movw	r30, r12
+ e38:	87 83       	std	Z+7, r24	; 0x07
+ e3a:	03 c0       	rjmp	.+6      	; 0xe42 <_ZN3DLL9addr_readEv+0x9e>
+            }
+            else
+            {
+                    Payload.Control[0] += 1;
+ e3c:	4f 5f       	subi	r20, 0xFF	; 255
+ e3e:	f6 01       	movw	r30, r12
+ e40:	47 83       	std	Z+7, r20	; 0x07
+            }
+            addressing(Payload.Address[1],Payload.Address[0]);  // swap the address and send again
+ e42:	f6 01       	movw	r30, r12
+ e44:	45 81       	ldd	r20, Z+5	; 0x05
+void DLL::addressing(uint8_t source,uint8_t destination)
+{
+	uint8_t addressbytes[2] = { 0x00,0x00};
+    addressbytes[0] = source;
+    addressbytes[1] = destination;
+    Payload.Address[0] = addressbytes[0];
+ e46:	36 81       	ldd	r19, Z+6	; 0x06
+ e48:	35 83       	std	Z+5, r19	; 0x05
+	Payload.Address[1] = addressbytes[1];
+ e4a:	46 83       	std	Z+6, r20	; 0x06
+            else
+            {
+                    Payload.Control[0] += 1;
+            }
+            addressing(Payload.Address[1],Payload.Address[0]);  // swap the address and send again
+            phy_layer.from_DLL_layer(Payload);
+ e4c:	ce 01       	movw	r24, r28
+ e4e:	43 96       	adiw	r24, 0x13	; 19
+ e50:	e0 80       	ld	r14, Z
+ e52:	f1 80       	ldd	r15, Z+1	; 0x01
+ e54:	02 81       	ldd	r16, Z+2	; 0x02
+ e56:	13 81       	ldd	r17, Z+3	; 0x03
+ e58:	24 81       	ldd	r18, Z+4	; 0x04
+ e5a:	57 81       	ldd	r21, Z+7	; 0x07
+ e5c:	60 85       	ldd	r22, Z+8	; 0x08
+ e5e:	0e 94 99 06 	call	0xd32	; 0xd32 <_ZN3PHY14from_DLL_layerE6Packet>
+ e62:	0a c0       	rjmp	.+20     	; 0xe78 <_ZN3DLL9addr_readEv+0xd4>
+        uint8_t Ackbits = Payload.Control[0]<<4;
+        Ackbits = Payload.Control[0]>>4;
+        if(errorchecking(Payload))    
+        {
+        ///  if errorchecking passed, Acknowledge bits +1 and send back to source
+            if(Ackbits==15) ///  overflows set back to 0;
+ e64:	84 2f       	mov	r24, r20
+ e66:	90 e0       	ldi	r25, 0x00	; 0
+ e68:	54 e0       	ldi	r21, 0x04	; 4
+ e6a:	95 95       	asr	r25
+ e6c:	87 95       	ror	r24
+ e6e:	5a 95       	dec	r21
+ e70:	e1 f7       	brne	.-8      	; 0xe6a <_ZN3DLL9addr_readEv+0xc6>
+ e72:	8f 30       	cpi	r24, 0x0F	; 15
+ e74:	19 f7       	brne	.-58     	; 0xe3c <_ZN3DLL9addr_readEv+0x98>
+ e76:	de cf       	rjmp	.-68     	; 0xe34 <_ZN3DLL9addr_readEv+0x90>
+            }
+            addressing(Payload.Address[1],Payload.Address[0]);  // swap the address and send again
+            phy_layer.from_DLL_layer(Payload);
+        }
+    }
+}
+ e78:	6d 96       	adiw	r28, 0x1d	; 29
+ e7a:	0f b6       	in	r0, 0x3f	; 63
+ e7c:	f8 94       	cli
+ e7e:	de bf       	out	0x3e, r29	; 62
+ e80:	0f be       	out	0x3f, r0	; 63
+ e82:	cd bf       	out	0x3d, r28	; 61
+ e84:	cf 91       	pop	r28
+ e86:	df 91       	pop	r29
+ e88:	1f 91       	pop	r17
+ e8a:	0f 91       	pop	r16
+ e8c:	ff 90       	pop	r15
+ e8e:	ef 90       	pop	r14
+ e90:	df 90       	pop	r13
+ e92:	cf 90       	pop	r12
+ e94:	08 95       	ret
+
+00000e96 <_ZN3DLL6senderEv>:
+
+    Payload.Everything[byte_count] = Payload.Footer;          ////// Footer
+    return;
+}
+
+void DLL::sender()
+ e96:	af 92       	push	r10
+ e98:	bf 92       	push	r11
+ e9a:	cf 92       	push	r12
+ e9c:	df 92       	push	r13
+ e9e:	ef 92       	push	r14
+ ea0:	ff 92       	push	r15
+ ea2:	0f 93       	push	r16
+ ea4:	1f 93       	push	r17
+ ea6:	df 93       	push	r29
+ ea8:	cf 93       	push	r28
+ eaa:	cd b7       	in	r28, 0x3d	; 61
+ eac:	de b7       	in	r29, 0x3e	; 62
+ eae:	2b 97       	sbiw	r28, 0x0b	; 11
+ eb0:	0f b6       	in	r0, 0x3f	; 63
+ eb2:	f8 94       	cli
+ eb4:	de bf       	out	0x3e, r29	; 62
+ eb6:	0f be       	out	0x3f, r0	; 63
+ eb8:	cd bf       	out	0x3d, r28	; 61
+ eba:	6c 01       	movw	r12, r24
+{
+    PHY phy_layer;
+    from_NET_layer(NET_packet);
+ ebc:	67 e1       	ldi	r22, 0x17	; 23
+ ebe:	72 e0       	ldi	r23, 0x02	; 2
+ ec0:	0e 94 8f 03 	call	0x71e	; 0x71e <_ZN3DLL14from_NET_layerEPh>
+    while(true)
+    {
+        // from_NET_layer(NET_packet);
+
+        encode_everything();
+        phy_layer.from_DLL_layer(Payload);
+ ec4:	5e 01       	movw	r10, r28
+ ec6:	08 94       	sec
+ ec8:	a1 1c       	adc	r10, r1
+ eca:	b1 1c       	adc	r11, r1
+    from_NET_layer(NET_packet);
+    while(true)
+    {
+        // from_NET_layer(NET_packet);
+
+        encode_everything();
+ ecc:	c6 01       	movw	r24, r12
+ ece:	0e 94 07 04 	call	0x80e	; 0x80e <_ZN3DLL17encode_everythingEv>
+        phy_layer.from_DLL_layer(Payload);
+ ed2:	c5 01       	movw	r24, r10
+ ed4:	f6 01       	movw	r30, r12
+ ed6:	e0 80       	ld	r14, Z
+ ed8:	f1 80       	ldd	r15, Z+1	; 0x01
+ eda:	02 81       	ldd	r16, Z+2	; 0x02
+ edc:	13 81       	ldd	r17, Z+3	; 0x03
+ ede:	24 81       	ldd	r18, Z+4	; 0x04
+ ee0:	35 81       	ldd	r19, Z+5	; 0x05
+ ee2:	46 81       	ldd	r20, Z+6	; 0x06
+ ee4:	57 81       	ldd	r21, Z+7	; 0x07
+ ee6:	60 85       	ldd	r22, Z+8	; 0x08
+ ee8:	0e 94 99 06 	call	0xd32	; 0xd32 <_ZN3PHY14from_DLL_layerE6Packet>
+ eec:	ef cf       	rjmp	.-34     	; 0xecc <_ZN3DLL6senderEv+0x36>
+
+00000eee <memcpy>:
+ eee:	fb 01       	movw	r30, r22
+ ef0:	dc 01       	movw	r26, r24
+ ef2:	02 c0       	rjmp	.+4      	; 0xef8 <memcpy+0xa>
+ ef4:	01 90       	ld	r0, Z+
+ ef6:	0d 92       	st	X+, r0
+ ef8:	41 50       	subi	r20, 0x01	; 1
+ efa:	50 40       	sbci	r21, 0x00	; 0
+ efc:	d8 f7       	brcc	.-10     	; 0xef4 <memcpy+0x6>
+ efe:	08 95       	ret
+
+00000f00 <memmove>:
+ f00:	68 17       	cp	r22, r24
+ f02:	79 07       	cpc	r23, r25
+ f04:	68 f4       	brcc	.+26     	; 0xf20 <memmove+0x20>
+ f06:	fb 01       	movw	r30, r22
+ f08:	dc 01       	movw	r26, r24
+ f0a:	e4 0f       	add	r30, r20
+ f0c:	f5 1f       	adc	r31, r21
+ f0e:	a4 0f       	add	r26, r20
+ f10:	b5 1f       	adc	r27, r21
+ f12:	02 c0       	rjmp	.+4      	; 0xf18 <memmove+0x18>
+ f14:	02 90       	ld	r0, -Z
+ f16:	0e 92       	st	-X, r0
+ f18:	41 50       	subi	r20, 0x01	; 1
+ f1a:	50 40       	sbci	r21, 0x00	; 0
+ f1c:	d8 f7       	brcc	.-10     	; 0xf14 <memmove+0x14>
+ f1e:	08 95       	ret
+ f20:	0c 94 77 07 	jmp	0xeee	; 0xeee <memcpy>
+
+00000f24 <_exit>:
+ f24:	f8 94       	cli
+
+00000f26 <__stop_program>:
+ f26:	ff cf       	rjmp	.-2      	; 0xf26 <__stop_program>
