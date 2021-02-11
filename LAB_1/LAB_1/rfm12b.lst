@@ -1,0 +1,1673 @@
+
+rfm12b.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000148  00800100  000007f6  0000088a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000007f6  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000079  00800248  00800248  000009d2  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  000009d2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000195  00000000  00000000  00000a12  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000bca  00000000  00000000  00000ba7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000527  00000000  00000000  00001771  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000095a  00000000  00000000  00001c98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000160  00000000  00000000  000025f4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000052d  00000000  00000000  00002754  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000353  00000000  00000000  00002c81  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000060  00000000  00000000  00002fd4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 4a 00 	jmp	0x94	; 0x94 <__ctors_end>
+   4:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+   8:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+   c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  10:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  14:	0c 94 a3 01 	jmp	0x346	; 0x346 <__vector_5>
+  18:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  1c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  20:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  24:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  28:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  2c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  30:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  34:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  38:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  3c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  40:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  44:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  48:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  4c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  50:	0c 94 02 01 	jmp	0x204	; 0x204 <__vector_20>
+  54:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  58:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  5c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  60:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  64:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  68:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  6c:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  70:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  74:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+  78:	0c 94 67 00 	jmp	0xce	; 0xce <__bad_interrupt>
+
+0000007c <_ZL9init_cmds>:
+  7c:	d6 80 01 82 f4 a4 02 c6 2d 94 ab c2 81 ca f7 c4     ........-.......
+  8c:	70 98 00 c8 00 e0 81 82                             p.......
+
+00000094 <__ctors_end>:
+  94:	11 24       	eor	r1, r1
+  96:	1f be       	out	0x3f, r1	; 63
+  98:	cf ef       	ldi	r28, 0xFF	; 255
+  9a:	d0 e1       	ldi	r29, 0x10	; 16
+  9c:	de bf       	out	0x3e, r29	; 62
+  9e:	cd bf       	out	0x3d, r28	; 61
+
+000000a0 <__do_copy_data>:
+  a0:	12 e0       	ldi	r17, 0x02	; 2
+  a2:	a0 e0       	ldi	r26, 0x00	; 0
+  a4:	b1 e0       	ldi	r27, 0x01	; 1
+  a6:	e6 ef       	ldi	r30, 0xF6	; 246
+  a8:	f7 e0       	ldi	r31, 0x07	; 7
+  aa:	02 c0       	rjmp	.+4      	; 0xb0 <.do_copy_data_start>
+
+000000ac <.do_copy_data_loop>:
+  ac:	05 90       	lpm	r0, Z+
+  ae:	0d 92       	st	X+, r0
+
+000000b0 <.do_copy_data_start>:
+  b0:	a8 34       	cpi	r26, 0x48	; 72
+  b2:	b1 07       	cpc	r27, r17
+  b4:	d9 f7       	brne	.-10     	; 0xac <.do_copy_data_loop>
+
+000000b6 <__do_clear_bss>:
+  b6:	12 e0       	ldi	r17, 0x02	; 2
+  b8:	a8 e4       	ldi	r26, 0x48	; 72
+  ba:	b2 e0       	ldi	r27, 0x02	; 2
+  bc:	01 c0       	rjmp	.+2      	; 0xc0 <.do_clear_bss_start>
+
+000000be <.do_clear_bss_loop>:
+  be:	1d 92       	st	X+, r1
+
+000000c0 <.do_clear_bss_start>:
+  c0:	a1 3c       	cpi	r26, 0xC1	; 193
+  c2:	b1 07       	cpc	r27, r17
+  c4:	e1 f7       	brne	.-8      	; 0xbe <.do_clear_bss_loop>
+  c6:	0e 94 9c 00 	call	0x138	; 0x138 <main>
+  ca:	0c 94 f9 03 	jmp	0x7f2	; 0x7f2 <_exit>
+
+000000ce <__bad_interrupt>:
+  ce:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000d2 <_Z7rx_pollv>:
+	put_str("\r\n[i] message transmitted: ");
+	put_str(message);
+	put_str("\r\n\r\n");
+}
+
+void rx_poll()
+  d2:	0f 93       	push	r16
+  d4:	1f 93       	push	r17
+	//! Inline function to return the rx buffer status byte.
+	/** \returns STATUS_FREE or STATUS_COMPLETE
+	* \see \ref rxtx_states "rx buffer states", rfm12_rx_len(), rfm12_rx_type(), rfm12_rx_buffer(), rfm12_rx_clear() and rf_rx_buffer_t
+	*/
+	static inline uint8_t rfm12_rx_status(void) {
+		return rf_rx_buffers[ctrl.buffer_out_num].status;
+  d6:	80 91 b7 02 	lds	r24, 0x02B7
+  da:	90 e0       	ldi	r25, 0x00	; 0
+{
+	if (rfm12_rx_status() == STATUS_COMPLETE)
+  dc:	23 e2       	ldi	r18, 0x23	; 35
+  de:	30 e0       	ldi	r19, 0x00	; 0
+  e0:	82 9f       	mul	r24, r18
+  e2:	b0 01       	movw	r22, r0
+  e4:	83 9f       	mul	r24, r19
+  e6:	70 0d       	add	r23, r0
+  e8:	92 9f       	mul	r25, r18
+  ea:	70 0d       	add	r23, r0
+  ec:	11 24       	eor	r1, r1
+  ee:	fb 01       	movw	r30, r22
+  f0:	e4 59       	subi	r30, 0x94	; 148
+  f2:	fd 4f       	sbci	r31, 0xFD	; 253
+  f4:	81 a1       	ldd	r24, Z+33	; 0x21
+  f6:	81 30       	cpi	r24, 0x01	; 1
+  f8:	e1 f4       	brne	.+56     	; 0x132 <_Z7rx_pollv+0x60>
+	//! Inline function to return the rx buffer length field.
+	/** \returns The length of the data inside the buffer
+	* \see rfm12_rx_status(), rfm12_rx_type(), rfm12_rx_buffer(), rfm12_rx_clear() and rf_rx_buffer_t
+	*/
+	static inline uint8_t rfm12_rx_len(void) {
+		return rf_rx_buffers[ctrl.buffer_out_num].len;
+  fa:	40 81       	ld	r20, Z
+	{
+		// Determine the length of the incoming data
+		uint8_t rx_length = rfm12_rx_len();
+
+		// Quick sanity check to ensure we are receiving good data
+		if ((rx_length == 0) || (rx_length > 100))
+  fc:	84 2f       	mov	r24, r20
+  fe:	81 50       	subi	r24, 0x01	; 1
+ 100:	84 36       	cpi	r24, 0x64	; 100
+ 102:	b8 f4       	brcc	.+46     	; 0x132 <_Z7rx_pollv+0x60>
+			// Malformed data
+			return;
+		}
+
+		// Receive the data
+		memcpy(rx_buff, rfm12_rx_buffer(), rx_length);
+ 104:	0b e9       	ldi	r16, 0x9B	; 155
+ 106:	11 e0       	ldi	r17, 0x01	; 1
+ 108:	9b 01       	movw	r18, r22
+ 10a:	21 59       	subi	r18, 0x91	; 145
+ 10c:	3d 4f       	sbci	r19, 0xFD	; 253
+ 10e:	c8 01       	movw	r24, r16
+ 110:	b9 01       	movw	r22, r18
+ 112:	50 e0       	ldi	r21, 0x00	; 0
+ 114:	0e 94 f0 03 	call	0x7e0	; 0x7e0 <memcpy>
+
+		// Clear the chip buffer after we read it
+		rfm12_rx_clear();
+ 118:	0e 94 3a 03 	call	0x674	; 0x674 <_Z14rfm12_rx_clearv>
+
+		put_str("message received: ");
+ 11c:	80 e0       	ldi	r24, 0x00	; 0
+ 11e:	91 e0       	ldi	r25, 0x01	; 1
+ 120:	0e 94 c6 03 	call	0x78c	; 0x78c <_Z7put_strPc>
+		put_str(rx_buff);
+ 124:	c8 01       	movw	r24, r16
+ 126:	0e 94 c6 03 	call	0x78c	; 0x78c <_Z7put_strPc>
+		put_str("\n\r");
+ 12a:	83 e1       	ldi	r24, 0x13	; 19
+ 12c:	91 e0       	ldi	r25, 0x01	; 1
+ 12e:	0e 94 c6 03 	call	0x78c	; 0x78c <_Z7put_strPc>
+	}
+}
+ 132:	1f 91       	pop	r17
+ 134:	0f 91       	pop	r16
+ 136:	08 95       	ret
+
+00000138 <main>:
+
+int main(void)
+ 138:	cf 93       	push	r28
+ 13a:	df 93       	push	r29
+{
+	init_uart0();	//init uart
+ 13c:	0e 94 a7 03 	call	0x74e	; 0x74e <_Z10init_uart0v>
+ 140:	88 ee       	ldi	r24, 0xE8	; 232
+ 142:	93 e0       	ldi	r25, 0x03	; 3
+	__asm__ volatile (
+		"1: sbiw %0,1" "\n\t"
+		"brne 1b"
+		: "=w" (__count)
+		: "0" (__count)
+	);
+ 144:	2c e2       	ldi	r18, 0x2C	; 44
+ 146:	31 e0       	ldi	r19, 0x01	; 1
+ 148:	f9 01       	movw	r30, r18
+ 14a:	31 97       	sbiw	r30, 0x01	; 1
+ 14c:	f1 f7       	brne	.-4      	; 0x14a <main+0x12>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 14e:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 150:	d9 f7       	brne	.-10     	; 0x148 <main+0x10>
+	_delay_ms(100); //delay for the rfm12 to initialize properly
+	rfm12_init();	//init the RFM12
+ 152:	0e 94 50 03 	call	0x6a0	; 0x6a0 <_Z10rfm12_initv>
+ 156:	88 ee       	ldi	r24, 0xE8	; 232
+ 158:	93 e0       	ldi	r25, 0x03	; 3
+ 15a:	2c e2       	ldi	r18, 0x2C	; 44
+ 15c:	31 e0       	ldi	r19, 0x01	; 1
+ 15e:	f9 01       	movw	r30, r18
+ 160:	31 97       	sbiw	r30, 0x01	; 1
+ 162:	f1 f7       	brne	.-4      	; 0x160 <main+0x28>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 164:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 166:	d9 f7       	brne	.-10     	; 0x15e <main+0x26>
+	_delay_ms(100);
+	sei(); //interrupts on
+ 168:	78 94       	sei
+ 16a:	cc e2       	ldi	r28, 0x2C	; 44
+ 16c:	d1 e0       	ldi	r29, 0x01	; 1
+
+	while (1)
+	{
+		rx_poll();
+ 16e:	0e 94 69 00 	call	0xd2	; 0xd2 <_Z7rx_pollv>
+
+		rfm12_tick();
+ 172:	0e 94 01 03 	call	0x602	; 0x602 <_Z10rfm12_tickv>
+ 176:	84 ec       	ldi	r24, 0xC4	; 196
+ 178:	99 e0       	ldi	r25, 0x09	; 9
+ 17a:	fe 01       	movw	r30, r28
+ 17c:	31 97       	sbiw	r30, 0x01	; 1
+ 17e:	f1 f7       	brne	.-4      	; 0x17c <main+0x44>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 180:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 182:	d9 f7       	brne	.-10     	; 0x17a <main+0x42>
+ 184:	f4 cf       	rjmp	.-24     	; 0x16e <main+0x36>
+
+00000186 <_Z6tx_msgPc>:
+char uart_buff[100] = ""; //uart input buffer
+uint8_t uart_index = 0;	  //uart input string position
+
+char rx_buff[100] = "";
+
+void tx_msg(char *message)
+ 186:	cf 93       	push	r28
+ 188:	df 93       	push	r29
+ 18a:	ec 01       	movw	r28, r24
+ 18c:	90 e0       	ldi	r25, 0x00	; 0
+ 18e:	01 c0       	rjmp	.+2      	; 0x192 <_Z6tx_msgPc+0xc>
+{
+	// Determine the length of the string
+	uint8_t length = 0;
+	while (message[length] != '\0')
+	{
+		length++;
+ 190:	9f 5f       	subi	r25, 0xFF	; 255
+
+void tx_msg(char *message)
+{
+	// Determine the length of the string
+	uint8_t length = 0;
+	while (message[length] != '\0')
+ 192:	fe 01       	movw	r30, r28
+ 194:	e9 0f       	add	r30, r25
+ 196:	f1 1d       	adc	r31, r1
+ 198:	80 81       	ld	r24, Z
+ 19a:	88 23       	and	r24, r24
+ 19c:	c9 f7       	brne	.-14     	; 0x190 <_Z6tx_msgPc+0xa>
+	{
+		length++;
+	}
+
+	// Queue message for transmission on rmf12 module
+	rfm12_tx(length, 0xEE, (uint8_t *)message);
+ 19e:	89 2f       	mov	r24, r25
+ 1a0:	6e ee       	ldi	r22, 0xEE	; 238
+ 1a2:	ae 01       	movw	r20, r28
+ 1a4:	0e 94 d3 03 	call	0x7a6	; 0x7a6 <_Z8rfm12_txhhPh>
+
+	// Tick the device to transmit
+	rfm12_tick();
+ 1a8:	0e 94 01 03 	call	0x602	; 0x602 <_Z10rfm12_tickv>
+
+	// Give the user an acknowledgement over UART
+	put_str("\r\n[i] message transmitted: ");
+ 1ac:	86 e1       	ldi	r24, 0x16	; 22
+ 1ae:	91 e0       	ldi	r25, 0x01	; 1
+ 1b0:	0e 94 c6 03 	call	0x78c	; 0x78c <_Z7put_strPc>
+	put_str(message);
+ 1b4:	ce 01       	movw	r24, r28
+ 1b6:	0e 94 c6 03 	call	0x78c	; 0x78c <_Z7put_strPc>
+	put_str("\r\n\r\n");
+ 1ba:	82 e3       	ldi	r24, 0x32	; 50
+ 1bc:	91 e0       	ldi	r25, 0x01	; 1
+ 1be:	0e 94 c6 03 	call	0x78c	; 0x78c <_Z7put_strPc>
+}
+ 1c2:	df 91       	pop	r29
+ 1c4:	cf 91       	pop	r28
+ 1c6:	08 95       	ret
+
+000001c8 <_Z10uart_inputc>:
+		rfm12_tick();
+		_delay_ms(250);
+	}
+}
+
+void uart_input(char byte)
+ 1c8:	1f 93       	push	r17
+ 1ca:	18 2f       	mov	r17, r24
+{
+	// Show the user what they are typing
+	put_ch(byte);
+ 1cc:	0e 94 be 03 	call	0x77c	; 0x77c <_Z6put_chc>
+
+	// Store the character in the input buffer
+	uart_buff[uart_index] = byte;
+ 1d0:	80 91 48 02 	lds	r24, 0x0248
+ 1d4:	e8 2f       	mov	r30, r24
+ 1d6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1d8:	e9 5c       	subi	r30, 0xC9	; 201
+ 1da:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1dc:	10 83       	st	Z, r17
+
+	// Determine if the return key has been hit
+	if (byte == '\r')
+ 1de:	1d 30       	cpi	r17, 0x0D	; 13
+ 1e0:	39 f4       	brne	.+14     	; 0x1f0 <_Z10uart_inputc+0x28>
+	{
+		// Reset the input buffer pointer
+		uart_index = 0;
+ 1e2:	10 92 48 02 	sts	0x0248, r1
+
+		// Transmit the entire input string
+		tx_msg(uart_buff);
+ 1e6:	87 e3       	ldi	r24, 0x37	; 55
+ 1e8:	91 e0       	ldi	r25, 0x01	; 1
+ 1ea:	0e 94 c3 00 	call	0x186	; 0x186 <_Z6tx_msgPc>
+ 1ee:	08 c0       	rjmp	.+16     	; 0x200 <_Z10uart_inputc+0x38>
+	}
+	// Ensure TX string is under 100 characters
+	else if (uart_index < 100)
+ 1f0:	84 36       	cpi	r24, 0x64	; 100
+ 1f2:	20 f4       	brcc	.+8      	; 0x1fc <_Z10uart_inputc+0x34>
+	{
+		// Select the next character in the string as long
+		// as the string is under 100 characters long
+		uart_index++;
+ 1f4:	8f 5f       	subi	r24, 0xFF	; 255
+ 1f6:	80 93 48 02 	sts	0x0248, r24
+ 1fa:	02 c0       	rjmp	.+4      	; 0x200 <_Z10uart_inputc+0x38>
+	}
+	else
+	{
+		// Overwrite the existing string when the input is
+		// greater than 100 characters so we don't lose it
+		uart_index = 0;
+ 1fc:	10 92 48 02 	sts	0x0248, r1
+	}
+}
+ 200:	1f 91       	pop	r17
+ 202:	08 95       	ret
+
+00000204 <__vector_20>:
+
+/* UART byte received interrupt */
+ISR(USART0_RX_vect)
+ 204:	1f 92       	push	r1
+ 206:	0f 92       	push	r0
+ 208:	0f b6       	in	r0, 0x3f	; 63
+ 20a:	0f 92       	push	r0
+ 20c:	11 24       	eor	r1, r1
+ 20e:	2f 93       	push	r18
+ 210:	3f 93       	push	r19
+ 212:	4f 93       	push	r20
+ 214:	5f 93       	push	r21
+ 216:	6f 93       	push	r22
+ 218:	7f 93       	push	r23
+ 21a:	8f 93       	push	r24
+ 21c:	9f 93       	push	r25
+ 21e:	af 93       	push	r26
+ 220:	bf 93       	push	r27
+ 222:	ef 93       	push	r30
+ 224:	ff 93       	push	r31
+{
+	uart_input(UDR0);
+ 226:	80 91 c6 00 	lds	r24, 0x00C6
+ 22a:	0e 94 e4 00 	call	0x1c8	; 0x1c8 <_Z10uart_inputc>
+ 22e:	81 e0       	ldi	r24, 0x01	; 1
+ 230:	90 e0       	ldi	r25, 0x00	; 0
+ 232:	01 97       	sbiw	r24, 0x01	; 1
+ 234:	f1 f7       	brne	.-4      	; 0x232 <__vector_20+0x2e>
+	_delay_ms(0);
+}
+ 236:	ff 91       	pop	r31
+ 238:	ef 91       	pop	r30
+ 23a:	bf 91       	pop	r27
+ 23c:	af 91       	pop	r26
+ 23e:	9f 91       	pop	r25
+ 240:	8f 91       	pop	r24
+ 242:	7f 91       	pop	r23
+ 244:	6f 91       	pop	r22
+ 246:	5f 91       	pop	r21
+ 248:	4f 91       	pop	r20
+ 24a:	3f 91       	pop	r19
+ 24c:	2f 91       	pop	r18
+ 24e:	0f 90       	pop	r0
+ 250:	0f be       	out	0x3f, r0	; 63
+ 252:	0f 90       	pop	r0
+ 254:	1f 90       	pop	r1
+ 256:	18 95       	reti
+
+00000258 <_ZL10rfm12_dataj>:
+
+
+//non-inlined version of rfm12_data
+//warning: without the attribute, gcc will inline this even if -Os is set
+static void __attribute__ ((noinline)) rfm12_data(uint16_t d) {
+	SS_ASSERT();
+ 258:	2c 98       	cbi	0x05, 4	; 5
+	#if !(RFM12_SPI_SOFTWARE)
+		SPDR = d >> 8;
+ 25a:	9e bd       	out	0x2e, r25	; 46
+		while (!(SPSR & (1<<SPIF)));
+ 25c:	0d b4       	in	r0, 0x2d	; 45
+ 25e:	07 fe       	sbrs	r0, 7
+ 260:	fd cf       	rjmp	.-6      	; 0x25c <_ZL10rfm12_dataj+0x4>
+
+		SPDR = d & 0xff;
+ 262:	8e bd       	out	0x2e, r24	; 46
+		while (!(SPSR & (1<<SPIF)));
+ 264:	0d b4       	in	r0, 0x2d	; 45
+ 266:	07 fe       	sbrs	r0, 7
+ 268:	fd cf       	rjmp	.-6      	; 0x264 <_ZL10rfm12_dataj+0xc>
+	#else
+		spi_data(d >> 8);
+		spi_data(d & 0xff);
+	#endif
+	SS_RELEASE();
+ 26a:	2c 9a       	sbi	0x05, 4	; 5
+}
+ 26c:	08 95       	ret
+
+0000026e <_ZL10rfm12_readj>:
+
+//non-inlined version of rfm12_read
+//warning: without the attribute, gcc will inline this even if -Os is set
+static uint16_t __attribute__ ((noinline)) rfm12_read(uint16_t c) {
+	uint16_t retval;
+	SS_ASSERT();
+ 26e:	2c 98       	cbi	0x05, 4	; 5
+
+	#if !(RFM12_SPI_SOFTWARE)
+		SPDR = c >> 8;
+ 270:	9e bd       	out	0x2e, r25	; 46
+		while (!(SPSR & (1<<SPIF)));
+ 272:	0d b4       	in	r0, 0x2d	; 45
+ 274:	07 fe       	sbrs	r0, 7
+ 276:	fd cf       	rjmp	.-6      	; 0x272 <_ZL10rfm12_readj+0x4>
+		retval = SPDR << 8;
+ 278:	3e b5       	in	r19, 0x2e	; 46
+		SPDR = c & 0xff;
+ 27a:	8e bd       	out	0x2e, r24	; 46
+		while (!(SPSR & (1<<SPIF)));
+ 27c:	0d b4       	in	r0, 0x2d	; 45
+ 27e:	07 fe       	sbrs	r0, 7
+ 280:	fd cf       	rjmp	.-6      	; 0x27c <_ZL10rfm12_readj+0xe>
+		retval |= SPDR;
+ 282:	2e b5       	in	r18, 0x2e	; 46
+	SS_ASSERT();
+
+	#if !(RFM12_SPI_SOFTWARE)
+		SPDR = c >> 8;
+		while (!(SPSR & (1<<SPIF)));
+		retval = SPDR << 8;
+ 284:	93 2f       	mov	r25, r19
+ 286:	80 e0       	ldi	r24, 0x00	; 0
+	#else
+		retval = spi_data(c >> 8);
+		retval <<= 8;
+		retval |= spi_data(c & 0xff);
+	#endif
+	SS_RELEASE();
+ 288:	2c 9a       	sbi	0x05, 4	; 5
+ 28a:	30 e0       	ldi	r19, 0x00	; 0
+ 28c:	28 2b       	or	r18, r24
+ 28e:	39 2b       	or	r19, r25
+	return retval;
+}
+ 290:	c9 01       	movw	r24, r18
+ 292:	08 95       	ret
+
+00000294 <_Z15rfm12_data_safej>:
+		}
+	}
+#endif
+
+#if RFM12_LIVECTRL_HOST
+	void rfm12_data_safe(uint16_t d) {
+ 294:	0f 93       	push	r16
+ 296:	1f 93       	push	r17
+		//disable the interrupt (as we're working directly with the transceiver now)
+		RFM12_INT_OFF();
+ 298:	0c e6       	ldi	r16, 0x6C	; 108
+ 29a:	10 e0       	ldi	r17, 0x00	; 0
+ 29c:	f8 01       	movw	r30, r16
+ 29e:	20 81       	ld	r18, Z
+ 2a0:	2d 7f       	andi	r18, 0xFD	; 253
+ 2a2:	20 83       	st	Z, r18
+		rfm12_data(d);
+ 2a4:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+		RFM12_INT_ON();
+ 2a8:	f8 01       	movw	r30, r16
+ 2aa:	80 81       	ld	r24, Z
+ 2ac:	82 60       	ori	r24, 0x02	; 2
+ 2ae:	80 83       	st	Z, r24
+	}
+ 2b0:	1f 91       	pop	r17
+ 2b2:	0f 91       	pop	r16
+ 2b4:	08 95       	ret
+
+000002b6 <_Z14rfm12_livectrlhj>:
+
+
+	void rfm12_livectrl(uint8_t cmd, uint16_t value) {
+ 2b6:	cf 93       	push	r28
+ 2b8:	df 93       	push	r29
+		uint16_t tmp = 0;
+		livectrl_cmd_t  *livectrl_cmd = &livectrl_cmds[cmd];
+ 2ba:	a8 2f       	mov	r26, r24
+ 2bc:	b0 e0       	ldi	r27, 0x00	; 0
+
+		livectrl_cmd->current_value = value; //update current value
+ 2be:	fd 01       	movw	r30, r26
+ 2c0:	83 e0       	ldi	r24, 0x03	; 3
+ 2c2:	ee 0f       	add	r30, r30
+ 2c4:	ff 1f       	adc	r31, r31
+ 2c6:	8a 95       	dec	r24
+ 2c8:	e1 f7       	brne	.-8      	; 0x2c2 <_Z14rfm12_livectrlhj+0xc>
+ 2ca:	e1 50       	subi	r30, 0x01	; 1
+ 2cc:	fe 4f       	sbci	r31, 0xFE	; 254
+ 2ce:	77 83       	std	Z+7, r23	; 0x07
+ 2d0:	66 83       	std	Z+6, r22	; 0x06
+		//but it makes sense never the less:
+		//the current_value only saves the bits for this one setting (for menu,saving,loding settings)
+		//while the shadow register keeps track of ALL bits the rfm12 has in that register.
+		//the shadow will also be used from rfm12_tick or maybe the interrupt
+
+		if (livectrl_cmd->shadow_register) {
+ 2d2:	fd 01       	movw	r30, r26
+ 2d4:	53 e0       	ldi	r21, 0x03	; 3
+ 2d6:	ee 0f       	add	r30, r30
+ 2d8:	ff 1f       	adc	r31, r31
+ 2da:	5a 95       	dec	r21
+ 2dc:	e1 f7       	brne	.-8      	; 0x2d6 <_Z14rfm12_livectrlhj+0x20>
+ 2de:	ed 5f       	subi	r30, 0xFD	; 253
+ 2e0:	fd 4f       	sbci	r31, 0xFD	; 253
+ 2e2:	c0 81       	ld	r28, Z
+ 2e4:	d1 81       	ldd	r29, Z+1	; 0x01
+ 2e6:	20 97       	sbiw	r28, 0x00	; 0
+ 2e8:	19 f4       	brne	.+6      	; 0x2f0 <_Z14rfm12_livectrlhj+0x3a>
+ 2ea:	40 e0       	ldi	r20, 0x00	; 0
+ 2ec:	50 e0       	ldi	r21, 0x00	; 0
+ 2ee:	10 c0       	rjmp	.+32     	; 0x310 <_Z14rfm12_livectrlhj+0x5a>
+			tmp = *livectrl_cmd->shadow_register;         //load shadow value if any
+ 2f0:	88 81       	ld	r24, Y
+ 2f2:	99 81       	ldd	r25, Y+1	; 0x01
+			tmp &= ~livectrl_cmd->rfm12_hw_parameter_mask;//clear parameter bits
+ 2f4:	fd 01       	movw	r30, r26
+ 2f6:	43 e0       	ldi	r20, 0x03	; 3
+ 2f8:	ee 0f       	add	r30, r30
+ 2fa:	ff 1f       	adc	r31, r31
+ 2fc:	4a 95       	dec	r20
+ 2fe:	e1 f7       	brne	.-8      	; 0x2f8 <_Z14rfm12_livectrlhj+0x42>
+ 300:	ef 5f       	subi	r30, 0xFF	; 255
+ 302:	fd 4f       	sbci	r31, 0xFD	; 253
+ 304:	40 81       	ld	r20, Z
+ 306:	51 81       	ldd	r21, Z+1	; 0x01
+ 308:	40 95       	com	r20
+ 30a:	50 95       	com	r21
+ 30c:	48 23       	and	r20, r24
+ 30e:	59 23       	and	r21, r25
+		}
+		tmp |= livectrl_cmd->rfm12_hw_command | (livectrl_cmd->rfm12_hw_parameter_mask & value);
+ 310:	33 e0       	ldi	r19, 0x03	; 3
+ 312:	aa 0f       	add	r26, r26
+ 314:	bb 1f       	adc	r27, r27
+ 316:	3a 95       	dec	r19
+ 318:	e1 f7       	brne	.-8      	; 0x312 <_Z14rfm12_livectrlhj+0x5c>
+ 31a:	fd 01       	movw	r30, r26
+ 31c:	ef 5f       	subi	r30, 0xFF	; 255
+ 31e:	fd 4f       	sbci	r31, 0xFD	; 253
+ 320:	80 81       	ld	r24, Z
+ 322:	91 81       	ldd	r25, Z+1	; 0x01
+ 324:	86 23       	and	r24, r22
+ 326:	97 23       	and	r25, r23
+ 328:	a1 50       	subi	r26, 0x01	; 1
+ 32a:	be 4f       	sbci	r27, 0xFE	; 254
+ 32c:	2d 91       	ld	r18, X+
+ 32e:	3c 91       	ld	r19, X
+ 330:	82 2b       	or	r24, r18
+ 332:	93 2b       	or	r25, r19
+ 334:	84 2b       	or	r24, r20
+ 336:	95 2b       	or	r25, r21
+
+		*livectrl_cmd->shadow_register = tmp;
+ 338:	99 83       	std	Y+1, r25	; 0x01
+ 33a:	88 83       	st	Y, r24
+
+		rfm12_data_safe(tmp);
+ 33c:	0e 94 4a 01 	call	0x294	; 0x294 <_Z15rfm12_data_safej>
+	}
+ 340:	df 91       	pop	r29
+ 342:	cf 91       	pop	r28
+ 344:	08 95       	ret
+
+00000346 <__vector_5>:
+*/
+//if polling is used, do not define an interrupt handler, but a polling function
+#if (RFM12_USE_POLLING)
+void rfm12_poll(void)
+#else
+ISR(RFM12_INT_VECT, ISR_NOBLOCK)
+ 346:	78 94       	sei
+ 348:	1f 92       	push	r1
+ 34a:	0f 92       	push	r0
+ 34c:	0f b6       	in	r0, 0x3f	; 63
+ 34e:	0f 92       	push	r0
+ 350:	11 24       	eor	r1, r1
+ 352:	9f 92       	push	r9
+ 354:	af 92       	push	r10
+ 356:	bf 92       	push	r11
+ 358:	cf 92       	push	r12
+ 35a:	df 92       	push	r13
+ 35c:	ef 92       	push	r14
+ 35e:	ff 92       	push	r15
+ 360:	0f 93       	push	r16
+ 362:	1f 93       	push	r17
+ 364:	2f 93       	push	r18
+ 366:	3f 93       	push	r19
+ 368:	4f 93       	push	r20
+ 36a:	5f 93       	push	r21
+ 36c:	6f 93       	push	r22
+ 36e:	7f 93       	push	r23
+ 370:	8f 93       	push	r24
+ 372:	9f 93       	push	r25
+ 374:	af 93       	push	r26
+ 376:	bf 93       	push	r27
+ 378:	cf 93       	push	r28
+ 37a:	df 93       	push	r29
+ 37c:	ef 93       	push	r30
+ 37e:	ff 93       	push	r31
+#endif
+{
+	#ifdef USE_INT_PIN_CHECK
+		uint8_t interrupt_high_inactive = nIRQ_PIN & _BV(BIT_nIRQ); // Masked input of interrupt pin for PCINT
+		if(interrupt_high_inactive)return;
+ 380:	19 99       	sbic	0x03, 1	; 3
+ 382:	fa c0       	rjmp	.+500    	; 0x578 <__vector_5+0x232>
+	#endif
+	RFM12_INT_OFF();
+ 384:	80 91 6c 00 	lds	r24, 0x006C
+ 388:	8d 7f       	andi	r24, 0xFD	; 253
+ 38a:	80 93 6c 00 	sts	0x006C, r24
+ 38e:	10 91 c0 02 	lds	r17, 0x02C0
+	//for the case in which another interrupt condition occured *while* we were handeling
+	//the first one.
+	while(recheck_interrupt){
+		//clear AVR int flag
+#ifdef __PLATFORM_AVR__
+		RFM12_INT_FLAG = (1<<RFM12_FLAG_BIT);
+ 392:	52 e0       	ldi	r21, 0x02	; 2
+ 394:	95 2e       	mov	r9, r21
+				else{
+					rf_rx_buffers[ctrl.buffer_in_num].buffer[ctrl.bytecount] = data;
+				}
+				ctrl.bytecount++;
+				//Check to see if bytecount pos is at the length, if so, finished
+				if(rf_rx_buffers[ctrl.buffer_in_num].len <= ctrl.bytecount){
+ 396:	c3 e2       	ldi	r28, 0x23	; 35
+ 398:	d0 e0       	ldi	r29, 0x00	; 0
+					/* if we're here, receiving is done */
+					/* the FIFO will need to be be reset by idle state */
+					//debug
+                    UART_DEBUG_PUTC('D');
+
+					rf_rx_buffers[ctrl.buffer_in_num].status = STATUS_OCCUPIED;
+ 39a:	41 e0       	ldi	r20, 0x01	; 1
+ 39c:	e4 2e       	mov	r14, r20
+ 39e:	f1 2c       	mov	r15, r1
+					//switch to other buffer
+					ctrl.buffer_in_num ^= 1;
+ 3a0:	dd 24       	eor	r13, r13
+ 3a2:	d3 94       	inc	r13
+
+				//Write the byte into the receive data structure with overflow check
+				if (ctrl.bytecount == 0){
+					//Specially check length byte on write
+					if(data>RFM12_TRX_FRAME_SIZE + RFM12_TRX_OVERHEAD){
+						rf_rx_buffers[ctrl.buffer_in_num].len=RFM12_TRX_FRAME_SIZE + RFM12_TRX_OVERHEAD;
+ 3a4:	31 e2       	ldi	r19, 0x21	; 33
+ 3a6:	b3 2e       	mov	r11, r19
+				break;
+			case STATE_TX_END:
+				ctrl.rfm12_state = STATE_TX_RESET;
+				break;
+			case STATE_TX:
+				ctrl.rfm12_state = STATE_TX_END;
+ 3a8:	23 e0       	ldi	r18, 0x03	; 3
+ 3aa:	a2 2e       	mov	r10, r18
+				break;
+			case STATE_TX_RESET:
+				ctrl.rfm12_state = STATE_RX_IDLE;
+				break;
+			case STATE_TX_END:
+				ctrl.rfm12_state = STATE_TX_RESET;
+ 3ac:	94 e0       	ldi	r25, 0x04	; 4
+ 3ae:	c9 2e       	mov	r12, r25
+	//for the case in which another interrupt condition occured *while* we were handeling
+	//the first one.
+	while(recheck_interrupt){
+		//clear AVR int flag
+#ifdef __PLATFORM_AVR__
+		RFM12_INT_FLAG = (1<<RFM12_FLAG_BIT);
+ 3b0:	9b ba       	out	0x1b, r9	; 27
+/* @description reads the upper 8 bits of the status
+ * register (the interrupt flags)
+ */
+static uint8_t rfm12_read_int_flags_inline(void) {
+	#if !(RFM12_SPI_SOFTWARE)
+		SS_ASSERT();
+ 3b2:	2c 98       	cbi	0x05, 4	; 5
+		SPDR = 0;
+ 3b4:	1e bc       	out	0x2e, r1	; 46
+		while (!(SPSR & (1<<SPIF)));
+ 3b6:	0d b4       	in	r0, 0x2d	; 45
+ 3b8:	07 fe       	sbrs	r0, 7
+ 3ba:	fd cf       	rjmp	.-6      	; 0x3b6 <__vector_5+0x70>
+		SS_RELEASE();
+ 3bc:	2c 9a       	sbi	0x05, 4	; 5
+		return SPDR;
+ 3be:	0e b5       	in	r16, 0x2e	; 46
+				rfm12_data(ctrl.pwrmgt_shadow);
+			}
+		#endif /* RFM12_USE_WAKEUP_TIMER */
+
+		//check if the fifo interrupt occurred
+		if (status & (RFM12_STATUS_FFIT>>8)) {
+ 3c0:	07 ff       	sbrs	r16, 7
+ 3c2:	d0 c0       	rjmp	.+416    	; 0x564 <__vector_5+0x21e>
+			uint8_t checksum_fail = 0;
+	        /********************
+	        ** NEXT STATE LOGIC *
+	        ********************/
+	        //Uses the current flags and buffer information to decide what to do
+			switch (ctrl.rfm12_state) {
+ 3c4:	90 91 b2 02 	lds	r25, 0x02B2
+ 3c8:	92 30       	cpi	r25, 0x02	; 2
+ 3ca:	39 f1       	breq	.+78     	; 0x41a <__vector_5+0xd4>
+ 3cc:	92 30       	cpi	r25, 0x02	; 2
+ 3ce:	18 f0       	brcs	.+6      	; 0x3d6 <__vector_5+0x90>
+ 3d0:	93 30       	cpi	r25, 0x03	; 3
+ 3d2:	81 f5       	brne	.+96     	; 0x434 <__vector_5+0xee>
+ 3d4:	1f c0       	rjmp	.+62     	; 0x414 <__vector_5+0xce>
+			case STATE_RX_IDLE: //Same next state logic as RX_ACTIVE
+			case STATE_RX_ACTIVE:
+#ifndef DISABLE_CHECKSUMM
+				//check header against checksum
+				if (ctrl.bytecount == 3 && checksum != 0xff) {
+ 3d6:	80 91 b5 02 	lds	r24, 0x02B5
+ 3da:	83 30       	cpi	r24, 0x03	; 3
+ 3dc:	11 f0       	breq	.+4      	; 0x3e2 <__vector_5+0x9c>
+ 3de:	20 e0       	ldi	r18, 0x00	; 0
+ 3e0:	04 c0       	rjmp	.+8      	; 0x3ea <__vector_5+0xa4>
+ 3e2:	20 e0       	ldi	r18, 0x00	; 0
+ 3e4:	1f 3f       	cpi	r17, 0xFF	; 255
+ 3e6:	09 f0       	breq	.+2      	; 0x3ea <__vector_5+0xa4>
+ 3e8:	21 e0       	ldi	r18, 0x01	; 1
+					//if the checksum does not match, reset the fifo
+					checksum_fail = 1;
+				}
+#endif
+				//Check there is space to accept AND that is not a checksum failure
+				if (rf_rx_buffers[ctrl.buffer_in_num].status == STATUS_FREE
+ 3ea:	80 91 b6 02 	lds	r24, 0x02B6
+ 3ee:	90 e0       	ldi	r25, 0x00	; 0
+ 3f0:	8c 9f       	mul	r24, r28
+ 3f2:	f0 01       	movw	r30, r0
+ 3f4:	8d 9f       	mul	r24, r29
+ 3f6:	f0 0d       	add	r31, r0
+ 3f8:	9c 9f       	mul	r25, r28
+ 3fa:	f0 0d       	add	r31, r0
+ 3fc:	11 24       	eor	r1, r1
+ 3fe:	e4 59       	subi	r30, 0x94	; 148
+ 400:	fd 4f       	sbci	r31, 0xFD	; 253
+ 402:	81 a1       	ldd	r24, Z+33	; 0x21
+ 404:	92 a1       	ldd	r25, Z+34	; 0x22
+ 406:	89 2b       	or	r24, r25
+ 408:	a9 f4       	brne	.+42     	; 0x434 <__vector_5+0xee>
+ 40a:	22 23       	and	r18, r18
+ 40c:	99 f4       	brne	.+38     	; 0x434 <__vector_5+0xee>
+						&& !checksum_fail) {
+					ctrl.rfm12_state = STATE_RX_ACTIVE;
+ 40e:	d0 92 b2 02 	sts	0x02B2, r13
+ 412:	12 c0       	rjmp	.+36     	; 0x438 <__vector_5+0xf2>
+				break;
+			case STATE_TX_RESET:
+				ctrl.rfm12_state = STATE_RX_IDLE;
+				break;
+			case STATE_TX_END:
+				ctrl.rfm12_state = STATE_TX_RESET;
+ 414:	c0 92 b2 02 	sts	0x02B2, r12
+ 418:	0f c0       	rjmp	.+30     	; 0x438 <__vector_5+0xf2>
+				break;
+			case STATE_TX:
+				ctrl.rfm12_state = STATE_TX_END;
+ 41a:	a0 92 b2 02 	sts	0x02B2, r10
+				if (ctrl.bytecount < ctrl.num_bytes && ctrl.bytecount <RFM12_TX_BUFFER_SIZE+6) {
+ 41e:	20 91 b5 02 	lds	r18, 0x02B5
+ 422:	80 91 b4 02 	lds	r24, 0x02B4
+ 426:	28 17       	cp	r18, r24
+ 428:	38 f4       	brcc	.+14     	; 0x438 <__vector_5+0xf2>
+ 42a:	24 32       	cpi	r18, 0x24	; 36
+ 42c:	28 f4       	brcc	.+10     	; 0x438 <__vector_5+0xf2>
+					//Stay in TX mode if there are more bytes to TX
+					ctrl.rfm12_state = STATE_TX;
+ 42e:	90 93 b2 02 	sts	0x02B2, r25
+ 432:	02 c0       	rjmp	.+4      	; 0x438 <__vector_5+0xf2>
+				}
+				break;
+			default:
+				ctrl.rfm12_state = STATE_RX_IDLE;
+ 434:	10 92 b2 02 	sts	0x02B2, r1
+			}
+
+			/********************
+			** STATE OPERATION **
+			********************/
+			switch (ctrl.rfm12_state) {
+ 438:	80 91 b2 02 	lds	r24, 0x02B2
+ 43c:	82 30       	cpi	r24, 0x02	; 2
+ 43e:	09 f4       	brne	.+2      	; 0x442 <__vector_5+0xfc>
+ 440:	5f c0       	rjmp	.+190    	; 0x500 <__vector_5+0x1ba>
+ 442:	83 30       	cpi	r24, 0x03	; 3
+ 444:	20 f4       	brcc	.+8      	; 0x44e <__vector_5+0x108>
+ 446:	81 30       	cpi	r24, 0x01	; 1
+ 448:	09 f0       	breq	.+2      	; 0x44c <__vector_5+0x106>
+ 44a:	7b c0       	rjmp	.+246    	; 0x542 <__vector_5+0x1fc>
+ 44c:	07 c0       	rjmp	.+14     	; 0x45c <__vector_5+0x116>
+ 44e:	83 30       	cpi	r24, 0x03	; 3
+ 450:	09 f4       	brne	.+2      	; 0x454 <__vector_5+0x10e>
+ 452:	66 c0       	rjmp	.+204    	; 0x520 <__vector_5+0x1da>
+ 454:	84 30       	cpi	r24, 0x04	; 4
+ 456:	09 f0       	breq	.+2      	; 0x45a <__vector_5+0x114>
+ 458:	74 c0       	rjmp	.+232    	; 0x542 <__vector_5+0x1fc>
+ 45a:	67 c0       	rjmp	.+206    	; 0x52a <__vector_5+0x1e4>
+			//if receive mode is not disabled (default)
+			#if !(RFM12_TRANSMIT_ONLY)
+			case STATE_RX_ACTIVE:
+				//Read a byte from the radio and take checksum
+				uint8_t data;
+				data = rfm12_read(RFM12_CMD_READ);
+ 45c:	80 e0       	ldi	r24, 0x00	; 0
+ 45e:	90 eb       	ldi	r25, 0xB0	; 176
+ 460:	0e 94 37 01 	call	0x26e	; 0x26e <_ZL10rfm12_readj>
+ 464:	38 2f       	mov	r19, r24
+				checksum ^= data;
+ 466:	18 27       	eor	r17, r24
+				//debug
+				UART_DEBUG_PUTC('R');
+				UART_DEBUG_PUTC(data);
+
+				//Write the byte into the receive data structure with overflow check
+				if (ctrl.bytecount == 0){
+ 468:	20 91 b5 02 	lds	r18, 0x02B5
+ 46c:	22 23       	and	r18, r18
+ 46e:	d9 f4       	brne	.+54     	; 0x4a6 <__vector_5+0x160>
+					//Specially check length byte on write
+					if(data>RFM12_TRX_FRAME_SIZE + RFM12_TRX_OVERHEAD){
+ 470:	82 32       	cpi	r24, 0x22	; 34
+ 472:	70 f0       	brcs	.+28     	; 0x490 <__vector_5+0x14a>
+						rf_rx_buffers[ctrl.buffer_in_num].len=RFM12_TRX_FRAME_SIZE + RFM12_TRX_OVERHEAD;
+ 474:	80 91 b6 02 	lds	r24, 0x02B6
+ 478:	90 e0       	ldi	r25, 0x00	; 0
+ 47a:	8c 9f       	mul	r24, r28
+ 47c:	f0 01       	movw	r30, r0
+ 47e:	8d 9f       	mul	r24, r29
+ 480:	f0 0d       	add	r31, r0
+ 482:	9c 9f       	mul	r25, r28
+ 484:	f0 0d       	add	r31, r0
+ 486:	11 24       	eor	r1, r1
+ 488:	e4 59       	subi	r30, 0x94	; 148
+ 48a:	fd 4f       	sbci	r31, 0xFD	; 253
+ 48c:	b0 82       	st	Z, r11
+ 48e:	1a c0       	rjmp	.+52     	; 0x4c4 <__vector_5+0x17e>
+					}
+					else{
+						rf_rx_buffers[ctrl.buffer_in_num].len = data;
+ 490:	80 91 b6 02 	lds	r24, 0x02B6
+ 494:	90 e0       	ldi	r25, 0x00	; 0
+ 496:	8c 9f       	mul	r24, r28
+ 498:	f0 01       	movw	r30, r0
+ 49a:	8d 9f       	mul	r24, r29
+ 49c:	f0 0d       	add	r31, r0
+ 49e:	9c 9f       	mul	r25, r28
+ 4a0:	f0 0d       	add	r31, r0
+ 4a2:	11 24       	eor	r1, r1
+ 4a4:	0c c0       	rjmp	.+24     	; 0x4be <__vector_5+0x178>
+					}
+				}
+				else{
+					rf_rx_buffers[ctrl.buffer_in_num].buffer[ctrl.bytecount] = data;
+ 4a6:	80 91 b6 02 	lds	r24, 0x02B6
+ 4aa:	90 e0       	ldi	r25, 0x00	; 0
+ 4ac:	8c 9f       	mul	r24, r28
+ 4ae:	f0 01       	movw	r30, r0
+ 4b0:	8d 9f       	mul	r24, r29
+ 4b2:	f0 0d       	add	r31, r0
+ 4b4:	9c 9f       	mul	r25, r28
+ 4b6:	f0 0d       	add	r31, r0
+ 4b8:	11 24       	eor	r1, r1
+ 4ba:	e2 0f       	add	r30, r18
+ 4bc:	f1 1d       	adc	r31, r1
+ 4be:	e4 59       	subi	r30, 0x94	; 148
+ 4c0:	fd 4f       	sbci	r31, 0xFD	; 253
+ 4c2:	30 83       	st	Z, r19
+				}
+				ctrl.bytecount++;
+ 4c4:	2f 5f       	subi	r18, 0xFF	; 255
+ 4c6:	20 93 b5 02 	sts	0x02B5, r18
+				//Check to see if bytecount pos is at the length, if so, finished
+				if(rf_rx_buffers[ctrl.buffer_in_num].len <= ctrl.bytecount){
+ 4ca:	40 91 b6 02 	lds	r20, 0x02B6
+ 4ce:	84 2f       	mov	r24, r20
+ 4d0:	90 e0       	ldi	r25, 0x00	; 0
+ 4d2:	8c 9f       	mul	r24, r28
+ 4d4:	f0 01       	movw	r30, r0
+ 4d6:	8d 9f       	mul	r24, r29
+ 4d8:	f0 0d       	add	r31, r0
+ 4da:	9c 9f       	mul	r25, r28
+ 4dc:	f0 0d       	add	r31, r0
+ 4de:	11 24       	eor	r1, r1
+ 4e0:	e4 59       	subi	r30, 0x94	; 148
+ 4e2:	fd 4f       	sbci	r31, 0xFD	; 253
+ 4e4:	80 81       	ld	r24, Z
+ 4e6:	99 27       	eor	r25, r25
+ 4e8:	87 fd       	sbrc	r24, 7
+ 4ea:	90 95       	com	r25
+ 4ec:	30 e0       	ldi	r19, 0x00	; 0
+ 4ee:	28 17       	cp	r18, r24
+ 4f0:	39 07       	cpc	r19, r25
+ 4f2:	3c f1       	brlt	.+78     	; 0x542 <__vector_5+0x1fc>
+					/* if we're here, receiving is done */
+					/* the FIFO will need to be be reset by idle state */
+					//debug
+                    UART_DEBUG_PUTC('D');
+
+					rf_rx_buffers[ctrl.buffer_in_num].status = STATUS_OCCUPIED;
+ 4f4:	f2 a2       	std	Z+34, r15	; 0x22
+ 4f6:	e1 a2       	std	Z+33, r14	; 0x21
+					//switch to other buffer
+					ctrl.buffer_in_num ^= 1;
+ 4f8:	4d 25       	eor	r20, r13
+ 4fa:	40 93 b6 02 	sts	0x02B6, r20
+ 4fe:	1f c0       	rjmp	.+62     	; 0x53e <__vector_5+0x1f8>
+				}
+				break;
+			#endif /* !(RFM12_TRANSMIT_ONLY) */
+			case STATE_TX:
+                //Send byte to radio
+				rfm12_data( RFM12_CMD_TX | rf_tx_buffer.sync[ctrl.bytecount]);
+ 500:	e0 91 b5 02 	lds	r30, 0x02B5
+ 504:	f0 e0       	ldi	r31, 0x00	; 0
+ 506:	e7 5b       	subi	r30, 0xB7	; 183
+ 508:	fd 4f       	sbci	r31, 0xFD	; 253
+ 50a:	80 81       	ld	r24, Z
+ 50c:	90 e0       	ldi	r25, 0x00	; 0
+ 50e:	98 6b       	ori	r25, 0xB8	; 184
+ 510:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+				ctrl.bytecount++;
+ 514:	80 91 b5 02 	lds	r24, 0x02B5
+ 518:	8f 5f       	subi	r24, 0xFF	; 255
+ 51a:	80 93 b5 02 	sts	0x02B5, r24
+ 51e:	11 c0       	rjmp	.+34     	; 0x542 <__vector_5+0x1fc>
+
+                UART_DEBUG_PUTC('T');
+				break;
+			case STATE_TX_END:
+				// Load a dummy byte to allow radio to send what is in TX double buffer
+				rfm12_data( RFM12_CMD_TX | 0xaa);
+ 520:	8a ea       	ldi	r24, 0xAA	; 170
+ 522:	98 eb       	ldi	r25, 0xB8	; 184
+ 524:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+ 528:	0c c0       	rjmp	.+24     	; 0x542 <__vector_5+0x1fc>
+				#ifdef TX_LEAVE_HOOK
+					TX_LEAVE_HOOK;
+				#endif
+
+				//flag the buffer as free again
+				ctrl.txstate = STATUS_FREE;
+ 52a:	10 92 b3 02 	sts	0x02B3, r1
+				#if RFM12_PWRMGT_SHADOW
+					ctrl.pwrmgt_shadow &= ~(RFM12_PWRMGT_ET); /* disable transmitter */
+					ctrl.pwrmgt_shadow |= (PWRMGT_RECEIVE);   /* activate predefined receive mode */
+					rfm12_data(ctrl.pwrmgt_shadow);
+				#else /* no RFM12_PWRMGT_SHADOW */
+					rfm12_data( PWRMGT_RECEIVE );
+ 52e:	81 e8       	ldi	r24, 0x81	; 129
+ 530:	92 e8       	ldi	r25, 0x82	; 130
+ 532:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+				//Receiver on RFM12BP on
+				#ifdef RX_ENTER_HOOK
+					RX_ENTER_HOOK;
+				#endif
+				//load a dummy byte to clear int status
+				rfm12_data( RFM12_CMD_TX | 0xaa);
+ 536:	8a ea       	ldi	r24, 0xAA	; 170
+ 538:	98 eb       	ldi	r25, 0xB8	; 184
+ 53a:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+
+				//Set to the idle state so the FIFO is reset.
+				ctrl.rfm12_state = STATE_RX_IDLE;
+ 53e:	10 92 b2 02 	sts	0x02B2, r1
+				break;
+			}
+
+			// The state may be set to IDLE by other states.
+			// So run it after the others.
+			if(ctrl.rfm12_state == STATE_RX_IDLE){
+ 542:	80 91 b2 02 	lds	r24, 0x02B2
+ 546:	88 23       	and	r24, r24
+ 548:	69 f4       	brne	.+26     	; 0x564 <__vector_5+0x21e>
+				// Reset buffer Variable
+				ctrl.bytecount = 0;
+ 54a:	10 92 b5 02 	sts	0x02B5, r1
+				ctrl.num_bytes = 0;
+ 54e:	10 92 b4 02 	sts	0x02B4, r1
+					// Reset checksum
+					checksum = 0;
+
+					// Reset FIFO
+					UART_DEBUG_PUTC('F');
+					rfm12_data( RFM12_CMD_FIFORESET | CLEAR_FIFO_INLINE);
+ 552:	81 e8       	ldi	r24, 0x81	; 129
+ 554:	9a ec       	ldi	r25, 0xCA	; 202
+ 556:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+					rfm12_data( RFM12_CMD_FIFORESET | ACCEPT_DATA_INLINE);
+ 55a:	83 e8       	ldi	r24, 0x83	; 131
+ 55c:	9a ec       	ldi	r25, 0xCA	; 202
+ 55e:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+ 562:	10 e0       	ldi	r17, 0x00	; 0
+	#endif /* !(RFM12_TRANSMIT_ONLY) */
+
+	//if we use at least one of the status bits, we need to check the status again
+	//for the case in which another interrupt condition occured *while* we were handeling
+	//the first one.
+	while(recheck_interrupt){
+ 564:	04 79       	andi	r16, 0x94	; 148
+ 566:	09 f0       	breq	.+2      	; 0x56a <__vector_5+0x224>
+ 568:	23 cf       	rjmp	.-442    	; 0x3b0 <__vector_5+0x6a>
+ 56a:	10 93 c0 02 	sts	0x02C0, r17
+	}
+
+    UART_DEBUG_PUTC('E');
+
+	//turn the int back on
+	RFM12_INT_ON();
+ 56e:	80 91 6c 00 	lds	r24, 0x006C
+ 572:	82 60       	ori	r24, 0x02	; 2
+ 574:	80 93 6c 00 	sts	0x006C, r24
+}
+ 578:	ff 91       	pop	r31
+ 57a:	ef 91       	pop	r30
+ 57c:	df 91       	pop	r29
+ 57e:	cf 91       	pop	r28
+ 580:	bf 91       	pop	r27
+ 582:	af 91       	pop	r26
+ 584:	9f 91       	pop	r25
+ 586:	8f 91       	pop	r24
+ 588:	7f 91       	pop	r23
+ 58a:	6f 91       	pop	r22
+ 58c:	5f 91       	pop	r21
+ 58e:	4f 91       	pop	r20
+ 590:	3f 91       	pop	r19
+ 592:	2f 91       	pop	r18
+ 594:	1f 91       	pop	r17
+ 596:	0f 91       	pop	r16
+ 598:	ff 90       	pop	r15
+ 59a:	ef 90       	pop	r14
+ 59c:	df 90       	pop	r13
+ 59e:	cf 90       	pop	r12
+ 5a0:	bf 90       	pop	r11
+ 5a2:	af 90       	pop	r10
+ 5a4:	9f 90       	pop	r9
+ 5a6:	0f 90       	pop	r0
+ 5a8:	0f be       	out	0x3f, r0	; 63
+ 5aa:	0f 90       	pop	r0
+ 5ac:	1f 90       	pop	r1
+ 5ae:	18 95       	reti
+
+000005b0 <_Z14rfm12_start_txv>:
+		rfm12_start_tx();
+	}
+}
+
+//! Start the buffered packet transmission
+void rfm12_start_tx() {
+ 5b0:	0f 93       	push	r16
+ 5b2:	1f 93       	push	r17
+	//we won't loose interrupts, as the AVR caches them in the int flag.
+	//we could disturb an ongoing reception,
+	//if it has just started some cpu cycles ago
+	//(as the check for this case is some lines (cpu cycles) above)
+	//anyhow, we MUST transmit at some point...
+	RFM12_INT_OFF();
+ 5b4:	0c e6       	ldi	r16, 0x6C	; 108
+ 5b6:	10 e0       	ldi	r17, 0x00	; 0
+ 5b8:	f8 01       	movw	r30, r16
+ 5ba:	80 81       	ld	r24, Z
+ 5bc:	8d 7f       	andi	r24, 0xFD	; 253
+ 5be:	80 83       	st	Z, r24
+
+	#if RFM12_PWRMGT_SHADOW
+		ctrl.pwrmgt_shadow &= ~(RFM12_PWRMGT_ER); /* disable receiver */
+		rfm12_data(ctrl.pwrmgt_shadow);
+	#else
+		rfm12_data(RFM12_CMD_PWRMGT | PWRMGT_DEFAULT ); /* disable receiver */
+ 5c0:	81 e0       	ldi	r24, 0x01	; 1
+ 5c2:	92 e8       	ldi	r25, 0x82	; 130
+ 5c4:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+		RX_LEAVE_HOOK;
+	#endif
+
+	//calculate number of bytes to be sent by ISR
+	//2 sync bytes + header_overhead + message length
+	ctrl.num_bytes =  2 + RFM12_TRX_OVERHEAD + rf_tx_buffer.len;
+ 5c8:	80 91 4b 02 	lds	r24, 0x024B
+ 5cc:	8b 5f       	subi	r24, 0xFB	; 251
+ 5ce:	80 93 b4 02 	sts	0x02B4, r24
+
+	//reset byte sent counter
+	ctrl.bytecount = 0;
+ 5d2:	10 92 b5 02 	sts	0x02B5, r1
+
+	//set mode for interrupt handler
+	ctrl.rfm12_state = STATE_TX;
+ 5d6:	82 e0       	ldi	r24, 0x02	; 2
+ 5d8:	80 93 b2 02 	sts	0x02B2, r24
+	#endif
+
+	//fill 2byte 0xAA preamble into data register
+	//the preamble helps the receivers AFC circuit to lock onto the exact frequency
+	//(hint: the tx FIFO [if el is enabled] is two staged, so we can safely write 2 bytes before starting)
+	rfm12_data(RFM12_CMD_TX | PREAMBLE);
+ 5dc:	8a ea       	ldi	r24, 0xAA	; 170
+ 5de:	98 eb       	ldi	r25, 0xB8	; 184
+ 5e0:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+	rfm12_data(RFM12_CMD_TX | PREAMBLE);
+ 5e4:	8a ea       	ldi	r24, 0xAA	; 170
+ 5e6:	98 eb       	ldi	r25, 0xB8	; 184
+ 5e8:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+	//set ET in power register to enable transmission (hint: TX starts now)
+	#if RFM12_PWRMGT_SHADOW
+		ctrl.pwrmgt_shadow |= RFM12_PWRMGT_ET;
+		rfm12_data (ctrl.pwrmgt_shadow);
+	#else
+		rfm12_data(RFM12_CMD_PWRMGT | PWRMGT_DEFAULT | RFM12_PWRMGT_ET);
+ 5ec:	81 e2       	ldi	r24, 0x21	; 33
+ 5ee:	92 e8       	ldi	r25, 0x82	; 130
+ 5f0:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+	#endif
+
+	//enable the interrupt to continue the transmission
+	RFM12_INT_ON();
+ 5f4:	f8 01       	movw	r30, r16
+ 5f6:	80 81       	ld	r24, Z
+ 5f8:	82 60       	ori	r24, 0x02	; 2
+ 5fa:	80 83       	st	Z, r24
+}
+ 5fc:	1f 91       	pop	r17
+ 5fe:	0f 91       	pop	r16
+ 600:	08 95       	ret
+
+00000602 <_Z10rfm12_tickv>:
+			oldstate = state;
+		}
+	#endif
+
+	//don't disturb RFM12 if transmitting or receiving
+	if (ctrl.rfm12_state != STATE_RX_IDLE) {
+ 602:	80 91 b2 02 	lds	r24, 0x02B2
+ 606:	88 23       	and	r24, r24
+ 608:	01 f5       	brne	.+64     	; 0x64a <_Z10rfm12_tickv+0x48>
+	//collision detection is enabled by default
+	#if !(RFM12_NOCOLLISIONDETECTION)
+		//disable the interrupt (as we're working directly with the transceiver now)
+		//hint: we could be losing an interrupt here, because we read the status register.
+		//this applys for the Wakeup timer, as it's flag is reset by reading.
+		RFM12_INT_OFF();
+ 60a:	80 91 6c 00 	lds	r24, 0x006C
+ 60e:	8d 7f       	andi	r24, 0xFD	; 253
+ 610:	80 93 6c 00 	sts	0x006C, r24
+		status = rfm12_read(RFM12_CMD_STATUS);
+ 614:	80 e0       	ldi	r24, 0x00	; 0
+ 616:	90 e0       	ldi	r25, 0x00	; 0
+ 618:	0e 94 37 01 	call	0x26e	; 0x26e <_ZL10rfm12_readj>
+		RFM12_INT_ON();
+ 61c:	20 91 6c 00 	lds	r18, 0x006C
+ 620:	22 60       	ori	r18, 0x02	; 2
+ 622:	20 93 6c 00 	sts	0x006C, r18
+				RFM12_INT_ON();
+			}
+		#endif /* RFM12_USE_WAKEUP_TIMER */
+
+		//check if we see a carrier
+		if (status & RFM12_STATUS_RSSI) {
+ 626:	90 ff       	sbrs	r25, 0
+ 628:	02 c0       	rjmp	.+4      	; 0x62e <_Z10rfm12_tickv+0x2c>
+			//yes: reset free counter and return
+			channel_free_count = CHANNEL_FREE_TIME;
+ 62a:	88 ec       	ldi	r24, 0xC8	; 200
+ 62c:	05 c0       	rjmp	.+10     	; 0x638 <_Z10rfm12_tickv+0x36>
+			return;
+		}
+		//no
+
+		//is the channel free long enough ?
+		if (channel_free_count != 0) {
+ 62e:	80 91 47 02 	lds	r24, 0x0247
+ 632:	88 23       	and	r24, r24
+ 634:	21 f0       	breq	.+8      	; 0x63e <_Z10rfm12_tickv+0x3c>
+			//no:
+			channel_free_count--; // decrement counter
+ 636:	81 50       	subi	r24, 0x01	; 1
+ 638:	80 93 47 02 	sts	0x0247, r24
+ 63c:	08 95       	ret
+		}
+		//yes: we can begin transmitting
+	#endif
+
+	//do we have something to transmit?
+	if (ctrl.txstate == STATUS_OCCUPIED) { //yes: start transmitting
+ 63e:	80 91 b3 02 	lds	r24, 0x02B3
+ 642:	81 30       	cpi	r24, 0x01	; 1
+ 644:	11 f4       	brne	.+4      	; 0x64a <_Z10rfm12_tickv+0x48>
+		rfm12_start_tx();
+ 646:	0e 94 d8 02 	call	0x5b0	; 0x5b0 <_Z14rfm12_start_txv>
+ 64a:	08 95       	ret
+
+0000064c <_Z14rfm12_queue_txhh>:
+#if (RFM12_NORETURNS)
+void
+#else
+uint8_t
+#endif
+rfm12_queue_tx(uint8_t type, uint8_t length) {
+ 64c:	98 2f       	mov	r25, r24
+	//exit if the buffer isn't free
+	if (ctrl.txstate != STATUS_FREE)
+ 64e:	80 91 b3 02 	lds	r24, 0x02B3
+ 652:	88 23       	and	r24, r24
+ 654:	11 f0       	breq	.+4      	; 0x65a <_Z14rfm12_queue_txhh+0xe>
+ 656:	83 e0       	ldi	r24, 0x03	; 3
+ 658:	08 95       	ret
+		return TXRETURN(RFM12_TX_OCCUPIED);
+
+	//write airlab header to buffer
+	rf_tx_buffer.len = length;
+ 65a:	60 93 4b 02 	sts	0x024B, r22
+	rf_tx_buffer.type = type;
+ 65e:	90 93 4c 02 	sts	0x024C, r25
+	rf_tx_buffer.checksum = length ^ type ^ 0xff;
+ 662:	69 27       	eor	r22, r25
+ 664:	60 95       	com	r22
+ 666:	60 93 4d 02 	sts	0x024D, r22
+
+	//schedule packet for transmission
+	ctrl.txstate = STATUS_OCCUPIED;
+ 66a:	81 e0       	ldi	r24, 0x01	; 1
+ 66c:	80 93 b3 02 	sts	0x02B3, r24
+ 670:	80 e8       	ldi	r24, 0x80	; 128
+
+	return TXRETURN(RFM12_TX_ENQUEUED);
+}
+ 672:	08 95       	ret
+
+00000674 <_Z14rfm12_rx_clearv>:
+	* \see rfm12_rx_status(), rfm12_rx_len(), rfm12_rx_type(), rfm12_rx_buffer() and rf_rx_buffers
+	*/
+	//warning: without the attribute, gcc will inline this even if -Os is set
+	void __attribute__((noinline)) rfm12_rx_clear(void) {
+			//mark the current buffer as empty
+			rf_rx_buffers[ctrl.buffer_out_num].status = STATUS_FREE;
+ 674:	40 91 b7 02 	lds	r20, 0x02B7
+ 678:	24 2f       	mov	r18, r20
+ 67a:	30 e0       	ldi	r19, 0x00	; 0
+ 67c:	83 e2       	ldi	r24, 0x23	; 35
+ 67e:	90 e0       	ldi	r25, 0x00	; 0
+ 680:	28 9f       	mul	r18, r24
+ 682:	f0 01       	movw	r30, r0
+ 684:	29 9f       	mul	r18, r25
+ 686:	f0 0d       	add	r31, r0
+ 688:	38 9f       	mul	r19, r24
+ 68a:	f0 0d       	add	r31, r0
+ 68c:	11 24       	eor	r1, r1
+ 68e:	e4 59       	subi	r30, 0x94	; 148
+ 690:	fd 4f       	sbci	r31, 0xFD	; 253
+ 692:	12 a2       	std	Z+34, r1	; 0x22
+ 694:	11 a2       	std	Z+33, r1	; 0x21
+
+			//switch to the other buffer
+			ctrl.buffer_out_num ^= 1;
+ 696:	81 e0       	ldi	r24, 0x01	; 1
+ 698:	48 27       	eor	r20, r24
+ 69a:	40 93 b7 02 	sts	0x02B7, r20
+
+	}
+ 69e:	08 95       	ret
+
+000006a0 <_Z10rfm12_initv>:
+* puts the module into receive mode before returning.
+*
+* \note Please note that the transmit power and receive amplification values are currently hard coded.
+* Have a look into rfm12_hw.h for possible settings.
+*/
+void rfm12_init(void) {
+ 6a0:	cf 93       	push	r28
+ 6a2:	df 93       	push	r29
+	//initialize spi
+#ifdef __PLATFORM_AVR__
+	SS_RELEASE();
+ 6a4:	2c 9a       	sbi	0x05, 4	; 5
+	DDR_SS |= (1<<BIT_SS);
+ 6a6:	24 9a       	sbi	0x04, 4	; 4
+		return d;
+	#endif
+}
+
+static void spi_init(void) {
+	DDR_MOSI |= (_BV(BIT_MOSI));
+ 6a8:	25 9a       	sbi	0x04, 5	; 4
+	DDR_SCK  |= (_BV(BIT_SCK));
+ 6aa:	27 9a       	sbi	0x04, 7	; 4
+	#if !(RFM12_SPI_SOFTWARE)
+		PORT_SPI |= (_BV(BIT_SPI_SS));
+ 6ac:	2c 9a       	sbi	0x05, 4	; 5
+		DDR_SPI  |= (_BV(BIT_SPI_SS));
+ 6ae:	24 9a       	sbi	0x04, 4	; 4
+	#endif
+
+	DDR_MISO &= ~(_BV(BIT_MISO));
+ 6b0:	26 98       	cbi	0x04, 6	; 4
+
+	#if !(RFM12_SPI_SOFTWARE)
+		SPCR = (1<<SPE) | (1<<MSTR) | (1<<SPR0); //SPI Master, clk/16
+ 6b2:	81 e5       	ldi	r24, 0x51	; 81
+ 6b4:	8c bd       	out	0x2c, r24	; 44
+	#endif
+
+	//store the syncronization pattern to the transmission buffer
+	//the sync pattern is used by the receiver to distinguish noise from real transmissions
+	//the sync pattern is hardcoded into the receiver
+	rf_tx_buffer.sync[0] = SYNC_MSB;
+ 6b6:	8d e2       	ldi	r24, 0x2D	; 45
+ 6b8:	80 93 49 02 	sts	0x0249, r24
+	rf_tx_buffer.sync[1] = SYNC_LSB;
+ 6bc:	84 ed       	ldi	r24, 0xD4	; 212
+ 6be:	80 93 4a 02 	sts	0x024A, r24
+
+	//if receive mode is not disabled (default)
+	#if !(RFM12_TRANSMIT_ONLY)
+		//init buffer pointers
+		ctrl.buffer_in_num = 0;
+ 6c2:	10 92 b6 02 	sts	0x02B6, r1
+		ctrl.buffer_out_num = 0;
+ 6c6:	10 92 b7 02 	sts	0x02B7, r1
+	#endif
+
+
+	#if RFM12_LIVECTRL
+		//init shadow registers with values about to be written to rfm12
+		ctrl.rxctrl_shadow = RFM12_CMD_RXCTRL_DEFAULT;
+ 6ca:	8d e2       	ldi	r24, 0x2D	; 45
+ 6cc:	94 e9       	ldi	r25, 0x94	; 148
+ 6ce:	90 93 b9 02 	sts	0x02B9, r25
+ 6d2:	80 93 b8 02 	sts	0x02B8, r24
+		ctrl.afc_shadow = RFM12_CMD_AFC_DEFAULT;
+ 6d6:	87 ef       	ldi	r24, 0xF7	; 247
+ 6d8:	94 ec       	ldi	r25, 0xC4	; 196
+ 6da:	90 93 bb 02 	sts	0x02BB, r25
+ 6de:	80 93 ba 02 	sts	0x02BA, r24
+		ctrl.txconf_shadow = RFM12_CMD_TXCONF_DEFAULT;
+ 6e2:	80 e7       	ldi	r24, 0x70	; 112
+ 6e4:	98 e9       	ldi	r25, 0x98	; 152
+ 6e6:	90 93 bd 02 	sts	0x02BD, r25
+ 6ea:	80 93 bc 02 	sts	0x02BC, r24
+		ctrl.cfg_shadow =    RFM12_CMD_CFG_DEFAULT;
+ 6ee:	86 ed       	ldi	r24, 0xD6	; 214
+ 6f0:	90 e8       	ldi	r25, 0x80	; 128
+ 6f2:	90 93 bf 02 	sts	0x02BF, r25
+ 6f6:	80 93 be 02 	sts	0x02BE, r24
+ 6fa:	c0 e0       	ldi	r28, 0x00	; 0
+ 6fc:	d0 e0       	ldi	r29, 0x00	; 0
+	uint8_t x;
+
+	#ifdef __PLATFORM_AVR__
+
+		for (x = 0; x < ( sizeof(init_cmds) / 2) ; x++) {
+			rfm12_data(pgm_read_word(&init_cmds[x]));
+ 6fe:	fe 01       	movw	r30, r28
+ 700:	ee 0f       	add	r30, r30
+ 702:	ff 1f       	adc	r31, r31
+ 704:	e4 58       	subi	r30, 0x84	; 132
+ 706:	ff 4f       	sbci	r31, 0xFF	; 255
+ 708:	85 91       	lpm	r24, Z+
+ 70a:	94 91       	lpm	r25, Z+
+ 70c:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+ 710:	21 96       	adiw	r28, 0x01	; 1
+	//write all the initialisation values to rfm12
+	uint8_t x;
+
+	#ifdef __PLATFORM_AVR__
+
+		for (x = 0; x < ( sizeof(init_cmds) / 2) ; x++) {
+ 712:	cc 30       	cpi	r28, 0x0C	; 12
+ 714:	d1 05       	cpc	r29, r1
+ 716:	99 f7       	brne	.-26     	; 0x6fe <_Z10rfm12_initv+0x5e>
+		adc_init();
+	#endif
+
+	//setup interrupt for falling edge trigger
+#ifdef __PLATFORM_AVR__
+	RFM12_INT_SETUP();
+ 718:	80 91 68 00 	lds	r24, 0x0068
+ 71c:	82 60       	ori	r24, 0x02	; 2
+ 71e:	80 93 68 00 	sts	0x0068, r24
+#endif
+
+	//clear int flag
+	rfm12_read(RFM12_CMD_STATUS);
+ 722:	80 e0       	ldi	r24, 0x00	; 0
+ 724:	90 e0       	ldi	r25, 0x00	; 0
+ 726:	0e 94 37 01 	call	0x26e	; 0x26e <_ZL10rfm12_readj>
+
+#ifdef __PLATFORM_AVR__
+	RFM12_INT_FLAG = (1<<RFM12_FLAG_BIT);
+ 72a:	82 e0       	ldi	r24, 0x02	; 2
+ 72c:	8b bb       	out	0x1b, r24	; 27
+#endif
+
+	//init receiver fifo, we now begin receiving.
+	rfm12_data(CLEAR_FIFO);
+ 72e:	81 e8       	ldi	r24, 0x81	; 129
+ 730:	9a ec       	ldi	r25, 0xCA	; 202
+ 732:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+	rfm12_data(ACCEPT_DATA);
+ 736:	83 e8       	ldi	r24, 0x83	; 131
+ 738:	9a ec       	ldi	r25, 0xCA	; 202
+ 73a:	0e 94 2c 01 	call	0x258	; 0x258 <_ZL10rfm12_dataj>
+
+	//activate the interrupt
+	RFM12_INT_ON();
+ 73e:	80 91 6c 00 	lds	r24, 0x006C
+ 742:	82 60       	ori	r24, 0x02	; 2
+ 744:	80 93 6c 00 	sts	0x006C, r24
+}
+ 748:	df 91       	pop	r29
+ 74a:	cf 91       	pop	r28
+ 74c:	08 95       	ret
+
+0000074e <_Z10init_uart0v>:
+
+void init_uart0 (void)
+{
+	/* Configure 9600 baud , 8-bit , no parity and one stop bit */
+	const int baud_rate = 9600;
+	UBRR0H = (F_CPU/(baud_rate*16L)-1) >> 8;
+ 74e:	10 92 c5 00 	sts	0x00C5, r1
+	UBRR0L = (F_CPU/(baud_rate*16L)-1);
+ 752:	8d e4       	ldi	r24, 0x4D	; 77
+ 754:	80 93 c4 00 	sts	0x00C4, r24
+	UCSR0B = _BV(RXEN0) | _BV(TXEN0);
+ 758:	e1 ec       	ldi	r30, 0xC1	; 193
+ 75a:	f0 e0       	ldi	r31, 0x00	; 0
+ 75c:	88 e1       	ldi	r24, 0x18	; 24
+ 75e:	80 83       	st	Z, r24
+	UCSR0C = _BV(UCSZ00) | _BV(UCSZ01);
+ 760:	86 e0       	ldi	r24, 0x06	; 6
+ 762:	80 93 c2 00 	sts	0x00C2, r24
+
+	// Enable RX interrupt
+	UCSR0B |= _BV(RXCIE0);
+ 766:	80 81       	ld	r24, Z
+ 768:	80 68       	ori	r24, 0x80	; 128
+ 76a:	80 83       	st	Z, r24
+}
+ 76c:	08 95       	ret
+
+0000076e <_Z6get_chv>:
+
+char get_ch (void)
+{
+	while (!( UCSR0A & _BV(RXC0)));
+ 76e:	80 91 c0 00 	lds	r24, 0x00C0
+ 772:	87 ff       	sbrs	r24, 7
+ 774:	fc cf       	rjmp	.-8      	; 0x76e <_Z6get_chv>
+	return UDR0 ;
+ 776:	80 91 c6 00 	lds	r24, 0x00C6
+}
+ 77a:	08 95       	ret
+
+0000077c <_Z6put_chc>:
+void put_ch ( char ch)
+ 77c:	98 2f       	mov	r25, r24
+{
+	while (!(UCSR0A & _BV(UDRE0)));
+ 77e:	80 91 c0 00 	lds	r24, 0x00C0
+ 782:	85 ff       	sbrs	r24, 5
+ 784:	fc cf       	rjmp	.-8      	; 0x77e <_Z6put_chc+0x2>
+	UDR0 = ch;
+ 786:	90 93 c6 00 	sts	0x00C6, r25
+}
+ 78a:	08 95       	ret
+
+0000078c <_Z7put_strPc>:
+
+void put_str (char *str)
+ 78c:	fc 01       	movw	r30, r24
+ 78e:	07 c0       	rjmp	.+14     	; 0x79e <_Z7put_strPc+0x12>
+	while (!( UCSR0A & _BV(RXC0)));
+	return UDR0 ;
+}
+void put_ch ( char ch)
+{
+	while (!(UCSR0A & _BV(UDRE0)));
+ 790:	80 91 c0 00 	lds	r24, 0x00C0
+ 794:	85 ff       	sbrs	r24, 5
+ 796:	fc cf       	rjmp	.-8      	; 0x790 <_Z7put_strPc+0x4>
+	UDR0 = ch;
+ 798:	90 93 c6 00 	sts	0x00C6, r25
+ 79c:	31 96       	adiw	r30, 0x01	; 1
+}
+
+void put_str (char *str)
+{
+	int i;
+	for (i=0; str[i]; i++) put_ch(str[i]);
+ 79e:	90 81       	ld	r25, Z
+ 7a0:	99 23       	and	r25, r25
+ 7a2:	b1 f7       	brne	.-20     	; 0x790 <_Z7put_strPc+0x4>
+}
+ 7a4:	08 95       	ret
+
+000007a6 <_Z8rfm12_txhhPh>:
+	#if (RFM12_NORETURNS)
+	void
+	#else
+	uint8_t
+	#endif
+	rfm12_tx(uint8_t len, uint8_t type, uint8_t *data) {
+ 7a6:	0f 93       	push	r16
+ 7a8:	1f 93       	push	r17
+ 7aa:	18 2f       	mov	r17, r24
+ 7ac:	06 2f       	mov	r16, r22
+		#if RFM12_UART_DEBUG
+			uart_putstr ("sending packet\r\n");
+		#endif
+
+		if (len > RFM12_TX_BUFFER_SIZE) return TXRETURN(RFM12_TX_ERROR);
+ 7ae:	8f 31       	cpi	r24, 0x1F	; 31
+ 7b0:	10 f0       	brcs	.+4      	; 0x7b6 <_Z8rfm12_txhhPh+0x10>
+ 7b2:	82 e0       	ldi	r24, 0x02	; 2
+ 7b4:	12 c0       	rjmp	.+36     	; 0x7da <_Z8rfm12_txhhPh+0x34>
+
+		//exit if the buffer isn't free
+		if (ctrl.txstate != STATUS_FREE)
+ 7b6:	80 91 b3 02 	lds	r24, 0x02B3
+ 7ba:	88 23       	and	r24, r24
+ 7bc:	11 f0       	breq	.+4      	; 0x7c2 <_Z8rfm12_txhhPh+0x1c>
+ 7be:	83 e0       	ldi	r24, 0x03	; 3
+ 7c0:	0c c0       	rjmp	.+24     	; 0x7da <_Z8rfm12_txhhPh+0x34>
+			return TXRETURN(RFM12_TX_OCCUPIED);
+
+		memcpy(rf_tx_buffer.buffer, data, len);
+ 7c2:	2e e4       	ldi	r18, 0x4E	; 78
+ 7c4:	32 e0       	ldi	r19, 0x02	; 2
+ 7c6:	c9 01       	movw	r24, r18
+ 7c8:	ba 01       	movw	r22, r20
+ 7ca:	41 2f       	mov	r20, r17
+ 7cc:	50 e0       	ldi	r21, 0x00	; 0
+ 7ce:	0e 94 f0 03 	call	0x7e0	; 0x7e0 <memcpy>
+
+		#if (!(RFM12_NORETURNS))
+		return rfm12_queue_tx(type, len);
+ 7d2:	80 2f       	mov	r24, r16
+ 7d4:	61 2f       	mov	r22, r17
+ 7d6:	0e 94 26 03 	call	0x64c	; 0x64c <_Z14rfm12_queue_txhh>
+		#else
+		rfm12_queue_tx(type, len);
+		#endif
+	}
+ 7da:	1f 91       	pop	r17
+ 7dc:	0f 91       	pop	r16
+ 7de:	08 95       	ret
+
+000007e0 <memcpy>:
+ 7e0:	fb 01       	movw	r30, r22
+ 7e2:	dc 01       	movw	r26, r24
+ 7e4:	02 c0       	rjmp	.+4      	; 0x7ea <memcpy+0xa>
+ 7e6:	01 90       	ld	r0, Z+
+ 7e8:	0d 92       	st	X+, r0
+ 7ea:	41 50       	subi	r20, 0x01	; 1
+ 7ec:	50 40       	sbci	r21, 0x00	; 0
+ 7ee:	d8 f7       	brcc	.-10     	; 0x7e6 <memcpy+0x6>
+ 7f0:	08 95       	ret
+
+000007f2 <_exit>:
+ 7f2:	f8 94       	cli
+
+000007f4 <__stop_program>:
+ 7f4:	ff cf       	rjmp	.-2      	; 0x7f4 <__stop_program>
