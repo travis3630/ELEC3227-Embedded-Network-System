@@ -8,8 +8,8 @@
 //#include <avr/interrupt.h>
 
 //#include the library for the RFM12 module and the UART
-//#include "rfm12.h"
-//#include "DLLnPHY.h"
+#include "rfm12.h"
+#include "DLLnPHY.h"
 using namespace std;
 
 uint8_t node_addr = 1;
