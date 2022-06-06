@@ -51,7 +51,7 @@ class DLL {       // The class
         uint8_t to_NET_layer();
     private:
         Packet Payload;
-        void from_NET_layer(uint8_t* networkpayload[]);
+        //void from_NET_layer(uint8_t* networkpayload[]);
         Packet to_PHY_layer();
 		uint8_t NET_queue_down[];
         uint8_t NET_queue_up[];
