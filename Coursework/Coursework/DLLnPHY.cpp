@@ -14,7 +14,7 @@ DLL::DLL()
 	CSmethod =0;
 }
 
-void DLL::from_NET_layer(uint8_t networkpayload[])
+void DLL::from_NET_layer(uint8_t* networkpayload[])
 {
     uint16_t length =0; 
     while (NET_packet[length] != '\0')
@@ -23,7 +23,7 @@ void DLL::from_NET_layer(uint8_t networkpayload[])
 	}
     for(uint8_t i = 0; i<length;i++)
     {
-        NET_queue_down[i] = networkpayload[i];
+        *NET_queue_down[i] = networkpayload[i];
     }
     addressing(NET_queue_down[2],NET_queue_down[3]);
     // determine the frame number to be send, each frame of DLL has 32 bits.
