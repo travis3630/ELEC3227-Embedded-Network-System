@@ -15,7 +15,7 @@
 uint8_t node_addr = NODE1;
 uint8_t HeaderFooter = 0x7E;
 uint8_t flagbyte = 0x55;
-uint8_t* NET_packet[] = {
+uint8_t NET_packet[] = {
     0x74, 0x64,
     0x01, 0x0F,   // src and dest addr
     0x79,         // length
