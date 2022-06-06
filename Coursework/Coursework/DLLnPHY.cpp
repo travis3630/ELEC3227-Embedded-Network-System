@@ -14,7 +14,7 @@ DLL::DLL()
 	CSmethod =0;
 }
 
-void DLL::from_NET_layer(uint8_t* networkpayload[])
+void DLL::from_NET_layer(uint8_t networkpayload[])
 {
     uint16_t length =0; 
     while (NET_packet[length] != '\0')
