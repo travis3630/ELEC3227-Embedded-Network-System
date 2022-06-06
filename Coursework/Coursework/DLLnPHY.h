@@ -35,18 +35,18 @@ uint8_t NET_packet[] = {
 typedef struct Packet{
     uint8_t Header;  // 1 byte
     uint8_t Footer;  // 1 byte
-    uint8_t* Netpkt[];       // 1-23bytes
-    uint8_t* checksum[2];    // 2 bytes
+    uint8_t Netpkt[];       // 1-23bytes
+    uint8_t checksum[2];    // 2 bytes
     uint8_t Length;         // 1 byte
-    uint8_t* Address[2];     // 2 bytes
-    uint8_t* Control[2];     // 2 bytes
+    uint8_t Address[2];     // 2 bytes
+    uint8_t Control[2];     // 2 bytes
     uint8_t Everything[];   // bytes
 } Packet;
 
 class DLL {       // The class
     public:       // Access specifier
         DLL();    //constructor
-        void from_NET_layer(uint8_t* networkpayload[]);
+        void from_NET_layer(uint8_t networkpayload[]);
         Packet to_PHY_layer();
         uint8_t to_NET_layer();
     private:
